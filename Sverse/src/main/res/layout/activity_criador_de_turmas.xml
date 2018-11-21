@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.oseias.sverse.OthersActivitys.CriadorDeTurmas">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cardContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="112dp"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/bgContainer"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="50dp"
+                            android:layout_marginTop="8dp"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintBottom_toBottomOf="@+id/imgContainer"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="@+id/imgContainer"
+                            app:layout_constraintTop_toTopOf="@+id/imgContainer"
+                            app:layout_constraintVertical_bias="0.0"
+                            app:srcCompat="@drawable/bg11" />
+
+                        <ImageView
+                            android:id="@+id/imgContainer"
+                            android:layout_width="110dp"
+                            android:layout_height="110dp"
+                            android:layout_marginBottom="4dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="4dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@mipmap/ic_seletor_de_cor" />
+
+                        <ImageView
+                            android:id="@+id/imgCamera"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:onClick="selecionarImageContainer"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/notaTitle"
+                            app:layout_constraintStart_toStartOf="@+id/imgContainer"
+                            app:layout_constraintTop_toTopOf="@+id/imgContainer"
+                            app:srcCompat="@android:drawable/ic_menu_camera" />
+
+                        <TextView
+                            android:id="@+id/notaTitle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="106dp"
+                            android:layout_marginTop="8dp"
+                            android:paddingBottom="4dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:paddingTop="4dp"
+                            android:shadowColor="#808080"
+                            android:shadowDx="3"
+                            android:shadowDy="3"
+                            android:shadowRadius="1"
+                            android:text="Preencha os Dados"
+                            android:textAlignment="textStart"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/imgContainer"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/imgContainer"
+                            app:layout_constraintTop_toTopOf="@+id/imgContainer" />
+
+                        <TextView
+                            android:id="@+id/tvContainerType"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="100dp"
+                            android:layout_marginTop="6dp"
+                            android:paddingBottom="4dp"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:paddingTop="4dp"
+                            android:shadowColor="#808080"
+                            android:shadowDx="3"
+                            android:shadowDy="3"
+                            android:shadowRadius="1"
+                            android:text="Turma"
+                            android:textAlignment="textStart"
+                            android:textColor="@android:color/background_light"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/imgContainer"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/imgContainer"
+                            app:layout_constraintTop_toTopOf="@+id/notaTitle" />
+
+                        <ImageView
+                            android:id="@+id/imgNotification"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginEnd="2dp"
+                            android:layout_marginTop="4dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/icon_notifi_6" />
+
+                        <TextView
+                            android:id="@+id/nNotifications"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="!"
+                            android:textAlignment="center"
+                            android:textColor="@color/branco"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@+id/imgNotification"
+                            app:layout_constraintEnd_toEndOf="@+id/imgNotification"
+                            app:layout_constraintStart_toStartOf="@+id/imgNotification"
+                            app:layout_constraintTop_toTopOf="@+id/imgNotification" />
+
+                    </android.support.constraint.ConstraintLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="128dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="24dp"
+                    android:text="Nome da Turma"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardContainer" />
+
+                <EditText
+                    android:id="@+id/editNome"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="24dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:inputType="textCapWords|textAutoCorrect|textPersonName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+                <TextView
+                    android:id="@+id/textView39"
+                    android:layout_width="126dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/lbl_descricao"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/textView7"
+                    app:layout_constraintStart_toStartOf="@+id/textView7"
+                    app:layout_constraintTop_toBottomOf="@+id/editNome" />
+
+                <EditText
+                    android:id="@+id/editDescricao"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="8dp"
+                    android:ems="10"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:textAlignment="viewStart"
+                    app:layout_constraintEnd_toEndOf="@+id/editNome"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView39" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="81dp"
+                    android:layout_height="18dp"
+                    android:layout_marginTop="24dp"
+                    android:text="@string/lbl_dificuldade"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/textView39"
+                    app:layout_constraintTop_toBottomOf="@+id/editDescricao" />
+
+                <Spinner
+                    android:id="@+id/spinnerImportancia"
+                    android:layout_width="0dp"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView13"
+                    app:layout_constraintEnd_toEndOf="@+id/editDescricao"
+                    app:layout_constraintStart_toEndOf="@+id/textView10"
+                    app:layout_constraintTop_toTopOf="@+id/textView13" />
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="81dp"
+                    android:layout_height="18dp"
+                    android:layout_marginTop="24dp"
+                    android:text="Importância:"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/textView10"
+                    app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+                <Spinner
+                    android:id="@+id/spinnerDificuldade"
+                    android:layout_width="0dp"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="8dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView10"
+                    app:layout_constraintEnd_toEndOf="@+id/editDescricao"
+                    app:layout_constraintStart_toEndOf="@+id/textView10"
+                    app:layout_constraintTop_toTopOf="@+id/textView10" />
+
+                <ImageView
+                    android:id="@+id/bSeletorBG"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:contentDescription="@string/lbl_add_data"
+                    android:onClick="selecionarBGContainer"
+                    app:layout_constraintStart_toStartOf="@+id/textView10"
+                    app:layout_constraintTop_toBottomOf="@+id/textView13"
+                    app:srcCompat="@mipmap/ic_seletor_de_cor" />
+
+                <TextView
+                    android:id="@+id/textView40"
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Selecione o backgound"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/bSeletorBG"
+                    app:layout_constraintStart_toEndOf="@+id/bSeletorBG"
+                    app:layout_constraintTop_toTopOf="@+id/bSeletorBG" />
+
+                <TextView
+                    android:id="@+id/tvData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginStart="8dp"
+                    android:text="@string/lbl_data_atual"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView40"
+                    app:layout_constraintTop_toTopOf="@+id/bSeletorBG" />
+
+                <TextView
+                    android:id="@+id/tvHora"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/lbl_hora_atual"
+                    app:layout_constraintBottom_toBottomOf="@+id/bSeletorBG"
+                    app:layout_constraintStart_toStartOf="@+id/tvData"
+                    app:layout_constraintTop_toBottomOf="@+id/tvData" />
+
+                <ImageView
+                    android:id="@+id/bDescartar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginTop="24dp"
+                    android:contentDescription="@string/lbl_excluir"
+                    android:onClick="descartarContainer"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/bAcept"
+                    app:layout_constraintTop_toBottomOf="@+id/tvHora"
+                    app:srcCompat="@mipmap/ic_lexcluir_c" />
+
+                <ImageView
+                    android:id="@+id/bAcept"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:contentDescription="@string/lbl_confirmar"
+                    android:onClick="salvarContainer"
+                    app:layout_constraintBottom_toBottomOf="@+id/bDescartar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/bDescartar"
+                    app:srcCompat="@mipmap/ic_acept" />
+
+            </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

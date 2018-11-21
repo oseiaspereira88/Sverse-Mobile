@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/fragment_perfil"
+    tools:context="com.example.oseias.sverse.ActPerfil">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/bgContainer"
+                android:layout_width="0dp"
+                android:layout_height="130dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/imgContainer"
+                app:layout_constraintTop_toTopOf="@+id/imgContainer"
+                app:srcCompat="@drawable/bg14" />
+
+            <ImageView
+                android:id="@+id/imgContainer"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/perfil_sverse" />
+
+            <ImageView
+                android:id="@+id/imageView72"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginEnd="12dp"
+                android:src="@android:drawable/ic_menu_camera"
+                app:layout_constraintBottom_toBottomOf="@+id/imgContainer"
+                app:layout_constraintEnd_toStartOf="@+id/notaTitle" />
+
+            <TextView
+                android:id="@+id/notaTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="106dp"
+                android:layout_marginTop="8dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="4dp"
+                android:shadowColor="#808080"
+                android:shadowDx="3"
+                android:shadowDy="3"
+                android:shadowRadius="1"
+                android:text="Nome do Usuário"
+                android:textAlignment="textStart"
+                android:textColor="@android:color/background_light"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/imgContainer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/imgContainer"
+                app:layout_constraintTop_toTopOf="@+id/imgContainer" />
+
+            <TextView
+                android:id="@+id/tvContainerType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="6dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="4dp"
+                android:shadowColor="#808080"
+                android:shadowDx="3"
+                android:shadowDy="3"
+                android:shadowRadius="1"
+                android:text="emailassociado@gmail.com"
+                android:textAlignment="textStart"
+                android:textColor="@android:color/background_light"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/imgContainer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/imgContainer"
+                app:layout_constraintTop_toTopOf="@+id/notaTitle" />
+
+            <ImageView
+                android:id="@+id/imgNotification"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/icon_notifi_6" />
+
+            <TextView
+                android:id="@+id/nNotifications"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="!"
+                android:textAlignment="center"
+                android:textColor="@color/branco"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/imgNotification"
+                app:layout_constraintEnd_toEndOf="@+id/imgNotification"
+                app:layout_constraintStart_toStartOf="@+id/imgNotification"
+                app:layout_constraintTop_toTopOf="@+id/imgNotification" />
+
+            <TextView
+                android:id="@+id/tvContainerType2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="4dp"
+                android:shadowColor="#808080"
+                android:shadowDx="3"
+                android:shadowDy="3"
+                android:shadowRadius="1"
+                android:text="Interações"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/tvContainerType6"
+                app:layout_constraintStart_toStartOf="@+id/bgContainer" />
+
+            <ImageView
+                android:id="@+id/imgContainer2"
+                android:layout_width="48dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/tvContainerType2"
+                app:layout_constraintStart_toStartOf="@+id/tvContainerType2"
+                app:layout_constraintTop_toBottomOf="@+id/tvContainerType2"
+                app:srcCompat="@drawable/border4" />
+
+            <TextView
+                android:id="@+id/tvContainerType7"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="2dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="4dp"
+                android:shadowColor="#808080"
+                android:shadowDx="3"
+                android:shadowDy="3"
+                android:shadowRadius="1"
+                android:text="00"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/imgContainer2"
+                app:layout_constraintEnd_toEndOf="@+id/imgContainer2"
+                app:layout_constraintStart_toStartOf="@+id/imgContainer2"
+                app:layout_constraintTop_toBottomOf="@+id/tvContainerType2" />
+
+            <TextView
+                android:id="@+id/tvContainerType6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="4dp"
+                android:shadowColor="#808080"
+                android:shadowDx="3"
+                android:shadowDy="3"
+                android:shadowRadius="1"
+                android:text="Desmpenho"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/bgContainer"
+                app:layout_constraintEnd_toStartOf="@+id/tvContainerType4"
+                app:layout_constraintStart_toEndOf="@+id/tvContainerType2"
+                app:layout_constraintTop_toBottomOf="@+id/imgContainer" />
+
+            <ImageView
+                android:id="@+id/imgContainer3"
+                android:layout_width="48dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/tvContainerType6"
+                app:layout_constraintStart_toStartOf="@+id/tvContainerType6"
+                app:layout_constraintTop_toBottomOf="@+id/tvContainerType6"
+                app:srcCompat="@drawable/border4" />
+
+            <TextView
+                android:id="@+id/tvContainerType5"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="2dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="4dp"
+                android:shadowColor="#808080"
+                android:shadowDx="3"
+                android:shadowDy="3"
+                android:shadowRadius="1"
+                android:text="00"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/imgContainer3"
+                app:layout_constraintEnd_toEndOf="@+id/imgContainer3"
+                app:layout_constraintStart_toStartOf="@+id/imgContainer3"
+                app:layout_constraintTop_toBottomOf="@+id/tvContainerType6" />
+
+            <TextView
+                android:id="@+id/tvContainerType4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_marginTop="4dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="4dp"
+                android:shadowColor="#808080"
+                android:shadowDx="3"
+                android:shadowDy="3"
+                android:shadowRadius="1"
+                android:text="Pendências"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/tvContainerType"
+                app:layout_constraintTop_toBottomOf="@+id/imgContainer" />
+
+            <ImageView
+                android:id="@+id/imgContainer4"
+                android:layout_width="48dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/tvContainerType4"
+                app:layout_constraintStart_toStartOf="@+id/tvContainerType4"
+                app:layout_constraintTop_toBottomOf="@+id/tvContainerType4"
+                app:srcCompat="@drawable/border4" />
+
+            <TextView
+                android:id="@+id/tvContainerType8"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="2dp"
+                android:paddingBottom="4dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="4dp"
+                android:shadowColor="#808080"
+                android:shadowDx="3"
+                android:shadowDy="3"
+                android:shadowRadius="1"
+                android:text="00"
+                android:textAlignment="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/imgContainer4"
+                app:layout_constraintEnd_toEndOf="@+id/imgContainer4"
+                app:layout_constraintStart_toStartOf="@+id/imgContainer4"
+                app:layout_constraintTop_toBottomOf="@+id/tvContainerType4" />
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+</android.support.constraint.ConstraintLayout>

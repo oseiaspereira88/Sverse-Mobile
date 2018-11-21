@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.versaplications.prodesenvelopment.sverse">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo88"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo88"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name="com.example.oseias.sverse.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.oseias.sverse.OthersActivitys.ActivityConfiguracoes"
+            android:label="@string/title_activity_configuracoes"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.oseias.sverse.OthersActivitys.CriadorDeNotas"
+            android:label="@string/title_activity_criador_de_notas"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.oseias.sverse.OthersActivitys.CriadorDeAtividades"
+            android:label="@string/title_activity_criador_de_atividades"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.oseias.sverse.OthersActivitys.OrganizadorDeHorarios"
+            android:label="@string/title_activity_organizador_de_horarios"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.oseias.sverse.OthersActivitys.ActivityLixeira"
+            android:label="@string/title_activity_lixeira"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.oseias.sverse.SQLite.TesteSQLite"
+            android:label="@string/title_activity_teste_sqlite"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.oseias.sverse.OthersActivitys.LoginActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.oseias.sverse.OthersActivitys.EditorDeNotas"
+            android:label="@string/title_activity_editor_de_notas"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.oseias.sverse.OthersActivitys.Cadastrar"
+            android:label="@string/title_activity_cadastrar"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.oseias.sverse.OthersActivitys.Teste"
+            android:label="@string/title_activity_teste"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.oseias.sverse.OthersActivitys.LixeiraActivity"
+            android:label="@string/title_activity_lixeira"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.oseias.sverse.OthersActivitys.TurmaLayout"
+            android:label="@string/title_activity_turma_layout"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.oseias.sverse.OthersActivitys.PomodoroConfig"
+            android:label="@string/title_activity_pomodoro_config"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="com.example.oseias.sverse.OthersActivitys.EstudoEmCiclo" />
+        <activity
+            android:name="com.example.oseias.sverse.OthersActivitys.PerfilActivity"
+            android:label="@string/title_activity_perfil"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="com.example.oseias.sverse.OthersActivitys.CriadorDeTurmas" />
+        <activity android:name="com.example.oseias.sverse.OthersActivitys.CriadorDeGrupos" />
+        <activity android:name="com.example.oseias.sverse.OthersActivitys.CriadorDeEstudoPessoal"></activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@mipmap/ic_launcher_round"
+            android:orderInCategory="0"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_perfil"
+            android:icon="@drawable/ic_menu_camera"
+            android:orderInCategory="1"
+            android:title="@string/lbl_menu_perfil" />
+        <item
+            android:id="@+id/nav_ferramentas"
+            android:icon="@drawable/ic_menu_manage"
+            android:orderInCategory="2"
+            android:title="@string/lbl_menu_ferramentas" />
+        <item
+            android:id="@+id/nav_ajuda"
+            android:icon="@drawable/ic_menu_gallery"
+            android:orderInCategory="3"
+            android:title="@string/lbl_menu_ajuda" />
+        <item
+            android:id="@+id/nav_sobre"
+            android:icon="@drawable/ic_menu_manage"
+            android:orderInCategory="4"
+            android:title="@string/lbl_menu_sobre" />
+    </group>
+
+    <item
+        android:orderInCategory="5"
+        android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_logoff"
+                android:icon="@mipmap/ic_logoff3"
+                android:title="Logoff" />
+        </menu>
+    </item>
+
+</menu>

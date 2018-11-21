@@ -1,0 +1,92 @@
+<resources>
+    <string name="app_name">Sverse</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Configurações</string>
+
+    <string-array name="titles_tabs">
+        <item>Mural Acadêmico</item>
+        <item>Containers de Estudo</item>
+        <item>Bloco de Notas</item>
+        <item>Notificações</item>
+    </string-array>
+
+    <string-array name="dificuldade_list">
+        <item>Muito Difícil</item>
+        <item>Difícil</item>
+        <item>Razoável</item>
+        <item>Fácil</item>
+    </string-array>
+
+    <string-array name="importancia_list">
+        <item>Importantíssimo</item>
+        <item>Importante</item>
+        <item>Razoável</item>
+        <item>Apenas Hobby</item>
+    </string-array>
+
+    <string name="lbl_menu_configuracoes">Configurações</string>
+    <string name="lbl_nome_bar_menu">Nome</string>
+    <string name="lbl_desempenho">Desempenho</string>
+    <string name="lbl_menu_ajuda">Ajuda</string>
+    <string name="lbl_menu_perfil">Perfil</string>
+    <string name="lbl_menu_ferramentas">Ferramentas</string>
+    <string name="lbl_menu_sobre">Sobre</string>
+    <string name="lbl_menu_reiniciar_activity">Reiniciar</string>
+    <string name="lbl_menu_sair_do_app">Sair</string>
+    <string name="title_activity_nota_creator">Activity Nota Creator</string>
+    <string name="lbl_menu_criar">Criar</string>
+    <string name="lbl_menu_cancelar">Cancelar</string>
+    <string name="title_activity_act_nota_creator">Criador de Notas</string>
+    <string name="lbl_sem_alarmes">Sem Alarmes</string>
+    <string name="lbl_data_atualizacao">- Data de Atualização:</string>
+    <string name="lbl_data_criacao">- Data de Criação:</string>
+    <string name="lbl_menu_home">Home</string>
+    <string name="title_activity_act_configuracoes">Configurações</string>
+    <string name="title_activity_act_ajuda">Ajuda</string>
+    <string name="title_activity_act_sobre">Sobre</string>
+    <string name="title_activity_act_perfil">Perfil</string>
+    <string name="title_activity_test">Test</string>
+    <string name="title_activity_configuracoes">Configurações</string>
+    <string name="title_activity_test_grid_view">Testando Notas No GridView</string>
+    <string name="title_activity_criador_de_notas">Criador De Notas</string>
+    <string name="lbl_msg_adicione_alarme">Adicione um Alarme</string>
+    <string name="lbl_sem_cor">Sem Cor</string>
+    <string name="lbl_add_cor">Adicione uma cor</string>
+    <string name="lbl_sem_emoji">Sem Emoji</string>
+    <string name="lbl_add_emoji">Adicione um emoji</string>
+    <string name="lbl_sem_tag">Sem Tag</string>
+    <string name="lbl_add_tag">Adicione uma tag</string>
+    <string name="lbl_data_atual">Data Atual</string>
+    <string name="lbl_hora_atual">Hora Atual</string>
+    <string name="title_activity_criador_de_atividades">Criador de Atividades</string>
+    <string name="lbl_assunto">Assunto:</string>
+    <string name="lbl_descricao">Descrição</string>
+    <string name="lbl_digite_aqui">Digite aqui</string>
+    <string name="lbl_dificuldade">Dificuldade:</string>
+    <string name="lbl_data_de_entrega">Data de entrega</string>
+    <string name="title_activity_organizador_de_horarios">Organizador de Horarios</string>
+    <string name="title_activity_lixeira">Lixeira</string>
+    <string name="title_activity_teste_sqlite">TesteSQLite</string>
+    <string name="lbl_login">Login:</string>
+    <string name="lbl_senha">Senha:</string>
+    <string name="lbl_manter_me_conectado">Manter-me conectado</string>
+
+    <string name="lbl_erro_login">Login Invalido!</string>
+    <string name="lbl_erro_senha">Senha Invalida!</string>
+    <string name="lbl_selecione_materia">Selecione a Matéria:</string>
+    <string name="lbl_add_data">Add Data</string>
+    <string name="lbl_excluir">Excluir</string>
+    <string name="lbl_confirmar">Confirmar</string>
+    <string name="title_activity_editor_de_notas">Editor de Notas</string>
+    <string name="title_activity_cadastrar">Cadastrar</string>
+    <string name="title_activity_teste">Teste</string>
+    <string name="title_activity_turma_layout">Turma Layout</string>
+    <string name="title_activity_estudo_em_ciclo">Ciclo de Estudo</string>
+    <string name="title_activity_pomodoro_config">PomodoroConfig</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_perfil">Gestor de Perfil</string>
+
+</resources>

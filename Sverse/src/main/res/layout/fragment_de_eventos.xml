@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="saveCurrentIdFragment"
+        android:orientation="horizontal"
+        android:paddingTop="0dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="8dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    tools:layout_editor_absoluteX="8dp"
+                    tools:layout_editor_absoluteY="8dp">
+
+                    <LinearLayout
+                        android:layout_width="180.5dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/altura_nota_padrao"
+                            android:orientation="vertical">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="8dp"
+                                android:background="@color/abc_search_url_text_holo">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <Button
+                                        android:id="@+id/button20a"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:allowUndo="false"
+                                        android:backgroundTint="@android:color/transparent"
+                                        android:text="Minha Nota oiajsfij safiojsdfjd saifj idsj ifjdisdjgi isdjgijifj sdifj isdjijsd ijgijsdi jfsdj disojfijs ddsj fisdj sdijidjs sidojf jdi"
+                                        android:textAlignment="center"
+                                        android:textAllCaps="false"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+                            </FrameLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/altura_nota_padrao"
+                            android:orientation="vertical">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="8dp"
+                                android:background="@color/colorPrimary">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/imageView22a"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="64dp"
+                                        app:srcCompat="@mipmap/ic_launcher" />
+
+                                    <TextView
+                                        android:id="@+id/textView23a"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_margin="10dp"
+                                        android:text="Minha Nota oiajsfij safiojsdfjd saifj idsj ifjdisdjgi isdjgijifj sdifj isdjijsd ijgijsdi jfsdj disojfijs ddsj fisdj sdijidjs sidojf jdi"
+                                        android:textAlignment="center"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+                            </FrameLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/altura_nota_padrao"
+                            android:orientation="vertical">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="8dp"
+                                android:background="@color/abc_search_url_text_holo">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <Button
+                                        android:id="@+id/button24a"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:allowUndo="false"
+                                        android:backgroundTint="@android:color/transparent"
+                                        android:text="Minha Nota oiajsfij safiojsdfjd saifj idsj ifjdisdjgi isdjgijifj sdifj isdjijsd ijgijsdi jfsdj disojfijs ddsj fisdj sdijidjs sidojf jdi"
+                                        android:textAlignment="center"
+                                        android:textAllCaps="false"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+                            </FrameLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/altura_nota_padrao"
+                            android:orientation="vertical">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="8dp"
+                                android:background="@color/colorPrimary">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/imageView25a"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="64dp"
+                                        app:srcCompat="@mipmap/ic_launcher" />
+
+                                    <TextView
+                                        android:id="@+id/textView26a"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_margin="10dp"
+                                        android:text="Minha Nota oiajsfij safiojsdfjd saifj idsj ifjdisdjgi isdjgijifj sdifj isdjijsd ijgijsdi jfsdj disojfijs ddsj fisdj sdijidjs sidojf jdi"
+                                        android:textAlignment="center"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+                            </FrameLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/altura_nota_padrao"
+                            android:orientation="vertical">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="8dp"
+                                android:background="@color/abc_search_url_text_holo">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <Button
+                                        android:id="@+id/button27a"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:allowUndo="false"
+                                        android:backgroundTint="@android:color/transparent"
+                                        android:text="Minha Nota oiajsfij safiojsdfjd saifj idsj ifjdisdjgi isdjgijifj sdifj isdjijsd ijgijsdi jfsdj disojfijs ddsj fisdj sdijidjs sidojf jdi"
+                                        android:textAlignment="center"
+                                        android:textAllCaps="false"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+                            </FrameLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/altura_nota_padrao"
+                            android:orientation="vertical">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="8dp"
+                                android:background="@color/colorPrimary">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/imageView28a"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="64dp"
+                                        app:srcCompat="@mipmap/ic_launcher" />
+
+                                    <TextView
+                                        android:id="@+id/textView29a"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_margin="10dp"
+                                        android:text="Minha Nota oiajsfij safiojsdfjd saifj idsj ifjdisdjgi isdjgijifj sdifj isdjijsd ijgijsdi jfsdj disojfijs ddsj fisdj sdijidjs sidojf jdi"
+                                        android:textAlignment="center"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+                            </FrameLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/altura_nota_padrao"
+                            android:orientation="vertical">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="8dp"
+                                android:background="@color/abc_search_url_text_holo">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <Button
+                                        android:id="@+id/button2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:allowUndo="false"
+                                        android:backgroundTint="@android:color/transparent"
+                                        android:text="Minha Nota oiajsfij safiojsdfjd saifj idsj ifjdisdjgi isdjgijifj sdifj isdjijsd ijgijsdi jfsdj disojfijs ddsj fisdj sdijidjs sidojf jdi"
+                                        android:textAlignment="center"
+                                        android:textAllCaps="false"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+                            </FrameLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/altura_nota_padrao"
+                            android:orientation="vertical">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="8dp"
+                                android:background="@color/colorPrimary">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/imageView12"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="64dp"
+                                        app:srcCompat="@mipmap/ic_launcher" />
+
+                                    <TextView
+                                        android:id="@+id/textView19"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_margin="10dp"
+                                        android:text="Minha Nota oiajsfij safiojsdfjd saifj idsj ifjdisdjgi isdjgijifj sdifj isdjijsd ijgijsdi jfsdj disojfijs ddsj fisdj sdijidjs sidojf jdi"
+                                        android:textAlignment="center"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+                            </FrameLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="180.5dp"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/altura_nota_padrao"
+                            android:orientation="vertical">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="8dp"
+                                android:background="@color/abc_search_url_text_holo">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <Button
+                                        android:id="@+id/button20b"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:allowUndo="false"
+                                        android:backgroundTint="@android:color/transparent"
+                                        android:text="Minha Nota oiajsfij safiojsdfjd saifj idsj ifjdisdjgi isdjgijifj sdifj isdjijsd ijgijsdi jfsdj disojfijs ddsj fisdj sdijidjs sidojf jdi"
+                                        android:textAlignment="center"
+                                        android:textAllCaps="false"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+                            </FrameLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/altura_nota_padrao"
+                            android:orientation="vertical">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="8dp"
+                                android:background="@color/colorPrimary">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/imageView22b"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="64dp"
+                                        app:srcCompat="@mipmap/ic_launcher" />
+
+                                    <TextView
+                                        android:id="@+id/textView23b"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_margin="10dp"
+                                        android:text="Minha Nota oiajsfij safiojsdfjd saifj idsj ifjdisdjgi isdjgijifj sdifj isdjijsd ijgijsdi jfsdj disojfijs ddsj fisdj sdijidjs sidojf jdi"
+                                        android:textAlignment="center"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+                            </FrameLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/altura_nota_padrao"
+                            android:orientation="vertical">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="8dp"
+                                android:background="@color/abc_search_url_text_holo">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <Button
+                                        android:id="@+id/button24b"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:allowUndo="false"
+                                        android:backgroundTint="@android:color/transparent"
+                                        android:text="Minha Nota oiajsfij safiojsdfjd saifj idsj ifjdisdjgi isdjgijifj sdifj isdjijsd ijgijsdi jfsdj disojfijs ddsj fisdj sdijidjs sidojf jdi"
+                                        android:textAlignment="center"
+                                        android:textAllCaps="false"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+                            </FrameLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/altura_nota_padrao"
+                            android:orientation="vertical">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="8dp"
+                                android:background="@color/colorPrimary">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/imageView25b"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="64dp"
+                                        app:srcCompat="@mipmap/ic_launcher" />
+
+                                    <TextView
+                                        android:id="@+id/textView26b"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_margin="10dp"
+                                        android:text="Minha Nota oiajsfij safiojsdfjd saifj idsj ifjdisdjgi isdjgijifj sdifj isdjijsd ijgijsdi jfsdj disojfijs ddsj fisdj sdijidjs sidojf jdi"
+                                        android:textAlignment="center"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+                            </FrameLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/altura_nota_padrao"
+                            android:orientation="vertical">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="8dp"
+                                android:background="@color/abc_search_url_text_holo">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <Button
+                                        android:id="@+id/button27b"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:allowUndo="false"
+                                        android:backgroundTint="@android:color/transparent"
+                                        android:text="Minha Nota oiajsfij safiojsdfjd saifj idsj ifjdisdjgi isdjgijifj sdifj isdjijsd ijgijsdi jfsdj disojfijs ddsj fisdj sdijidjs sidojf jdi"
+                                        android:textAlignment="center"
+                                        android:textAllCaps="false"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+                            </FrameLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/altura_nota_padrao"
+                            android:orientation="vertical">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="8dp"
+                                android:background="@color/colorPrimary">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/imageView28b"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="64dp"
+                                        app:srcCompat="@mipmap/ic_launcher" />
+
+                                    <TextView
+                                        android:id="@+id/textView29b"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_margin="10dp"
+                                        android:text="Minha Nota oiajsfij safiojsdfjd saifj idsj ifjdisdjgi isdjgijifj sdifj isdjijsd ijgijsdi jfsdj disojfijs ddsj fisdj sdijidjs sidojf jdi"
+                                        android:textAlignment="center"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+                            </FrameLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/altura_nota_padrao"
+                            android:orientation="vertical">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="8dp"
+                                android:background="@color/abc_search_url_text_holo">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <Button
+                                        android:id="@+id/button2b"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:allowUndo="false"
+                                        android:backgroundTint="@android:color/transparent"
+                                        android:text="Minha Nota oiajsfij safiojsdfjd saifj idsj ifjdisdjgi isdjgijifj sdifj isdjijsd ijgijsdi jfsdj disojfijs ddsj fisdj sdijidjs sidojf jdi"
+                                        android:textAlignment="center"
+                                        android:textAllCaps="false"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+                            </FrameLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/altura_nota_padrao"
+                            android:orientation="vertical">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="8dp"
+                                android:background="@color/colorPrimary">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+                                        android:id="@+id/imageView12b"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="64dp"
+                                        app:srcCompat="@mipmap/ic_launcher" />
+
+                                    <TextView
+                                        android:id="@+id/textView19b"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_margin="10dp"
+                                        android:text="Minha Nota oiajsfij safiojsdfjd saifj idsj ifjdisdjgi isdjgijifj sdifj isdjijsd ijgijsdi jfsdj disojfijs ddsj fisdj sdijidjs sidojf jdi"
+                                        android:textAlignment="center"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+                            </FrameLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>
