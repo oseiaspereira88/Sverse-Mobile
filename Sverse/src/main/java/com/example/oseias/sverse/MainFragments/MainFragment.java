@@ -60,6 +60,9 @@ public class MainFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         appBar.removeView(tabLayout);
+        if(lastIndexFragment != defaultIndexPrimaryFragment){
+            lastIndexFragment = defaultIndexPrimaryFragment;
+        }
     }
 
     public void lerPredefinicoes(){
@@ -72,13 +75,5 @@ public class MainFragment extends Fragment {
         ConfiguracaoDAO configsDAO = new ConfiguracaoDAO(getActivity());
         configsDAO.atualizarConfig(new Configuracao(Configuracao.LAST_INDEX_FRAGMENT, 0));
         Toast.makeText(getContext(), "O LastIndexFragment foi salvo...", Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        if(lastIndexFragment != defaultIndexPrimaryFragment){
-            lastIndexFragment = defaultIndexPrimaryFragment;
-        }
     }
 }

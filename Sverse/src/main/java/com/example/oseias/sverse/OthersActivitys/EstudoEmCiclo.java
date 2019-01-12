@@ -8,13 +8,13 @@ import android.widget.ListView;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.example.oseias.sverse.OtherAdapters.ItensAdapter;
-import com.example.oseias.sverse.OthersClass.Item;
+import com.example.oseias.sverse.OthersClass.ItemArea;
 import com.versaplications.prodesenvelopment.sverse.R;
 
 import java.util.ArrayList;
 
 public class EstudoEmCiclo extends AppCompatActivity {
-    ArrayList<Item> lista;
+    ArrayList<ItemArea> lista;
     ItensAdapter itensAdapter;
     ListView lv;
 
@@ -31,11 +31,11 @@ public class EstudoEmCiclo extends AppCompatActivity {
     }
 
     public void crieDados(){
-        lista.add(new Item("Feijão Branco", 5.75f));
-        lista.add(new Item("Feijão Preto", 8.75f));
-        lista.add(new Item("Feijão Macaça", 4.75f));
-        lista.add(new Item("Feijão Verde", 7.75f));
-        lista.add(new Item("Fava Gigante", 8.75f));
+        lista.add(new ItemArea("Feijão Branco", 5.75f));
+        lista.add(new ItemArea("Feijão Preto", 8.75f));
+        lista.add(new ItemArea("Feijão Macaça", 4.75f));
+        lista.add(new ItemArea("Feijão Verde", 7.75f));
+        lista.add(new ItemArea("Fava Gigante", 8.75f));
     }
 
     public void actionButton(View view){

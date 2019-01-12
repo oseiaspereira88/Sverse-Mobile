@@ -1,10 +1,10 @@
 package com.example.oseias.sverse.OthersClass;
 
-public class Item {
+public class ItemArea {
     private String nome;
     private float preco;
 
-    public Item(String nome, float preco) {
+    public ItemArea(String nome, float preco) {
         this.nome = nome;
         this.preco = preco;
     }

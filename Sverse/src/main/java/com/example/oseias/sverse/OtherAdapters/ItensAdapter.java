@@ -9,16 +9,16 @@ import android.widget.LinearLayout;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.example.oseias.sverse.OthersClass.Item;
+import com.example.oseias.sverse.OthersClass.ItemArea;
 import com.versaplications.prodesenvelopment.sverse.R;
 import java.util.ArrayList;
 
 public class ItensAdapter extends BaseAdapter {
     Context ctx;
-    ArrayList<Item> itens;
+    ArrayList<ItemArea> itens;
     boolean isLongeClick;
 
-    public ItensAdapter(Context ctx, ArrayList<Item> itens) {
+    public ItensAdapter(Context ctx, ArrayList<ItemArea> itens) {
         this.ctx = ctx;
         this.itens = itens;
         isLongeClick = false;

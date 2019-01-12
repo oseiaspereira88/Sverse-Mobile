@@ -82,7 +82,15 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name="com.example.oseias.sverse.OthersActivitys.CriadorDeTurmas" />
         <activity android:name="com.example.oseias.sverse.OthersActivitys.CriadorDeGrupos" />
-        <activity android:name="com.example.oseias.sverse.OthersActivitys.CriadorDeEstudoPessoal"></activity>
+        <activity android:name="com.example.oseias.sverse.OthersActivitys.CriadorDeEstudoPessoal" />
+        <activity
+            android:name="com.example.oseias.sverse.OthersActivitys.AreaDeTrabalho"
+            android:label="@string/title_activity_area_de_trabalho"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.example.oseias.sverse.OthersActivitys.AreaDeTrabalhoEmGrupo"
+            android:label="@string/title_activity_area_de_trabalho_em_grupo"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

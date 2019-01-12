@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.example.oseias.sverse.OthersClass.Item;
+import com.example.oseias.sverse.OthersClass.ItemArea;
 import com.example.oseias.sverse.OthersClass.UnidadeDeEstudo;
 import com.versaplications.prodesenvelopment.sverse.R;
 import java.util.ArrayList;
@@ -20,9 +20,9 @@ public class CicloAdapter extends BaseAdapter {
     Context ctx;
     ArrayList<UnidadeDeEstudo> listaDeEstudos;
     boolean isLongeClick;
-    ArrayList<Item> itens;
+    ArrayList<ItemArea> itens;
 
-    public CicloAdapter(Context ctx, ArrayList<Item> itens) {
+    public CicloAdapter(Context ctx, ArrayList<ItemArea> itens) {
         this.ctx = ctx;
         this.itens = itens;
         isLongeClick = false;

@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.example.oseias.sverse.OthersActivitys.ActivityConfiguracoes;
+import com.example.oseias.sverse.OthersActivitys.AreaDeTrabalhoEmGrupo;
 import com.example.oseias.sverse.OthersActivitys.CriadorDeAtividades;
 import com.example.oseias.sverse.OthersActivitys.EstudoEmCiclo;
 import com.example.oseias.sverse.OthersActivitys.PerfilActivity;

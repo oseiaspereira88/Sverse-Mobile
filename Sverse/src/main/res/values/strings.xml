@@ -11,6 +11,18 @@
         <item>Notificações</item>
     </string-array>
 
+    <string-array name="titles_tabs_etapas">
+        <item>Todas</item>
+        <item>Em Andamento</item>
+        <item>Concluidas</item>
+    </string-array>
+
+    <string-array name="titles_tabs_temas">
+        <item>Todos</item>
+        <item>A Estudar</item>
+        <item>Estudados</item>
+    </string-array>
+
     <string-array name="dificuldade_list">
         <item>Muito Difícil</item>
         <item>Difícil</item>
@@ -88,5 +100,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_perfil">Gestor de Perfil</string>
+    <string name="title_activity_area_de_trabalho">Area de Trabalho</string>
+    <string name="title_activity_area_de_trabalho_em_grupo">Area de Trabalho</string>
 
 </resources>
