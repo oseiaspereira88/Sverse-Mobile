@@ -66,8 +66,8 @@ public class CicloAdapter extends BaseAdapter {
 
         TextView tvNome = view.findViewById(R.id.tvNome);
         TextView tvPreco = view.findViewById(R.id.tvPreco);
-        tvNome.setText(itens.get(i).getNome());
-        tvPreco.setText(String.valueOf(itens.get(i).getPreco()));
+        //tvNome.setText(itens.get(i).getNome());
+        //tvPreco.setText(String.valueOf(itens.get(i).getPreco()));
 
         //Atribuições
 

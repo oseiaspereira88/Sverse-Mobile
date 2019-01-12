@@ -1,15 +1,13 @@
 package com.example.oseias.sverse.OthersClass;
 
-import java.util.ArrayList;
 import java.util.Date;
 
-public class ItemArea {
+public class SubItemArea {
     private String titulo;
     private String descricao;
     private Date dataDeCriacao;
-    private ArrayList<SubItemArea> subItens;
 
-    public ItemArea(String titulo, String descricao) {
+    public SubItemArea(String titulo, String descricao) {
         this.titulo = titulo;
         this.descricao = descricao;
     }
@@ -28,21 +26,5 @@ public class ItemArea {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
-    }
-
-    public ArrayList<SubItemArea> getSubItens() {
-        return subItens;
-    }
-
-    public void setSubItens(ArrayList<SubItemArea> subItens) {
-        this.subItens = subItens;
-    }
-
-    public void addSubItem(SubItemArea subItem) {
-        subItens.add(subItem);
-    }
-
-    public void removeSubItem(int idSubItem) {
-        subItens.remove(idSubItem);
     }
 }

@@ -31,11 +31,11 @@ public class EstudoEmCiclo extends AppCompatActivity {
     }
 
     public void crieDados(){
-        lista.add(new ItemArea("Feijão Branco", 5.75f));
-        lista.add(new ItemArea("Feijão Preto", 8.75f));
-        lista.add(new ItemArea("Feijão Macaça", 4.75f));
-        lista.add(new ItemArea("Feijão Verde", 7.75f));
-        lista.add(new ItemArea("Fava Gigante", 8.75f));
+        lista.add(new ItemArea("Feijão Branco", "Feijão Branco"));
+        lista.add(new ItemArea("Feijão Preto", "Feijão Branco"));
+        lista.add(new ItemArea("Feijão Macaça", "Feijão Branco"));
+        lista.add(new ItemArea("Feijão Verde", "Feijão Branco"));
+        lista.add(new ItemArea("Fava Gigante", "Feijão Branco"));
     }
 
     public void actionButton(View view){
