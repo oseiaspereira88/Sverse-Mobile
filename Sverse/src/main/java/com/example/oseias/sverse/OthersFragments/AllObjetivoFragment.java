@@ -2,11 +2,8 @@ package com.example.oseias.sverse.OthersFragments;
 
 import android.content.ClipData;
 import android.content.ClipDescription;
-import android.graphics.drawable.Drawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
@@ -18,20 +15,20 @@ import android.view.DragEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewParent;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.example.oseias.sverse.Interfaces.RecyclerViewOnClickListenerHack;
-import com.example.oseias.sverse.OtherAdapters.ObjetivoAdapter;
-import com.example.oseias.sverse.OthersClass.ItemArea;
+import com.example.oseias.sverse.Interfaces.AllRecyclerViewOnClickListenerHack;
+import com.example.oseias.sverse.OtherAdapters.AllObjetivoAdapter;
+import com.example.oseias.sverse.OthersClass.SimpleDividerItemDecoration;
+import com.example.oseias.sverse.SQLite.model.Objetivo;
 import com.versaplications.prodesenvelopment.sverse.R;
 import java.util.ArrayList;
 
-public class ObjetivoFragment extends Fragment implements RecyclerViewOnClickListenerHack {
+public class AllObjetivoFragment extends Fragment implements AllRecyclerViewOnClickListenerHack {
     private RecyclerView rv;
-    ObjetivoAdapter adapter;
-    private ArrayList<ItemArea> objetivos;
+    AllObjetivoAdapter adapter;
+    private ArrayList<Objetivo> objetivos;
     private CardView cardTitulo;
     public ConstraintLayout areaExcluir;
     private TextView textTitulo;
@@ -47,7 +44,7 @@ public class ObjetivoFragment extends Fragment implements RecyclerViewOnClickLis
     int defaultSize = 0;
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_objetivos, null); //->container, false
+        View rootView = inflater.inflate(R.layout.fragment_all_objetivos, null); //->container, false
         initializeViews(container, rootView);
         return rootView;
     }
@@ -56,13 +53,13 @@ public class ObjetivoFragment extends Fragment implements RecyclerViewOnClickLis
         View parent = (View) container.getParent();
         AppBarLayout barLayout = (AppBarLayout) parent.findViewById(R.id.appBarArea);
         TabLayout tabLayout = (TabLayout) barLayout.getChildAt(0);
-        cardTitulo = (CardView) rootView.findViewById(R.id.cardTitulo);
+        cardTitulo = (CardView) rootView.findViewById(R.id.cardAll);
         areaExcluir = (ConstraintLayout) rootView.findViewById(R.id.areaExcluir);
-        textTitulo = (TextView) rootView.findViewById(R.id.tvTituloLista);
+        textTitulo = (TextView) rootView.findViewById(R.id.tvAll);
         textTitulo.setText(tabLayout.getTabAt(tabLayout.getSelectedTabPosition()).getText().toString());
         imgExcluir = (ImageView) rootView.findViewById(R.id.imgExcluir);
 
-        areaExcluir.setOnDragListener(new ObjetivoAdapter.MyOnDragListener());
+        areaExcluir.setOnDragListener(new AllObjetivoAdapter.MyOnDragListener());
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -82,7 +79,7 @@ public class ObjetivoFragment extends Fragment implements RecyclerViewOnClickLis
             }
         });
 
-        rv = (RecyclerView) rootView.findViewById(R.id.recyclerArea);
+        rv = (RecyclerView) rootView.findViewById(R.id.recyclerAll);
         rv.setOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
@@ -94,7 +91,7 @@ public class ObjetivoFragment extends Fragment implements RecyclerViewOnClickLis
                 super.onScrolled(recyclerView, dx, dy);
 
                 LinearLayoutManager llm = (LinearLayoutManager) rv.getLayoutManager();
-                adapter = (ObjetivoAdapter) rv.getAdapter();
+                adapter = (AllObjetivoAdapter) rv.getAdapter();
 
                 if (objetivos.size() == llm.findLastCompletelyVisibleItemPosition() + 1) {
                     //Toast.makeText(getActivity(), "Voce chegou ao final da sua lista.", Toast.LENGTH_SHORT).show();
@@ -102,36 +99,38 @@ public class ObjetivoFragment extends Fragment implements RecyclerViewOnClickLis
             }
         });
 
+        rv.addItemDecoration(new SimpleDividerItemDecoration(getActivity()));
+
         rv.setHasFixedSize(true);
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         rv.setLayoutManager(llm);
-        adapter = new ObjetivoAdapter(getActivity(), generateItens());
+        adapter = new AllObjetivoAdapter(getActivity(), generateItens());
         adapter.setRecyclerViewOnClickListenerHack(this);
         rv.setAdapter(adapter);
 
     }
 
-    public ArrayList<ItemArea> generateItens() {
+    public ArrayList<Objetivo> generateItens() {
         objetivos = new ArrayList<>();
-        objetivos.add(new ItemArea("Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado."));
-        objetivos.add(new ItemArea("Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado."));
-        objetivos.add(new ItemArea("Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado."));
-        objetivos.add(new ItemArea("Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado."));
-        objetivos.add(new ItemArea("Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado."));
-        objetivos.add(new ItemArea("Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado."));
+        objetivos.add(new Objetivo(1, "ALL: Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado.", 1, 100, "Em Andamento"));
+        objetivos.add(new Objetivo(2, "ALL: Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado.", 2, 100, "Em Andamento"));
+        objetivos.add(new Objetivo(3, "ALL: Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado.", 3, 100, "Em Andamento"));
+        objetivos.add(new Objetivo(4, "ALL: Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado.", 4, 100, "Em Andamento"));
+        objetivos.add(new Objetivo(7, "ALL: Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado.", 5, 100, "Em Andamento"));
+        objetivos.add(new Objetivo(6, "ALL: Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado.", 6, 100, "Concluido"));
         return objetivos;
     }
 
 
     @Override
     public void onClickListener(View view, int position) {
-        adapter = (ObjetivoAdapter) rv.getAdapter();
+        adapter = (AllObjetivoAdapter) rv.getAdapter();
         //adapter.removeItemList(position);
         //abrir Objetivo ou meta;
+        Toast.makeText(getActivity(), "Vc clicou num item da lista Geral", Toast.LENGTH_SHORT).show();
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public void onLongClickListener(View view, int position) {
         view.setVisibility(View.INVISIBLE);

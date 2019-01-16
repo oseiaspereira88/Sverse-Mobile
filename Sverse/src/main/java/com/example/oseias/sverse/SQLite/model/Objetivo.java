@@ -6,21 +6,22 @@ package com.example.oseias.sverse.SQLite.model;
 
 public class Objetivo {
     private Integer _id;
-    private String objetivo;
-    private String progresso;
-    private boolean isAtivo;
-    private String espectativa;
-    private Integer id_usuario;
+    private String titulo;
+    private String descricao;
+    private Integer indexOrdem;
+    private Integer progressoPorCento;
+    private String estado;
 
-    public Objetivo(){}
+    public Objetivo() {
+    }
 
-    public Objetivo(Integer _id, String objetivo, String progresso, boolean isAtivo, String espectativa, Integer id_usuario) {
+    public Objetivo(Integer _id, String titulo, String descricao, Integer indexOrdem, Integer progressoPorCento, String estado) {
         this._id = _id;
-        this.objetivo = objetivo;
-        this.progresso = progresso;
-        this.isAtivo = isAtivo;
-        this.espectativa = espectativa;
-        this.id_usuario = id_usuario;
+        this.titulo = titulo;
+        this.descricao = descricao;
+        this.indexOrdem = indexOrdem;
+        this.progressoPorCento = progressoPorCento;
+        this.estado = estado;
     }
 
     public Integer get_id() {
@@ -31,44 +32,43 @@ public class Objetivo {
         this._id = _id;
     }
 
-    public String getObjetivo() {
-        return objetivo;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public void setObjetivo(String objetivo) {
-        this.objetivo = objetivo;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
-    public String getProgresso() {
-        return progresso;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setProgresso(String progresso) {
-        this.progresso = progresso;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
-    public boolean isAtivo() {
-        return isAtivo;
+    public Integer getIndexOrdem() {
+        return indexOrdem;
     }
 
-    public void setAtivo(boolean ativo) {
-        isAtivo = ativo;
+    public void setIndexOrdem(Integer indexOrdem) {
+        this.indexOrdem = indexOrdem;
     }
 
-    public String getEspectativa() {
-        return espectativa;
+    public Integer getProgressoPorCento() {
+        return progressoPorCento;
     }
 
-    public void setEspectativa(String espectativa) {
-        this.espectativa = espectativa;
+    public void setProgressoPorCento(Integer progressoPorCento) {
+        this.progressoPorCento = progressoPorCento;
     }
 
-    public Integer getId_usuario() {
-        return id_usuario;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setId_usuario(Integer id_usuario) {
-        this.id_usuario = id_usuario;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 }
-

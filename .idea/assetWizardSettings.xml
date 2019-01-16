@@ -36,7 +36,8 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="color" value="419f8f" />
+                                                <entry key="color" value="3378c8" />
+                                                <entry key="paddingPercent" value="10" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -47,7 +48,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/navigation/ic_apps_black_24dp.xml" />
+                                                <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/social/ic_person_add_black_24dp.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -69,7 +70,8 @@
                                   <option name="values">
                                     <map>
                                       <entry key="cropped" value="true" />
-                                      <entry key="outputName" value="ic_grid_mode" />
+                                      <entry key="iconShape" value="CIRCLE" />
+                                      <entry key="outputName" value="ic_participante_add" />
                                     </map>
                                   </option>
                                 </PersistentState>

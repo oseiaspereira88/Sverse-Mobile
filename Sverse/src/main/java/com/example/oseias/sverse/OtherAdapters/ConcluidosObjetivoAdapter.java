@@ -9,21 +9,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.oseias.sverse.Interfaces.RecyclerViewOnClickListenerHack;
-import com.example.oseias.sverse.OthersClass.ItemArea;
+import com.example.oseias.sverse.Interfaces.ConcluidosRecyclerViewOnClickListenerHack;
 import com.example.oseias.sverse.SQLite.model.Objetivo;
 import com.versaplications.prodesenvelopment.sverse.R;
 
 import java.util.ArrayList;
 
-public class ObjetivoAdapter extends RecyclerView.Adapter<ObjetivoAdapter.MyViewHolder> {
+public class ConcluidosObjetivoAdapter extends RecyclerView.Adapter<ConcluidosObjetivoAdapter.MyViewHolder> {
     private Context ctx;
-    private ArrayList<ItemArea> objetivos;
+    private ArrayList<Objetivo> objetivos;
     private LayoutInflater myLayoutInflater;
-    private static RecyclerViewOnClickListenerHack recyclerViewOnClickListenerHack;
+    private static ConcluidosRecyclerViewOnClickListenerHack recyclerViewOnClickListenerHack;
 
 
-    public ObjetivoAdapter(Context ctx, ArrayList<ItemArea> objetivos) {
+    public ConcluidosObjetivoAdapter(Context ctx, ArrayList<Objetivo> objetivos) {
         this.ctx = ctx;
         this.objetivos = objetivos;
         this.myLayoutInflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -32,7 +31,7 @@ public class ObjetivoAdapter extends RecyclerView.Adapter<ObjetivoAdapter.MyView
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Log.i("LOG", "onCreateViewHolder()");
-        View view = myLayoutInflater.inflate(R.layout.item_area_model, parent, false);
+        View view = myLayoutInflater.inflate(R.layout.item_objetivo_model, parent, false);
         MyViewHolder holder = new MyViewHolder(view);
         return holder;
     }
@@ -54,7 +53,7 @@ public class ObjetivoAdapter extends RecyclerView.Adapter<ObjetivoAdapter.MyView
         notifyItemRemoved(position);
     }
 
-    public void setRecyclerViewOnClickListenerHack(RecyclerViewOnClickListenerHack r) {
+    public void setRecyclerViewOnClickListenerHack(ConcluidosRecyclerViewOnClickListenerHack r) {
         this.recyclerViewOnClickListenerHack = r;
     }
 

@@ -4,7 +4,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.example.oseias.sverse.OthersFragments.ObjetivoFragment;
+import com.example.oseias.sverse.OthersFragments.AllObjetivoFragment;
+import com.example.oseias.sverse.OthersFragments.ConcluidosObjetivoFragment;
+import com.example.oseias.sverse.OthersFragments.EmAndamentoObjetivoFragment;
 
 /**
  * Created by Oseias on 10/01/2018.
@@ -27,11 +29,11 @@ public class MyFragmentPagerAreaAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return new ObjetivoFragment();
+                return new AllObjetivoFragment();
             case 1:
-                return new ObjetivoFragment();
+                return new EmAndamentoObjetivoFragment();
             case 2:
-                return new ObjetivoFragment();
+                return new ConcluidosObjetivoFragment();
             default:
                 return null;
         }
