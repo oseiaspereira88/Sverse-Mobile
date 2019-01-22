@@ -13,6 +13,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        app:cardBackgroundColor="@android:drawable/screen_background_dark_transparent"
         app:cardCornerRadius="8dp"
         app:cardElevation="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
