@@ -46,7 +46,7 @@ public class EtapasFragment extends Fragment implements AllRecyclerViewOnClickLi
     int aceptColor = R.color.green;
     int alertColor = R.color.darkred;
     boolean isDrag = false;
-    boolean isPrimaryEnter = true;
+    boolean isDroped = true;
     int position;
     int defaultSize = 0;
 
@@ -203,6 +203,7 @@ public class EtapasFragment extends Fragment implements AllRecyclerViewOnClickLi
         defaultSize = adapter.getItemCount();
         this.position = position;
         isDrag = true;
+        isDroped = false;
     }
 
     @Override
@@ -215,21 +216,24 @@ public class EtapasFragment extends Fragment implements AllRecyclerViewOnClickLi
                 }
                 return false;
             case DragEvent.ACTION_DRAG_ENTERED:
-                if (!isPrimaryEnter) {
+                ConstraintLayout clExcluir1 = (ConstraintLayout) view;
+                if(clExcluir1 == areaExcluir) {
                     cardTitulo.setBackgroundResource(aceptColor);
-                } else {
-                    isPrimaryEnter = false;
                 }
                 break;
             case DragEvent.ACTION_DRAG_LOCATION:
                 break;
             case DragEvent.ACTION_DRAG_EXITED:
-                Toast.makeText(getActivity(), "Exited.", Toast.LENGTH_SHORT).show();
-                cardTitulo.setBackgroundResource(alertColor);
+                ConstraintLayout clExcluir2 = (ConstraintLayout) view;
+                if(clExcluir2 == areaExcluir) {
+                    cardTitulo.setBackgroundResource(alertColor);
+                }
                 break;
             case DragEvent.ACTION_DROP:
-                Toast.makeText(getActivity(), "Droped.", Toast.LENGTH_SHORT).show();
-                adapter.removeItemList(position);
+                ConstraintLayout clExcluir3 = (ConstraintLayout) view;
+                if(clExcluir3 == areaExcluir) {
+                    adapter.removeItemList(position);
+                }
                 if (adapter.getItemCount() == defaultSize) {
                     View viewDroped = (View) event.getLocalState();
                     viewDroped.setVisibility(View.VISIBLE);
@@ -237,8 +241,13 @@ public class EtapasFragment extends Fragment implements AllRecyclerViewOnClickLi
                 cardTitulo.setBackgroundResource(defaultColor);
                 imgAction.setVisibility(View.INVISIBLE);
                 textTitulo.setText(aux);
+                isDroped = true;
                 break;
             case DragEvent.ACTION_DRAG_ENDED:
+                if(!isDroped){
+                    View viewDroped = (View) event.getLocalState();
+                    viewDroped.setVisibility(View.VISIBLE);
+                }
                 resetarDefaults();
                 break;
         }
@@ -253,6 +262,5 @@ public class EtapasFragment extends Fragment implements AllRecyclerViewOnClickLi
         aux = "";
         position = 0;
         defaultSize = 0;
-        isPrimaryEnter = true;
     }
 }

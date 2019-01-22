@@ -32,7 +32,7 @@ public class FragmentEtapasEmAndamento extends Fragment implements EmAndamentoRe
     EtapasEmAndamentoAdapter adapter;
     private ArrayList<Objetivo> objetivos;
     private CardView cardTitulo;
-    public ConstraintLayout areaExcluir;
+    public ConstraintLayout areaAcept;
     private TextView textTitulo;
     private ImageView imgExcluir;
 
@@ -41,7 +41,7 @@ public class FragmentEtapasEmAndamento extends Fragment implements EmAndamentoRe
     int aceptColor = R.color.green;
     int alertColor = R.color.darkred;
     boolean isDrag = false;
-    boolean isPrimaryEnter = true;
+    boolean isDroped = true;
     int position;
     int defaultSize = 0;
 
@@ -56,12 +56,12 @@ public class FragmentEtapasEmAndamento extends Fragment implements EmAndamentoRe
         AppBarLayout barLayout = (AppBarLayout) parent.findViewById(R.id.appBarArea);
         TabLayout tabLayout = (TabLayout) barLayout.getChildAt(0);
         cardTitulo = (CardView) rootView.findViewById(R.id.cardEmAndamento);
-        areaExcluir = (ConstraintLayout) rootView.findViewById(R.id.areaAcept);
+        areaAcept = (ConstraintLayout) rootView.findViewById(R.id.areaAcept);
         textTitulo = (TextView) rootView.findViewById(R.id.tvEmAndamento);
         textTitulo.setText(tabLayout.getTabAt(tabLayout.getSelectedTabPosition()).getText().toString());
         imgExcluir = (ImageView) rootView.findViewById(R.id.imgAcept);
 
-        areaExcluir.setOnDragListener(new EtapasEmAndamentoAdapter.MyOnDragListener());
+        areaAcept.setOnDragListener(new EtapasEmAndamentoAdapter.MyOnDragListener());
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -148,6 +148,7 @@ public class FragmentEtapasEmAndamento extends Fragment implements EmAndamentoRe
         defaultSize = adapter.getItemCount();
         this.position = position;
         isDrag = true;
+        isDroped = false;
     }
 
     @Override
@@ -160,21 +161,24 @@ public class FragmentEtapasEmAndamento extends Fragment implements EmAndamentoRe
                 }
                 return false;
             case DragEvent.ACTION_DRAG_ENTERED:
-                if(!isPrimaryEnter){
+                ConstraintLayout cl1 = (ConstraintLayout) view;
+                if(cl1 == areaAcept) {
                     cardTitulo.setBackgroundResource(defaultColor);
-                }else {
-                    isPrimaryEnter  = false;
                 }
                 break;
             case DragEvent.ACTION_DRAG_LOCATION:
                 break;
             case DragEvent.ACTION_DRAG_EXITED:
-                Toast.makeText(getActivity(), "Exited.", Toast.LENGTH_SHORT).show();
-                cardTitulo.setBackgroundResource(aceptColor);
+                ConstraintLayout cl2 = (ConstraintLayout) view;
+                if(cl2 == areaAcept) {
+                    cardTitulo.setBackgroundResource(aceptColor);
+                }
                 break;
             case DragEvent.ACTION_DROP:
-                Toast.makeText(getActivity(), "Droped.", Toast.LENGTH_SHORT).show();
-                adapter.removeItemList(position);
+                ConstraintLayout cl3 = (ConstraintLayout) view;
+                if(cl3 == areaAcept) {
+                    adapter.removeItemList(position);
+                }
                 if(adapter.getItemCount() == defaultSize){
                     View viewDroped = (View) event.getLocalState();
                     viewDroped.setVisibility(View.VISIBLE);
@@ -184,6 +188,10 @@ public class FragmentEtapasEmAndamento extends Fragment implements EmAndamentoRe
                 textTitulo.setText(aux);
                 break;
             case DragEvent.ACTION_DRAG_ENDED:
+                if(!isDroped){
+                    View viewDroped = (View) event.getLocalState();
+                    viewDroped.setVisibility(View.VISIBLE);
+                }
                 resetarDefaults();
                 break;
         }
@@ -198,6 +206,5 @@ public class FragmentEtapasEmAndamento extends Fragment implements EmAndamentoRe
         aux = "";
         position = 0;
         defaultSize = 0;
-        isPrimaryEnter = true;
     }
 }
