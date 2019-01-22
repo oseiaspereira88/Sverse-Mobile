@@ -1,4 +1,4 @@
-package com.example.oseias.sverse.MainFragments;
+package com.example.oseias.sverse.OthersFragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -21,7 +21,7 @@ import java.util.ArrayList;
  * Created by Oseias on 10/01/2018.
  */
 
-public class NotifiFragment extends Fragment {
+public class NotificacoesFragment extends Fragment {
     GridView gridView;
     NotifiAdapter adapterNotifi;
     View rootView;

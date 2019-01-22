@@ -1,4 +1,4 @@
-package com.example.oseias.sverse.MainFragments;
+package com.example.oseias.sverse.OthersFragments;
 
 import android.content.Intent;
 import android.os.Bundle;

@@ -9,20 +9,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.oseias.sverse.Interfaces.ConcluidosRecyclerViewOnClickListenerHack;
+import com.example.oseias.sverse.Interfaces.EmAndamentoRecyclerViewOnClickListenerHack;
 import com.example.oseias.sverse.SQLite.model.Objetivo;
 import com.versaplications.prodesenvelopment.sverse.R;
 
 import java.util.ArrayList;
 
-public class ConcluidosObjetivoAdapter extends RecyclerView.Adapter<ConcluidosObjetivoAdapter.MyViewHolder> {
+public class EtapasEmAndamentoAdapter extends RecyclerView.Adapter<EtapasEmAndamentoAdapter.MyViewHolder> {
     private Context ctx;
     private ArrayList<Objetivo> objetivos;
     private LayoutInflater myLayoutInflater;
-    private static ConcluidosRecyclerViewOnClickListenerHack recyclerViewOnClickListenerHack;
+    private static EmAndamentoRecyclerViewOnClickListenerHack recyclerViewOnClickListenerHack;
 
 
-    public ConcluidosObjetivoAdapter(Context ctx, ArrayList<Objetivo> objetivos) {
+    public EtapasEmAndamentoAdapter(Context ctx, ArrayList<Objetivo> objetivos) {
         this.ctx = ctx;
         this.objetivos = objetivos;
         this.myLayoutInflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -31,7 +31,7 @@ public class ConcluidosObjetivoAdapter extends RecyclerView.Adapter<ConcluidosOb
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Log.i("LOG", "onCreateViewHolder()");
-        View view = myLayoutInflater.inflate(R.layout.item_objetivo_model, parent, false);
+        View view = myLayoutInflater.inflate(R.layout.item_etapa_model, parent, false);
         MyViewHolder holder = new MyViewHolder(view);
         return holder;
     }
@@ -53,7 +53,7 @@ public class ConcluidosObjetivoAdapter extends RecyclerView.Adapter<ConcluidosOb
         notifyItemRemoved(position);
     }
 
-    public void setRecyclerViewOnClickListenerHack(ConcluidosRecyclerViewOnClickListenerHack r) {
+    public void setRecyclerViewOnClickListenerHack(EmAndamentoRecyclerViewOnClickListenerHack r) {
         this.recyclerViewOnClickListenerHack = r;
     }
 
@@ -63,7 +63,7 @@ public class ConcluidosObjetivoAdapter extends RecyclerView.Adapter<ConcluidosOb
         public MyViewHolder(View itemView) {
             super(itemView);
             titulo = (TextView) itemView.findViewById(R.id.textObjetivo);
-            recyclerSubItemEtapa = (RecyclerView) itemView.findViewById(R.id.recyclerSubItemEtapas);
+            //recyclerSubItemEtapa = (RecyclerView) itemView.findViewById(R.id.recyclerSubItemEtapas);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

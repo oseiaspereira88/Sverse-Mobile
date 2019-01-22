@@ -8,21 +8,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import com.example.oseias.sverse.Interfaces.AllRecyclerViewOnClickListenerHack;
+import com.example.oseias.sverse.Interfaces.ConcluidosRecyclerViewOnClickListenerHack;
 import com.example.oseias.sverse.SQLite.model.Objetivo;
 import com.versaplications.prodesenvelopment.sverse.R;
 
 import java.util.ArrayList;
 
-public class AllObjetivoAdapter extends RecyclerView.Adapter<AllObjetivoAdapter.MyViewHolder> {
+public class EtapasConcluidasAdapter extends RecyclerView.Adapter<EtapasConcluidasAdapter.MyViewHolder> {
     private Context ctx;
     private ArrayList<Objetivo> objetivos;
     private LayoutInflater myLayoutInflater;
-    private static AllRecyclerViewOnClickListenerHack allRecyclerViewOnClickListenerHack;
+    private static ConcluidosRecyclerViewOnClickListenerHack recyclerViewOnClickListenerHack;
 
 
-    public AllObjetivoAdapter(Context ctx, ArrayList<Objetivo> objetivos) {
+    public EtapasConcluidasAdapter(Context ctx, ArrayList<Objetivo> objetivos) {
         this.ctx = ctx;
         this.objetivos = objetivos;
         this.myLayoutInflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -31,7 +30,7 @@ public class AllObjetivoAdapter extends RecyclerView.Adapter<AllObjetivoAdapter.
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Log.i("LOG", "onCreateViewHolder()");
-        View view = myLayoutInflater.inflate(R.layout.item_objetivo_model, parent, false);
+        View view = myLayoutInflater.inflate(R.layout.item_etapa_model, parent, false);
         MyViewHolder holder = new MyViewHolder(view);
         return holder;
     }
@@ -53,8 +52,8 @@ public class AllObjetivoAdapter extends RecyclerView.Adapter<AllObjetivoAdapter.
         notifyItemRemoved(position);
     }
 
-    public void setRecyclerViewOnClickListenerHack(AllRecyclerViewOnClickListenerHack r) {
-        this.allRecyclerViewOnClickListenerHack = r;
+    public void setRecyclerViewOnClickListenerHack(ConcluidosRecyclerViewOnClickListenerHack r) {
+        this.recyclerViewOnClickListenerHack = r;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
@@ -63,13 +62,12 @@ public class AllObjetivoAdapter extends RecyclerView.Adapter<AllObjetivoAdapter.
         public MyViewHolder(View itemView) {
             super(itemView);
             titulo = (TextView) itemView.findViewById(R.id.textObjetivo);
-            recyclerSubItemEtapa = (RecyclerView) itemView.findViewById(R.id.recyclerSubItemEtapas);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if(allRecyclerViewOnClickListenerHack != null){
-                        allRecyclerViewOnClickListenerHack.onClickListener(v, getPosition());
+                    if(recyclerViewOnClickListenerHack != null){
+                        recyclerViewOnClickListenerHack.onClickListener(v, getPosition());
                     }
                 }
             });
@@ -77,8 +75,8 @@ public class AllObjetivoAdapter extends RecyclerView.Adapter<AllObjetivoAdapter.
             itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
-                    if(allRecyclerViewOnClickListenerHack != null){
-                        allRecyclerViewOnClickListenerHack.onLongClickListener(v, getPosition());
+                    if(recyclerViewOnClickListenerHack != null){
+                        recyclerViewOnClickListenerHack.onLongClickListener(v, getPosition());
                     }
                     return true;
                 }
@@ -92,8 +90,8 @@ public class AllObjetivoAdapter extends RecyclerView.Adapter<AllObjetivoAdapter.
 
         @Override
         public boolean onDrag(View v, DragEvent event) {
-            if(allRecyclerViewOnClickListenerHack != null){
-                allRecyclerViewOnClickListenerHack.onDragListener(v, event);
+            if(recyclerViewOnClickListenerHack != null){
+                recyclerViewOnClickListenerHack.onDragListener(v, event);
             }
             return true;
         }

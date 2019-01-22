@@ -19,17 +19,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.oseias.sverse.Interfaces.EmAndamentoRecyclerViewOnClickListenerHack;
-import com.example.oseias.sverse.OtherAdapters.EmAndamentoObjetivoAdapter;
+import com.example.oseias.sverse.Interfaces.ConcluidosRecyclerViewOnClickListenerHack;
+import com.example.oseias.sverse.OtherAdapters.EtapasConcluidasAdapter;
 import com.example.oseias.sverse.OthersClass.SimpleDividerItemDecoration;
 import com.example.oseias.sverse.SQLite.model.Objetivo;
 import com.versaplications.prodesenvelopment.sverse.R;
 
 import java.util.ArrayList;
 
-public class EmAndamentoObjetivoFragment extends Fragment implements EmAndamentoRecyclerViewOnClickListenerHack {
+public class FragmentEtapasConcluidas extends Fragment implements ConcluidosRecyclerViewOnClickListenerHack {
     private RecyclerView rv;
-    EmAndamentoObjetivoAdapter adapter;
+    EtapasConcluidasAdapter adapter;
     private ArrayList<Objetivo> objetivos;
     private CardView cardTitulo;
     public ConstraintLayout areaExcluir;
@@ -46,7 +46,7 @@ public class EmAndamentoObjetivoFragment extends Fragment implements EmAndamento
     int defaultSize = 0;
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_em_andamento_objetivo, null); //->container, false
+        View rootView = inflater.inflate(R.layout.fragment_etapas_concluidas, null); //->container, false
         initializeViews(container, rootView);
         return rootView;
     }
@@ -55,13 +55,13 @@ public class EmAndamentoObjetivoFragment extends Fragment implements EmAndamento
         View parent = (View) container.getParent();
         AppBarLayout barLayout = (AppBarLayout) parent.findViewById(R.id.appBarArea);
         TabLayout tabLayout = (TabLayout) barLayout.getChildAt(0);
-        cardTitulo = (CardView) rootView.findViewById(R.id.cardEmAndamento);
-        areaExcluir = (ConstraintLayout) rootView.findViewById(R.id.areaAcept);
-        textTitulo = (TextView) rootView.findViewById(R.id.tvEmAndamento);
+        cardTitulo = (CardView) rootView.findViewById(R.id.cardConcluidos);
+        areaExcluir = (ConstraintLayout) rootView.findViewById(R.id.areaReset);
+        textTitulo = (TextView) rootView.findViewById(R.id.tvConcluidos);
         textTitulo.setText(tabLayout.getTabAt(tabLayout.getSelectedTabPosition()).getText().toString());
-        imgExcluir = (ImageView) rootView.findViewById(R.id.imgAcept);
+        imgExcluir = (ImageView) rootView.findViewById(R.id.imgReset);
 
-        areaExcluir.setOnDragListener(new EmAndamentoObjetivoAdapter.MyOnDragListener());
+        areaExcluir.setOnDragListener(new EtapasConcluidasAdapter.MyOnDragListener());
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -81,7 +81,7 @@ public class EmAndamentoObjetivoFragment extends Fragment implements EmAndamento
             }
         });
 
-        rv = (RecyclerView) rootView.findViewById(R.id.recyclerEmAndamento);
+        rv = (RecyclerView) rootView.findViewById(R.id.recyclerConcluidos);
         rv.setOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
@@ -93,21 +93,20 @@ public class EmAndamentoObjetivoFragment extends Fragment implements EmAndamento
                 super.onScrolled(recyclerView, dx, dy);
 
                 LinearLayoutManager llm = (LinearLayoutManager) rv.getLayoutManager();
-                adapter = (EmAndamentoObjetivoAdapter) rv.getAdapter();
+                adapter = (EtapasConcluidasAdapter) rv.getAdapter();
 
                 if (objetivos.size() == llm.findLastCompletelyVisibleItemPosition() + 1) {
                     //Toast.makeText(getActivity(), "Voce chegou ao final da sua lista.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
         rv.addItemDecoration(new SimpleDividerItemDecoration(getActivity()));
 
         rv.setHasFixedSize(true);
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         rv.setLayoutManager(llm);
-        adapter = new EmAndamentoObjetivoAdapter(getActivity(), generateItens());
+        adapter = new EtapasConcluidasAdapter(getActivity(), generateItens());
         adapter.setRecyclerViewOnClickListenerHack(this);
         rv.setAdapter(adapter);
 
@@ -115,11 +114,11 @@ public class EmAndamentoObjetivoFragment extends Fragment implements EmAndamento
 
     public ArrayList<Objetivo> generateItens() {
         objetivos = new ArrayList<>();
-        objetivos.add(new Objetivo(1, "Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado.", 1, 100, "Em Andamento"));
-        objetivos.add(new Objetivo(2, "Segundo Objetivo", "Nosso primeira Objetivo será assim e assado.", 2, 100, "Em Andamento"));
-        objetivos.add(new Objetivo(3, "Terceiro Objetivo", "Nosso primeira Objetivo será assim e assado.", 3, 100, "Em Andamento"));
-        objetivos.add(new Objetivo(4, "Quarto Objetivo", "Nosso primeira Objetivo será assim e assado.", 4, 100, "Em Andamento"));
-        objetivos.add(new Objetivo(7, "Quinto Objetivo", "Nosso primeira Objetivo será assim e assado.", 5, 100, "Em Andamento"));
+        //objetivos.add(new Objetivo(1, "Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado.", 1, 100, "Em Andamento"));
+        //objetivos.add(new Objetivo(2, "Segundo Objetivo", "Nosso primeira Objetivo será assim e assado.", 2, 100, "Em Andamento"));
+        //objetivos.add(new Objetivo(3, "Terceiro Objetivo", "Nosso primeira Objetivo será assim e assado.", 3, 100, "Em Andamento"));
+        //objetivos.add(new Objetivo(4, "Quarto Objetivo", "Nosso primeira Objetivo será assim e assado.", 4, 100, "Em Andamento"));
+        //objetivos.add(new Objetivo(7, "Quinto Objetivo", "Nosso primeira Objetivo será assim e assado.", 5, 100, "Em Andamento"));
         objetivos.add(new Objetivo(6, "Sexto Objetivo", "Nosso primeira Objetivo será assim e assado.", 6, 100, "Concluido"));
         return objetivos;
     }
@@ -127,10 +126,10 @@ public class EmAndamentoObjetivoFragment extends Fragment implements EmAndamento
 
     @Override
     public void onClickListener(View view, int position) {
-        adapter = (EmAndamentoObjetivoAdapter) rv.getAdapter();
+        adapter = (EtapasConcluidasAdapter) rv.getAdapter();
         //adapter.removeItemList(position);
         //abrir Objetivo ou meta;
-        Toast.makeText(getActivity(), "Vc clicou num item em andamento", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), "Vc clicou num item concluido", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -143,7 +142,7 @@ public class EmAndamentoObjetivoFragment extends Fragment implements EmAndamento
         cardTitulo.setBackgroundResource(aceptColor);
         imgExcluir.setVisibility(View.VISIBLE);
         aux = textTitulo.getText().toString();
-        textTitulo.setText("Marque como Concluida");
+        textTitulo.setText("Marque como em Andamento");
 
         defaultSize = adapter.getItemCount();
         this.position = position;

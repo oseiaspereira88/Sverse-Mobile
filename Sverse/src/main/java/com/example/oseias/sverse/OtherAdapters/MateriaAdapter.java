@@ -23,7 +23,7 @@ import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.example.oseias.sverse.MainFragments.ContainersFragment;
+import com.example.oseias.sverse.OthersFragments.ContainersFragment;
 import com.versaplications.prodesenvelopment.sverse.R;
 import com.example.oseias.sverse.SQLite.model.Container;
 

@@ -1,4 +1,4 @@
-package com.example.oseias.sverse.OthersFragments;
+package com.example.oseias.sverse.MainFragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,11 +13,11 @@ import com.versaplications.prodesenvelopment.sverse.R;
  * Created by Oseias on 10/01/2018.
  */
 
-public class FragmentAjuda extends Fragment {
+public class FragmentPerfil extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_ajuda, container, false);
+        return inflater.inflate(R.layout.fragment_perfil, container, false);
     }
 }

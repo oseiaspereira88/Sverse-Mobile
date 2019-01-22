@@ -13,11 +13,11 @@ import com.versaplications.prodesenvelopment.sverse.R;
  * Created by Oseias on 10/01/2018.
  */
 
-public class FragmentSobre extends Fragment {
+public class MuralFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_sobre, container, false);
+        return inflater.inflate(R.layout.mural_fragment, container, false);
     }
 }

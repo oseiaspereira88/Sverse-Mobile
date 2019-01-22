@@ -5,11 +5,12 @@ import java.util.Date;
 public class SubItemArea {
     private String titulo;
     private String descricao;
-    private Date dataDeCriacao;
+    private String dataDeCriacao;
 
-    public SubItemArea(String titulo, String descricao) {
+    public SubItemArea(String titulo, String descricao, String dataDeCriacao) {
         this.titulo = titulo;
         this.descricao = descricao;
+        this.dataDeCriacao = dataDeCriacao;
     }
 
     public String getTitulo() {
@@ -26,5 +27,13 @@ public class SubItemArea {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public String getDataDeCriacao() {
+        return dataDeCriacao;
+    }
+
+    public void setDataDeCriacao(String dataDeCriacao) {
+        this.dataDeCriacao = dataDeCriacao;
     }
 }

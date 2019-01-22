@@ -18,21 +18,28 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.example.oseias.sverse.Interfaces.AllRecyclerViewOnClickListenerHack;
-import com.example.oseias.sverse.OtherAdapters.AllObjetivoAdapter;
+import com.example.oseias.sverse.OtherAdapters.EtapaAdapter;
 import com.example.oseias.sverse.OthersClass.SimpleDividerItemDecoration;
 import com.example.oseias.sverse.SQLite.model.Objetivo;
 import com.versaplications.prodesenvelopment.sverse.R;
+
 import java.util.ArrayList;
 
-public class AllObjetivoFragment extends Fragment implements AllRecyclerViewOnClickListenerHack {
+public class EtapasFragment extends Fragment implements AllRecyclerViewOnClickListenerHack {
     private RecyclerView rv;
-    AllObjetivoAdapter adapter;
-    private ArrayList<Objetivo> objetivos;
+    private ConstraintLayout clMore;
+    private EtapaAdapter adapter;
+    private ArrayList<Objetivo> etapa;
     private CardView cardTitulo;
     public ConstraintLayout areaExcluir;
     private TextView textTitulo;
-    private ImageView imgExcluir;
+    private ImageView imgAction;
+    private ImageView imgDetalhe;
+    private boolean isOpenMore = false;
 
     private String aux;
     int defaultColor = R.color.colorAccent;
@@ -44,7 +51,7 @@ public class AllObjetivoFragment extends Fragment implements AllRecyclerViewOnCl
     int defaultSize = 0;
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_all_objetivos, null); //->container, false
+        View rootView = inflater.inflate(R.layout.fragment_etapas, null); //->container, false
         initializeViews(container, rootView);
         return rootView;
     }
@@ -53,13 +60,63 @@ public class AllObjetivoFragment extends Fragment implements AllRecyclerViewOnCl
         View parent = (View) container.getParent();
         AppBarLayout barLayout = (AppBarLayout) parent.findViewById(R.id.appBarArea);
         TabLayout tabLayout = (TabLayout) barLayout.getChildAt(0);
+        clMore = (ConstraintLayout) rootView.findViewById(R.id.clMore);
         cardTitulo = (CardView) rootView.findViewById(R.id.cardAll);
         areaExcluir = (ConstraintLayout) rootView.findViewById(R.id.areaExcluir);
         textTitulo = (TextView) rootView.findViewById(R.id.tvAll);
         textTitulo.setText(tabLayout.getTabAt(tabLayout.getSelectedTabPosition()).getText().toString());
-        imgExcluir = (ImageView) rootView.findViewById(R.id.imgExcluir);
+        imgAction = (ImageView) rootView.findViewById(R.id.imgAction);
+        imgDetalhe = (ImageView) rootView.findViewById(R.id.imgDetalhe);
 
-        areaExcluir.setOnDragListener(new AllObjetivoAdapter.MyOnDragListener());
+        imgDetalhe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!isOpenMore) {
+                    rv.setVisibility(View.INVISIBLE);
+                    clMore.setVisibility(View.VISIBLE);
+                    isOpenMore = true;
+                    YoYo.with(Techniques.RotateIn)
+                            .duration(300)
+                            .repeat(0)
+                            .playOn(v);
+
+                    ImageView img = (ImageView) v;
+                    img.setImageResource(R.drawable.ic_arrow_back);
+                    YoYo.with(Techniques.FadeIn)
+                            .duration(700)
+                            .repeat(0)
+                            .playOn(img);
+
+                    YoYo.with(Techniques.FadeIn)
+                            .duration(700)
+                            .repeat(0)
+                            .playOn(clMore);
+                } else{
+                    rv.setVisibility(View.VISIBLE);
+                    clMore.setVisibility(View.INVISIBLE);
+                    isOpenMore = false;
+                    YoYo.with(Techniques.FadeIn)
+                            .duration(300)
+                            .repeat(0)
+                            .playOn(v);
+
+                    ImageView img = (ImageView) v;
+                    img.setImageResource(R.drawable.ic_vertical_more);
+                    YoYo.with(Techniques.RotateIn)
+                            .duration(700)
+                            .repeat(0)
+                            .playOn(v);
+
+                    YoYo.with(Techniques.FadeIn)
+                            .duration(700)
+                            .repeat(0)
+                            .playOn(rv);
+                    isOpenMore = false;
+                }
+            }
+        });
+
+        areaExcluir.setOnDragListener(new EtapaAdapter.MyOnDragListener());
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -91,9 +148,9 @@ public class AllObjetivoFragment extends Fragment implements AllRecyclerViewOnCl
                 super.onScrolled(recyclerView, dx, dy);
 
                 LinearLayoutManager llm = (LinearLayoutManager) rv.getLayoutManager();
-                adapter = (AllObjetivoAdapter) rv.getAdapter();
+                adapter = (EtapaAdapter) rv.getAdapter();
 
-                if (objetivos.size() == llm.findLastCompletelyVisibleItemPosition() + 1) {
+                if (etapa.size() == llm.findLastCompletelyVisibleItemPosition() + 1) {
                     //Toast.makeText(getActivity(), "Voce chegou ao final da sua lista.", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -105,27 +162,27 @@ public class AllObjetivoFragment extends Fragment implements AllRecyclerViewOnCl
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         rv.setLayoutManager(llm);
-        adapter = new AllObjetivoAdapter(getActivity(), generateItens());
+        adapter = new EtapaAdapter(getActivity(), generateItens());
         adapter.setRecyclerViewOnClickListenerHack(this);
         rv.setAdapter(adapter);
 
     }
 
     public ArrayList<Objetivo> generateItens() {
-        objetivos = new ArrayList<>();
-        objetivos.add(new Objetivo(1, "ALL: Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado.", 1, 100, "Em Andamento"));
-        objetivos.add(new Objetivo(2, "ALL: Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado.", 2, 100, "Em Andamento"));
-        objetivos.add(new Objetivo(3, "ALL: Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado.", 3, 100, "Em Andamento"));
-        objetivos.add(new Objetivo(4, "ALL: Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado.", 4, 100, "Em Andamento"));
-        objetivos.add(new Objetivo(7, "ALL: Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado.", 5, 100, "Em Andamento"));
-        objetivos.add(new Objetivo(6, "ALL: Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado.", 6, 100, "Concluido"));
-        return objetivos;
+        etapa = new ArrayList<>();
+        etapa.add(new Objetivo(1, "ALL: Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado.", 1, 100, "Em Andamento"));
+        etapa.add(new Objetivo(2, "ALL: Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado.", 2, 100, "Em Andamento"));
+        etapa.add(new Objetivo(3, "ALL: Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado.", 3, 100, "Em Andamento"));
+        etapa.add(new Objetivo(4, "ALL: Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado.", 4, 100, "Em Andamento"));
+        etapa.add(new Objetivo(7, "ALL: Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado.", 5, 100, "Em Andamento"));
+        etapa.add(new Objetivo(6, "ALL: Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado.", 6, 100, "Concluido"));
+        return etapa;
     }
 
 
     @Override
     public void onClickListener(View view, int position) {
-        adapter = (AllObjetivoAdapter) rv.getAdapter();
+        adapter = (EtapaAdapter) rv.getAdapter();
         //adapter.removeItemList(position);
         //abrir Objetivo ou meta;
         Toast.makeText(getActivity(), "Vc clicou num item da lista Geral", Toast.LENGTH_SHORT).show();
@@ -139,7 +196,7 @@ public class AllObjetivoFragment extends Fragment implements AllRecyclerViewOnCl
         view.startDrag(data, sb, view, 0);
 
         cardTitulo.setBackgroundResource(alertColor);
-        imgExcluir.setVisibility(View.VISIBLE);
+        imgAction.setVisibility(View.VISIBLE);
         aux = textTitulo.getText().toString();
         textTitulo.setText("Solte aqui para Excluir");
 
@@ -153,15 +210,15 @@ public class AllObjetivoFragment extends Fragment implements AllRecyclerViewOnCl
         int action = event.getAction();
         switch (action) {
             case DragEvent.ACTION_DRAG_STARTED:
-                if(event.getClipDescription().hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)){
+                if (event.getClipDescription().hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)) {
                     return true;
                 }
                 return false;
             case DragEvent.ACTION_DRAG_ENTERED:
-                if(!isPrimaryEnter){
+                if (!isPrimaryEnter) {
                     cardTitulo.setBackgroundResource(aceptColor);
-                }else {
-                    isPrimaryEnter  = false;
+                } else {
+                    isPrimaryEnter = false;
                 }
                 break;
             case DragEvent.ACTION_DRAG_LOCATION:
@@ -173,12 +230,12 @@ public class AllObjetivoFragment extends Fragment implements AllRecyclerViewOnCl
             case DragEvent.ACTION_DROP:
                 Toast.makeText(getActivity(), "Droped.", Toast.LENGTH_SHORT).show();
                 adapter.removeItemList(position);
-                if(adapter.getItemCount() == defaultSize){
+                if (adapter.getItemCount() == defaultSize) {
                     View viewDroped = (View) event.getLocalState();
                     viewDroped.setVisibility(View.VISIBLE);
                 }
                 cardTitulo.setBackgroundResource(defaultColor);
-                imgExcluir.setVisibility(View.INVISIBLE);
+                imgAction.setVisibility(View.INVISIBLE);
                 textTitulo.setText(aux);
                 break;
             case DragEvent.ACTION_DRAG_ENDED:
@@ -189,9 +246,9 @@ public class AllObjetivoFragment extends Fragment implements AllRecyclerViewOnCl
         return true;
     }
 
-    public void resetarDefaults(){
+    public void resetarDefaults() {
         cardTitulo.setBackgroundResource(defaultColor);
-        imgExcluir.setVisibility(View.INVISIBLE);
+        imgAction.setVisibility(View.INVISIBLE);
         isDrag = false;
         aux = "";
         position = 0;

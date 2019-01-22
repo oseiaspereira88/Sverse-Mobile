@@ -25,7 +25,7 @@
             android:layout_height="match_parent">
 
             <android.support.v7.widget.CardView
-                android:id="@+id/cardConcluidos"
+                android:id="@+id/cardEmAndamento"
                 android:layout_width="match_parent"
                 android:layout_height="36dp"
                 app:cardBackgroundColor="@color/colorAccent"
@@ -35,22 +35,22 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <android.support.constraint.ConstraintLayout
-                    android:id="@+id/areaReset"
+                    android:id="@+id/areaAcept"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:id="@+id/imgReset"
+                        android:id="@+id/imgAcept"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:visibility="invisible"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@mipmap/ic_refazer" />
+                        app:srcCompat="@mipmap/ic_acept" />
 
                     <TextView
-                        android:id="@+id/tvConcluidos"
+                        android:id="@+id/tvEmAndamento"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingBottom="4dp"
@@ -65,19 +65,15 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
                 </android.support.constraint.ConstraintLayout>
-
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.RecyclerView
-                android:id="@+id/recyclerConcluidos"
+                android:id="@+id/recyclerEmAndamento"
                 android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_marginBottom="4dp"
-                android:layout_marginTop="4dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardConcluidos" />
+                app:layout_constraintTop_toBottomOf="@+id/cardEmAndamento" />
 
         </android.support.constraint.ConstraintLayout>
     </android.support.v7.widget.CardView>

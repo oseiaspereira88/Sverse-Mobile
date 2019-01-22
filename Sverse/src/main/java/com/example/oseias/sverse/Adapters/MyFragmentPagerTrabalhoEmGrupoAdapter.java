@@ -4,18 +4,18 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.example.oseias.sverse.OthersFragments.AllObjetivoFragment;
-import com.example.oseias.sverse.OthersFragments.ConcluidosObjetivoFragment;
-import com.example.oseias.sverse.OthersFragments.EmAndamentoObjetivoFragment;
+import com.example.oseias.sverse.OthersFragments.EtapasFragment;
+import com.example.oseias.sverse.OthersFragments.FragmentEtapasConcluidas;
+import com.example.oseias.sverse.OthersFragments.FragmentEtapasEmAndamento;
 
 /**
  * Created by Oseias on 10/01/2018.
  */
 
-public class MyFragmentPagerAreaAdapter extends FragmentPagerAdapter {
+public class MyFragmentPagerTrabalhoEmGrupoAdapter extends FragmentPagerAdapter {
     private String[] tabTitles;
 
-    public MyFragmentPagerAreaAdapter(FragmentManager fm, String[] tabTitles) {
+    public MyFragmentPagerTrabalhoEmGrupoAdapter(FragmentManager fm, String[] tabTitles) {
         super(fm);
         this.tabTitles = tabTitles;
     }
@@ -29,11 +29,11 @@ public class MyFragmentPagerAreaAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return new AllObjetivoFragment();
+                return new EtapasFragment();
             case 1:
-                return new EmAndamentoObjetivoFragment();
+                return new FragmentEtapasEmAndamento();
             case 2:
-                return new ConcluidosObjetivoFragment();
+                return new FragmentEtapasConcluidas();
             default:
                 return null;
         }

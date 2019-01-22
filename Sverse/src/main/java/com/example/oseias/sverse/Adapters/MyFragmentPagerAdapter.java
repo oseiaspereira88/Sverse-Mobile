@@ -4,10 +4,10 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.example.oseias.sverse.MainFragments.BlocoDeNotasFragment;
-import com.example.oseias.sverse.MainFragments.MuralFragment;
-import com.example.oseias.sverse.MainFragments.NotifiFragment;
-import com.example.oseias.sverse.MainFragments.ContainersFragment;
+import com.example.oseias.sverse.OthersFragments.BlocoDeNotasFragment;
+import com.example.oseias.sverse.OthersFragments.MuralFragment;
+import com.example.oseias.sverse.OthersFragments.NotificacoesFragment;
+import com.example.oseias.sverse.OthersFragments.ContainersFragment;
 
 /**
  * Created by Oseias on 10/01/2018.
@@ -38,7 +38,7 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
             case 2:
                 return new BlocoDeNotasFragment();
             case 3:
-                return new NotifiFragment();
+                return new NotificacoesFragment();
             default:
                 return null;
         }
