@@ -40,7 +40,7 @@ public class EtapasEmAndamentoAdapter extends RecyclerView.Adapter<EtapasEmAndam
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Log.i("LOG", "onBindViewHolder()");
         holder.titulo.setText(objetivos.get(position).getTitulo());
-
+        holder.ordemPosition.setText(objetivos.get(position).getIndexOrdem() + "");
     }
 
     @Override
@@ -60,10 +60,12 @@ public class EtapasEmAndamentoAdapter extends RecyclerView.Adapter<EtapasEmAndam
     public class MyViewHolder extends RecyclerView.ViewHolder{
         public TextView titulo;
         public RecyclerView recyclerSubItemEtapa;
+        public TextView ordemPosition;
+
         public MyViewHolder(View itemView) {
             super(itemView);
             titulo = (TextView) itemView.findViewById(R.id.textObjetivo);
-            //recyclerSubItemEtapa = (RecyclerView) itemView.findViewById(R.id.recyclerSubItemEtapas);
+            ordemPosition = (TextView) itemView.findViewById(R.id.tvPosicao);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

@@ -39,7 +39,7 @@ public class EtapasConcluidasAdapter extends RecyclerView.Adapter<EtapasConcluid
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Log.i("LOG", "onBindViewHolder()");
         holder.titulo.setText(objetivos.get(position).getTitulo());
-
+        holder.ordemPosition.setText(objetivos.get(position).getIndexOrdem() + "");
     }
 
     @Override
@@ -59,9 +59,12 @@ public class EtapasConcluidasAdapter extends RecyclerView.Adapter<EtapasConcluid
     public class MyViewHolder extends RecyclerView.ViewHolder{
         public TextView titulo;
         public RecyclerView recyclerSubItemEtapa;
+        public TextView ordemPosition;
+
         public MyViewHolder(View itemView) {
             super(itemView);
             titulo = (TextView) itemView.findViewById(R.id.textObjetivo);
+            ordemPosition = (TextView) itemView.findViewById(R.id.tvPosicao);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
