@@ -1,10 +1,13 @@
 package com.example.oseias.sverse;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.app.AlertDialog;
+import android.view.KeyEvent;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -61,10 +64,40 @@ public class MainActivity extends AppCompatActivity
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        getSupportFragmentManager().beginTransaction().replace (R.id.contenedor, new MainFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, new MainFragment()).commit();
         navigationView.getMenu().getItem(0).setChecked(true);
 
         configsDAO = new ConfiguracaoDAO(this);
+    }
+
+    // Código botão Voltar
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        //Handle the back button
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            checkExit();
+            return true;
+        } else {
+            return super.onKeyDown(keyCode, event);
+        }
+    }
+
+    private void checkExit() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Deseja realmente sair?")
+                .setCancelable(false)
+                .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        finish();
+                        //Ação tomada caso o usuário escolha sim.
+                    }
+                })
+                .setNegativeButton("Não", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
     @Override
@@ -96,12 +129,12 @@ public class MainActivity extends AppCompatActivity
             Toast.makeText(this, "Abrindo Configurações...", Toast.LENGTH_SHORT).show();
             Intent it = new Intent(this, ActivityConfiguracoes.class);
             startActivity(it);
-        }else if (id == R.id.action_reiniciar_activity) {
+        } else if (id == R.id.action_reiniciar_activity) {
             GestorDeNotas gn = new GestorDeNotas(this);
             gn.deleteFilesBackup(new View(this));
             Toast.makeText(this, "Reiniciando Configurações e o App...", Toast.LENGTH_SHORT).show();
             recreate();
-        }else if (id == R.id.action_sair_do_app) {
+        } else if (id == R.id.action_sair_do_app) {
             Toast.makeText(this, "Fechando...", Toast.LENGTH_SHORT).show();
             finish();
         }
@@ -117,15 +150,15 @@ public class MainActivity extends AppCompatActivity
         FragmentManager fragmentManager = getSupportFragmentManager();
 
         if (id == R.id.nav_home) {
-            fragmentManager.beginTransaction().replace (R.id.contenedor, new MainFragment()).commit();
+            fragmentManager.beginTransaction().replace(R.id.contenedor, new MainFragment()).commit();
         } else if (id == R.id.nav_perfil) {
-            fragmentManager.beginTransaction().replace (R.id.contenedor, new FragmentPerfil()).commit();
+            fragmentManager.beginTransaction().replace(R.id.contenedor, new FragmentPerfil()).commit();
         } else if (id == R.id.nav_ferramentas) {
-            fragmentManager.beginTransaction().replace (R.id.contenedor, new FragmentFerramentas()).commit();
+            fragmentManager.beginTransaction().replace(R.id.contenedor, new FragmentFerramentas()).commit();
         } else if (id == R.id.nav_ajuda) {
-            fragmentManager.beginTransaction().replace (R.id.contenedor, new FragmentAjuda()).commit();
+            fragmentManager.beginTransaction().replace(R.id.contenedor, new FragmentAjuda()).commit();
         } else if (id == R.id.nav_sobre) {
-            fragmentManager.beginTransaction().replace (R.id.contenedor, new FragmentSobre()).commit();
+            fragmentManager.beginTransaction().replace(R.id.contenedor, new FragmentSobre()).commit();
         } else if (id == R.id.nav_logoff) {
             logoff();
         }
@@ -135,7 +168,7 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    public void abrirCicloDeEstudo(View view){
+    public void abrirCicloDeEstudo(View view) {
         YoYo.with(Techniques.RotateIn)
                 .duration(700)
                 .repeat(0)
@@ -145,31 +178,31 @@ public class MainActivity extends AppCompatActivity
         startActivity(it);
     }
 
-    public void abrirCriadorDeAtividades(){
+    public void abrirCriadorDeAtividades() {
         Toast.makeText(this, "Abrindo Criador de Atividades...", Toast.LENGTH_SHORT).show();
         Intent it = new Intent(this, CriadorDeAtividades.class);
         startActivity(it);
     }
 
-    public void actionButton(View view){
+    public void actionButton(View view) {
         YoYo.with(Techniques.RotateIn)
                 .duration(700)
                 .repeat(0)
                 .playOn(view);
     }
 
-    public void abrirPerfil(View view){
+    public void abrirPerfil(View view) {
         YoYo.with(Techniques.Wave)
                 .duration(700)
                 .repeat(0)
                 .playOn(view);
 
-        getSupportFragmentManager().beginTransaction().replace (R.id.contenedor, new FragmentPerfil()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, new FragmentPerfil()).commit();
         navigationView.getMenu().getItem(0).setChecked(true);
         drawer.closeDrawers();
     }
 
-    public void logoff(){
+    public void logoff() {
         //setando as configurações
         configsDAO.atualizarConfig(new Configuracao(Configuracao.IS_LOGIN_PERSISTENT, 0));
         configsDAO.atualizarConfig(new Configuracao(Configuracao.ID_LOGIN, 0));

@@ -68,10 +68,10 @@ public class ContainerGridAdapter extends BaseAdapter {
 
         final Container container = (Container) this.getItem(i);
         //CardView card = (CardView) view.findViewById(R.id.cardContainer);
-        TextView nameTxt = (TextView) view.findViewById(R.id.notaTitle);
+        TextView nameTxt = (TextView) view.findViewById(R.id.perfilNome);
         TextView nNotifi = (TextView) view.findViewById(R.id.nNotifiContainer);
-        ImageView imgContainerNotifi = (ImageView) view.findViewById(R.id.imgNotification);
-        ImageView img = (ImageView) view.findViewById(R.id.bgContainer);
+        ImageView imgContainerNotifi = (ImageView) view.findViewById(R.id.imgConfig);
+        ImageView img = (ImageView) view.findViewById(R.id.imgBG);
 
         //Add Values
         //card.setPreventCornerOverlap(false);

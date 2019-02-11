@@ -1,29 +1,31 @@
 package com.example.oseias.sverse.SQLite.model;
 
+import com.example.oseias.sverse.OthersClass.SubItemArea;
+
+import java.util.ArrayList;
+
 /**
  * Created by IUser on 18/02/2018.
  */
 
 public class Etapa {
     private Integer _id;
-    private Integer idDoTrabalho;
     private String titulo;
-    private Integer nTopicos;
     private String descricao;
+    private Integer indexOrdem;
+    private Integer progressoPorCento;
     private String estado;
-    private String progresso;
 
-    public Etapa(){}
+    public Etapa() {
+    }
 
-
-    public Etapa(Integer _id, Integer idDoTrabalho, String titulo, Integer nTopicos, String descricao, String estado, String progresso) {
+    public Etapa(Integer _id, String titulo, String descricao, Integer indexOrdem, Integer progressoPorCento, String estado) {
         this._id = _id;
-        this.idDoTrabalho = idDoTrabalho;
         this.titulo = titulo;
-        this.nTopicos = nTopicos;
         this.descricao = descricao;
+        this.indexOrdem = indexOrdem;
+        this.progressoPorCento = progressoPorCento;
         this.estado = estado;
-        this.progresso = progresso;
     }
 
     public Integer get_id() {
@@ -34,28 +36,12 @@ public class Etapa {
         this._id = _id;
     }
 
-    public Integer getIdDoTrabalho() {
-        return idDoTrabalho;
-    }
-
-    public void setIdDoTrabalho(Integer idDoTrabalho) {
-        this.idDoTrabalho = idDoTrabalho;
-    }
-
     public String getTitulo() {
         return titulo;
     }
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
-    }
-
-    public Integer getnTopicos() {
-        return nTopicos;
-    }
-
-    public void setnTopicos(Integer nTopicos) {
-        this.nTopicos = nTopicos;
     }
 
     public String getDescricao() {
@@ -66,19 +52,27 @@ public class Etapa {
         this.descricao = descricao;
     }
 
+    public Integer getIndexOrdem() {
+        return indexOrdem;
+    }
+
+    public void setIndexOrdem(Integer indexOrdem) {
+        this.indexOrdem = indexOrdem;
+    }
+
+    public Integer getProgressoPorCento() {
+        return progressoPorCento;
+    }
+
+    public void setProgressoPorCento(Integer progressoPorCento) {
+        this.progressoPorCento = progressoPorCento;
+    }
+
     public String getEstado() {
         return estado;
     }
 
     public void setEstado(String estado) {
         this.estado = estado;
-    }
-
-    public String getProgresso() {
-        return progresso;
-    }
-
-    public void setProgresso(String progresso) {
-        this.progresso = progresso;
     }
 }

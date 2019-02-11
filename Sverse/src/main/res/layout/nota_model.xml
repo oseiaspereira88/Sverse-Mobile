@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/notaTitle"
+            android:id="@+id/perfilNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="12dp"
@@ -71,7 +71,7 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/imgNotification"
+        android:id="@+id/imgConfig"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:visibility="visible"
@@ -86,9 +86,9 @@
         android:text="!"
         android:textSize="10sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imgNotification"
+        app:layout_constraintBottom_toBottomOf="@+id/imgConfig"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imgNotification"
-        app:layout_constraintTop_toTopOf="@+id/imgNotification" />
+        app:layout_constraintStart_toStartOf="@+id/imgConfig"
+        app:layout_constraintTop_toTopOf="@+id/imgConfig" />
 
 </android.support.constraint.ConstraintLayout>

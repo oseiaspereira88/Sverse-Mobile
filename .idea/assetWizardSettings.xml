@@ -23,7 +23,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/navigation/ic_arrow_back_black_24dp.xml" />
+                                                <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/content/ic_create_black_24dp.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -33,7 +33,9 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="outputName" value="ic_arrow_back" />
+                                      <entry key="outputName" value="ic_add_etapa_mini2" />
+                                      <entry key="theme" value="CUSTOM" />
+                                      <entry key="themeColor" value="1e1b1d" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -96,7 +98,6 @@
                                   <option name="values">
                                     <map>
                                       <entry key="cropped" value="true" />
-                                      <entry key="iconShape" value="NONE" />
                                       <entry key="outputName" value="ic_participante_add" />
                                     </map>
                                   </option>

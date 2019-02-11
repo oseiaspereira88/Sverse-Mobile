@@ -9,22 +9,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.oseias.sverse.Interfaces.EmAndamentoRecyclerViewOnClickListenerHack;
-import com.example.oseias.sverse.SQLite.model.Objetivo;
+import com.example.oseias.sverse.Interfaces.RecyclerViewOnClickListenerHack;
+import com.example.oseias.sverse.SQLite.model.Etapa;
 import com.versaplications.prodesenvelopment.sverse.R;
 
 import java.util.ArrayList;
 
 public class EtapasEmAndamentoAdapter extends RecyclerView.Adapter<EtapasEmAndamentoAdapter.MyViewHolder> {
     private Context ctx;
-    private ArrayList<Objetivo> objetivos;
+    private ArrayList<Etapa> etapas;
     private LayoutInflater myLayoutInflater;
-    private static EmAndamentoRecyclerViewOnClickListenerHack recyclerViewOnClickListenerHack;
+    private static RecyclerViewOnClickListenerHack recyclerViewOnClickListenerHack;
 
 
-    public EtapasEmAndamentoAdapter(Context ctx, ArrayList<Objetivo> objetivos) {
+    public EtapasEmAndamentoAdapter(Context ctx, ArrayList<Etapa> etapas) {
         this.ctx = ctx;
-        this.objetivos = objetivos;
+        this.etapas = etapas;
         this.myLayoutInflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
@@ -39,21 +39,21 @@ public class EtapasEmAndamentoAdapter extends RecyclerView.Adapter<EtapasEmAndam
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Log.i("LOG", "onBindViewHolder()");
-        holder.titulo.setText(objetivos.get(position).getTitulo());
-        holder.ordemPosition.setText(objetivos.get(position).getIndexOrdem() + "");
+        holder.titulo.setText(etapas.get(position).getTitulo());
+        holder.ordemPosition.setText(etapas.get(position).getIndexOrdem() + "");
     }
 
     @Override
     public int getItemCount() {
-        return objetivos.size();
+        return etapas.size();
     }
 
     public void removeItemList(int position){
-        objetivos.remove(position);
+        etapas.remove(position);
         notifyItemRemoved(position);
     }
 
-    public void setRecyclerViewOnClickListenerHack(EmAndamentoRecyclerViewOnClickListenerHack r) {
+    public void setRecyclerViewOnClickListenerHack(RecyclerViewOnClickListenerHack r) {
         this.recyclerViewOnClickListenerHack = r;
     }
 
@@ -71,7 +71,7 @@ public class EtapasEmAndamentoAdapter extends RecyclerView.Adapter<EtapasEmAndam
                 @Override
                 public void onClick(View v) {
                     if(recyclerViewOnClickListenerHack != null){
-                        recyclerViewOnClickListenerHack.onClickListener(v, getPosition());
+                        recyclerViewOnClickListenerHack.onClickListener2(v, getPosition());
                     }
                 }
             });
@@ -80,7 +80,7 @@ public class EtapasEmAndamentoAdapter extends RecyclerView.Adapter<EtapasEmAndam
                 @Override
                 public boolean onLongClick(View v) {
                     if(recyclerViewOnClickListenerHack != null){
-                        recyclerViewOnClickListenerHack.onLongClickListener(v, getPosition());
+                        recyclerViewOnClickListenerHack.onLongClickListener2(v, getPosition());
                     }
                     return true;
                 }
@@ -95,7 +95,7 @@ public class EtapasEmAndamentoAdapter extends RecyclerView.Adapter<EtapasEmAndam
         @Override
         public boolean onDrag(View v, DragEvent event) {
             if(recyclerViewOnClickListenerHack != null){
-                recyclerViewOnClickListenerHack.onDragListener(v, event);
+                recyclerViewOnClickListenerHack.onDragListener2(v, event);
             }
             return true;
         }

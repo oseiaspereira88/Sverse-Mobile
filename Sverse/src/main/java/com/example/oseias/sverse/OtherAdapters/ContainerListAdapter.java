@@ -70,12 +70,12 @@ public class ContainerListAdapter extends BaseAdapter {
 
         Container container = (Container) this.getItem(i);
         CardView card = (CardView) view.findViewById(R.id.cardContainer);
-        TextView tvName = (TextView) view.findViewById(R.id.notaTitle);
-        TextView tvType = (TextView) view.findViewById(R.id.tvContainerType);
+        TextView tvName = (TextView) view.findViewById(R.id.perfilNome);
+        TextView tvType = (TextView) view.findViewById(R.id.tvEmailOrTipo);
         TextView nNotifications = (TextView) view.findViewById(R.id.nNotifications);
-        ImageView imgNotification = (ImageView) view.findViewById(R.id.imgNotification);
-        ImageView bgContainer = (ImageView) view.findViewById(R.id.bgContainer);
-        ImageView imgContainer = (ImageView) view.findViewById(R.id.imgContainer);
+        ImageView imgNotification = (ImageView) view.findViewById(R.id.imgConfig);
+        ImageView bgContainer = (ImageView) view.findViewById(R.id.imgBG);
+        ImageView imgContainer = (ImageView) view.findViewById(R.id.imgPerfil);
 
         //Add Values
         //card.setPreventCornerOverlap(false);

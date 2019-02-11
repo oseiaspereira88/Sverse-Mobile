@@ -1,40 +1,31 @@
 package com.example.oseias.sverse.OthersFragments;
 
-import android.content.ClipData;
-import android.content.ClipDescription;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.DragEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.oseias.sverse.Interfaces.EmAndamentoRecyclerViewOnClickListenerHack;
 import com.example.oseias.sverse.OtherAdapters.EtapasEmAndamentoAdapter;
-import com.example.oseias.sverse.OthersClass.SimpleDividerItemDecoration;
-import com.example.oseias.sverse.SQLite.model.Objetivo;
+import com.example.oseias.sverse.SQLite.model.Etapa;
 import com.versaplications.prodesenvelopment.sverse.R;
 
 import java.util.ArrayList;
 
-public class FragmentEtapasEmAndamento extends Fragment implements EmAndamentoRecyclerViewOnClickListenerHack {
+public class FragmentEtapasEmAndamento extends Fragment {
     private RecyclerView rv;
     EtapasEmAndamentoAdapter adapter;
-    private ArrayList<Objetivo> objetivos;
+    private ArrayList<Etapa> etapas;
     private CardView cardTitulo;
     public ConstraintLayout areaAcept;
     private TextView textTitulo;
-    private ImageView imgExcluir;
+    private ImageView imgAcept;
 
     private String aux;
     int defaultColor = R.color.colorAccent;
@@ -47,9 +38,11 @@ public class FragmentEtapasEmAndamento extends Fragment implements EmAndamentoRe
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_etapas_em_andamento, null); //->container, false
-        initializeViews(container, rootView);
+        //initializeViews(container, rootView);
         return rootView;
     }
+
+    /*
 
     public void initializeViews(ViewGroup container, View rootView) {
         View parent = (View) container.getParent();
@@ -59,7 +52,7 @@ public class FragmentEtapasEmAndamento extends Fragment implements EmAndamentoRe
         areaAcept = (ConstraintLayout) rootView.findViewById(R.id.areaAcept);
         textTitulo = (TextView) rootView.findViewById(R.id.tvEmAndamento);
         textTitulo.setText(tabLayout.getTabAt(tabLayout.getSelectedTabPosition()).getText().toString());
-        imgExcluir = (ImageView) rootView.findViewById(R.id.imgAcept);
+        imgAcept = (ImageView) rootView.findViewById(R.id.imgAcept);
 
         areaAcept.setOnDragListener(new EtapasEmAndamentoAdapter.MyOnDragListener());
 
@@ -95,13 +88,11 @@ public class FragmentEtapasEmAndamento extends Fragment implements EmAndamentoRe
                 LinearLayoutManager llm = (LinearLayoutManager) rv.getLayoutManager();
                 adapter = (EtapasEmAndamentoAdapter) rv.getAdapter();
 
-                if (objetivos.size() == llm.findLastCompletelyVisibleItemPosition() + 1) {
+                if (etapas.size() == llm.findLastCompletelyVisibleItemPosition() + 1) {
                     //Toast.makeText(getActivity(), "Voce chegou ao final da sua lista.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-
-        rv.addItemDecoration(new SimpleDividerItemDecoration(getActivity()));
 
         rv.setHasFixedSize(true);
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
@@ -113,15 +104,15 @@ public class FragmentEtapasEmAndamento extends Fragment implements EmAndamentoRe
 
     }
 
-    public ArrayList<Objetivo> generateItens() {
-        objetivos = new ArrayList<>();
-        objetivos.add(new Objetivo(1, "Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado.", 1, 100, "Em Andamento"));
-        objetivos.add(new Objetivo(2, "Segundo Objetivo", "Nosso primeira Objetivo será assim e assado.", 2, 100, "Em Andamento"));
-        objetivos.add(new Objetivo(3, "Terceiro Objetivo", "Nosso primeira Objetivo será assim e assado.", 3, 100, "Em Andamento"));
-        objetivos.add(new Objetivo(4, "Quarto Objetivo", "Nosso primeira Objetivo será assim e assado.", 4, 100, "Em Andamento"));
-        objetivos.add(new Objetivo(7, "Quinto Objetivo", "Nosso primeira Objetivo será assim e assado.", 5, 100, "Em Andamento"));
-        //objetivos.add(new Objetivo(6, "Sexto Objetivo", "Nosso primeira Objetivo será assim e assado.", 6, 100, "Concluido"));
-        return objetivos;
+    public ArrayList<Etapa> generateItens() {
+        etapas = new ArrayList<>();
+        etapas.add(new Etapa(1, "Primeiro Etapa", "Nosso primeira Etapa será assim e assado.", 1, 100, "Em Andamento"));
+        etapas.add(new Etapa(2, "Segundo Etapa", "Nosso primeira Etapa será assim e assado.", 2, 100, "Em Andamento"));
+        etapas.add(new Etapa(3, "Terceiro Etapa", "Nosso primeira Etapa será assim e assado.", 3, 100, "Em Andamento"));
+        etapas.add(new Etapa(4, "Quarto Etapa", "Nosso primeira Etapa será assim e assado.", 4, 100, "Em Andamento"));
+        etapas.add(new Etapa(7, "Quinto Etapa", "Nosso primeira Etapa será assim e assado.", 5, 100, "Em Andamento"));
+        //etapas.add(new Etapa(6, "Sexto Etapa", "Nosso primeira Etapa será assim e assado.", 6, 100, "Concluido"));
+        return etapas;
     }
 
 
@@ -129,7 +120,7 @@ public class FragmentEtapasEmAndamento extends Fragment implements EmAndamentoRe
     public void onClickListener(View view, int position) {
         adapter = (EtapasEmAndamentoAdapter) rv.getAdapter();
         //adapter.removeItemList(position);
-        //abrir Objetivo ou meta;
+        //abrir Etapa ou meta;
         Toast.makeText(getActivity(), "Vc clicou num item em andamento", Toast.LENGTH_SHORT).show();
     }
 
@@ -141,7 +132,7 @@ public class FragmentEtapasEmAndamento extends Fragment implements EmAndamentoRe
         view.startDrag(data, sb, view, 0);
 
         cardTitulo.setBackgroundResource(aceptColor);
-        imgExcluir.setVisibility(View.VISIBLE);
+        imgAcept.setVisibility(View.VISIBLE);
         aux = textTitulo.getText().toString();
         textTitulo.setText("Marque como Concluida");
 
@@ -184,7 +175,7 @@ public class FragmentEtapasEmAndamento extends Fragment implements EmAndamentoRe
                     viewDroped.setVisibility(View.VISIBLE);
                 }
                 cardTitulo.setBackgroundResource(defaultColor);
-                imgExcluir.setVisibility(View.INVISIBLE);
+                imgAcept.setVisibility(View.INVISIBLE);
                 textTitulo.setText(aux);
                 break;
             case DragEvent.ACTION_DRAG_ENDED:
@@ -201,10 +192,12 @@ public class FragmentEtapasEmAndamento extends Fragment implements EmAndamentoRe
 
     public void resetarDefaults(){
         cardTitulo.setBackgroundResource(defaultColor);
-        imgExcluir.setVisibility(View.INVISIBLE);
+        imgAcept.setVisibility(View.INVISIBLE);
         isDrag = false;
         aux = "";
         position = 0;
         defaultSize = 0;
     }
+
+    */
 }

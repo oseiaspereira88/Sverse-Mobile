@@ -8,7 +8,7 @@
     android:paddingTop="8dp">
 
     <ImageView
-        android:id="@+id/bgContainer"
+        android:id="@+id/imgBG"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -16,12 +16,12 @@
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/notaTitle"
+        app:layout_constraintStart_toStartOf="@+id/perfilNome"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/bg11" />
 
     <ImageView
-        android:id="@+id/imgNotification"
+        android:id="@+id/imgConfig"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginEnd="2dp"
@@ -42,12 +42,12 @@
         android:textSize="10sp"
         android:textStyle="bold"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/imgNotification"
+        app:layout_constraintBottom_toBottomOf="@+id/imgConfig"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imgNotification" />
+        app:layout_constraintTop_toTopOf="@+id/imgConfig" />
 
     <TextView
-        android:id="@+id/notaTitle"
+        android:id="@+id/perfilNome"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"

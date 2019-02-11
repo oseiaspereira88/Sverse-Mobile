@@ -62,11 +62,11 @@ public class CriadorDeTurmas extends AppCompatActivity {
         textData.setText(dataDeCriacao);
         textHora.setText(horaDeCriacao);
 
-        textNome = (TextView) this.findViewById(R.id.notaTitle);
-        textType = (TextView) this.findViewById(R.id.tvContainerType);
+        textNome = (TextView) this.findViewById(R.id.perfilNome);
+        textType = (TextView) this.findViewById(R.id.tvEmailOrTipo);
         nNotifications = (TextView) this.findViewById(R.id.nNotifications);
-        imgContainer = (ImageView) this.findViewById(R.id.imgContainer);
-        imgContainerBG = (ImageView) this.findViewById(R.id.bgContainer);
+        imgContainer = (ImageView) this.findViewById(R.id.imgPerfil);
+        imgContainerBG = (ImageView) this.findViewById(R.id.imgBG);
         imgCamera = (ImageView) this.findViewById(R.id.imgCamera);
         buttonSelectorBG = (ImageView) this.findViewById(R.id.bSeletorBG);
         buttonDescartar = (ImageView) this.findViewById(R.id.bDescartar);

@@ -9,28 +9,27 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.example.oseias.sverse.Interfaces.AllRecyclerViewOnClickListenerHack;
-import com.example.oseias.sverse.SQLite.model.Objetivo;
+import com.example.oseias.sverse.Interfaces.RecyclerViewOnClickListenerHack;
+import com.example.oseias.sverse.SQLite.model.Etapa;
 import com.versaplications.prodesenvelopment.sverse.R;
 
 import java.util.ArrayList;
 
-public class EtapaAdapter extends RecyclerView.Adapter<EtapaAdapter.MyViewHolder> {
+public class AllEtapaAdapter extends RecyclerView.Adapter<AllEtapaAdapter.MyViewHolder> {
     private Activity act;
-    private ArrayList<Objetivo> objetivos;
+    private ArrayList<Etapa> etapas;
     private LayoutInflater myLayoutInflater;
-    private static AllRecyclerViewOnClickListenerHack allRecyclerViewOnClickListenerHack;
+    private static RecyclerViewOnClickListenerHack allRecyclerViewOnClickListenerHack;
 
 
-    public EtapaAdapter(Activity act, ArrayList<Objetivo> objetivos) {
+    public AllEtapaAdapter(Activity act, ArrayList<Etapa> etapas) {
         this.act = act;
-        this.objetivos = objetivos;
+        this.etapas = etapas;
         this.myLayoutInflater = (LayoutInflater) act.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
@@ -45,9 +44,9 @@ public class EtapaAdapter extends RecyclerView.Adapter<EtapaAdapter.MyViewHolder
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Log.i("LOG", "onBindViewHolder()");
-        holder.titulo.setText(objetivos.get(position).getTitulo());
-        holder.ordemPosition.setText(objetivos.get(position).getIndexOrdem() + "");
-        if(objetivos.get(position).getEstado()=="Em Andamento"){
+        holder.titulo.setText(etapas.get(position).getTitulo());
+        holder.ordemPosition.setText(etapas.get(position).getIndexOrdem() + "");
+        if(etapas.get(position).getEstado()=="Em Andamento"){
             holder.checkBox.setChecked(false);
             holder.checkBox.setVisibility(View.VISIBLE);
         } else{
@@ -71,15 +70,15 @@ public class EtapaAdapter extends RecyclerView.Adapter<EtapaAdapter.MyViewHolder
 
     @Override
     public int getItemCount() {
-        return objetivos.size();
+        return etapas.size();
     }
 
     public void removeItemList(int position){
-        objetivos.remove(position);
+        etapas.remove(position);
         notifyItemRemoved(position);
     }
 
-    public void setRecyclerViewOnClickListenerHack(AllRecyclerViewOnClickListenerHack r) {
+    public void setRecyclerViewOnClickListenerHack(RecyclerViewOnClickListenerHack r) {
         this.allRecyclerViewOnClickListenerHack = r;
     }
 
@@ -99,7 +98,7 @@ public class EtapaAdapter extends RecyclerView.Adapter<EtapaAdapter.MyViewHolder
                 @Override
                 public void onClick(View v) {
                     if(allRecyclerViewOnClickListenerHack != null){
-                        allRecyclerViewOnClickListenerHack.onClickListener(v, getPosition());
+                        allRecyclerViewOnClickListenerHack.onClickListener1(v, getPosition());
                         YoYo.with(Techniques.Landing)
                                 .duration(700)
                                 .repeat(0)
@@ -118,7 +117,7 @@ public class EtapaAdapter extends RecyclerView.Adapter<EtapaAdapter.MyViewHolder
                 @Override
                 public boolean onLongClick(View v) {
                     if(allRecyclerViewOnClickListenerHack != null){
-                        allRecyclerViewOnClickListenerHack.onLongClickListener(v, getPosition());
+                        allRecyclerViewOnClickListenerHack.onLongClickListener1(v, getPosition());
                         YoYo.with(Techniques.Wave)
                                 .duration(700)
                                 .repeat(0)
@@ -137,7 +136,7 @@ public class EtapaAdapter extends RecyclerView.Adapter<EtapaAdapter.MyViewHolder
         @Override
         public boolean onDrag(View v, DragEvent event) {
             if(allRecyclerViewOnClickListenerHack != null){
-                allRecyclerViewOnClickListenerHack.onDragListener(v, event);
+                allRecyclerViewOnClickListenerHack.onDragListener1(v, event);
             }
             return true;
         }

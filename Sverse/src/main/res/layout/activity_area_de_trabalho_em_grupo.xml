@@ -2,24 +2,476 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     android:id="@+id/constraintLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.oseias.sverse.OthersActivitys.AreaDeTrabalhoEmGrupo">
 
     <ImageView
-        android:id="@+id/imageView35"
-        android:layout_width="wrap_content"
+        android:id="@+id/imgBackground"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView30"
+        app:layout_constraintTop_toBottomOf="@+id/imgTituloBG"
         app:srcCompat="@drawable/bg29" />
 
+
+
+    <HorizontalScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView31">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvAll"
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@android:drawable/screen_background_dark_transparent"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardAll"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        app:cardBackgroundColor="@color/colorAccent">
+
+                        <android.support.constraint.ConstraintLayout
+                            android:id="@+id/areaExcluir"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/imgAction"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginEnd="8dp"
+                                android:visibility="invisible"
+                                app:layout_constraintBottom_toBottomOf="@+id/tvAll"
+                                app:layout_constraintEnd_toStartOf="@+id/imgDetalhe"
+                                app:layout_constraintTop_toTopOf="@+id/tvAll"
+                                app:srcCompat="@mipmap/ic_lexcluir_c" />
+
+                            <TextView
+                                android:id="@+id/tvAll"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginStart="8dp"
+                                android:paddingBottom="4dp"
+                                android:paddingTop="4dp"
+                                android:text="Todas"
+                                android:textAlignment="viewStart"
+                                android:textColor="@color/branco"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/imgAction"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageView
+                                android:id="@+id/imgDetalhe"
+                                android:layout_width="36dp"
+                                android:layout_height="0dp"
+                                android:scaleType="center"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@drawable/ic_vertical_more" />
+                        </android.support.constraint.ConstraintLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recyclerAll"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="8dp"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardAll">
+
+                    </android.support.v7.widget.RecyclerView>
+
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/clMore"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/recyclerAll">
+
+                        <android.support.constraint.ConstraintLayout
+                            android:id="@+id/constraintLayout2"
+                            android:layout_width="match_parent"
+                            android:layout_height="112dp">
+
+                            <ImageView
+                                android:id="@+id/imgBG"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginStart="50dp"
+                                android:layout_marginTop="6dp"
+                                android:scaleType="centerCrop"
+                                app:layout_constraintBottom_toTopOf="@+id/imageView76"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintStart_toStartOf="@+id/imgPerfil"
+                                app:layout_constraintTop_toTopOf="@+id/imgPerfil"
+                                app:layout_constraintVertical_bias="0.0"
+                                app:srcCompat="@drawable/bg11" />
+
+                            <ImageView
+                                android:id="@+id/imageView76"
+                                android:layout_width="0dp"
+                                android:layout_height="2dp"
+                                android:layout_marginBottom="6dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="@+id/perfilNome"
+                                app:layout_constraintStart_toStartOf="@+id/imgBG"
+                                app:srcCompat="@drawable/border6" />
+
+                            <ImageView
+                                android:id="@+id/imgPerfil"
+                                android:layout_width="110dp"
+                                android:layout_height="110dp"
+                                android:scaleType="centerCrop"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@mipmap/ic_seletor_de_cor" />
+
+                            <ImageView
+                                android:id="@+id/imgCamera"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_marginBottom="6dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="8dp"
+                                android:onClick="selecionarImageContainer"
+                                android:scaleType="centerCrop"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/perfilNome"
+                                app:layout_constraintStart_toStartOf="@+id/imgPerfil"
+                                app:layout_constraintTop_toTopOf="@+id/imgPerfil"
+                                app:srcCompat="@android:drawable/ic_menu_camera" />
+
+                            <TextView
+                                android:id="@+id/perfilNome"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginStart="106dp"
+                                android:layout_marginTop="8dp"
+                                android:paddingBottom="4dp"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp"
+                                android:paddingTop="4dp"
+                                android:scrollHorizontally="true"
+                                android:shadowColor="#808080"
+                                android:shadowDx="3"
+                                android:shadowDy="3"
+                                android:shadowRadius="1"
+                                android:text="Preencha os Dados"
+                                android:textAlignment="textStart"
+                                android:textColor="@android:color/background_light"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@+id/imgPerfil"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="@+id/imgPerfil"
+                                app:layout_constraintTop_toTopOf="@+id/imgPerfil" />
+
+                            <TextView
+                                android:id="@+id/textView22"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="4dp"
+                                android:layout_marginEnd="4dp"
+                                android:text="10/10/2019"
+                                android:textColor="@android:color/background_light"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@+id/imgBG"
+                                app:layout_constraintEnd_toEndOf="@+id/perfilNome" />
+
+                        </android.support.constraint.ConstraintLayout>
+
+                        <ScrollView
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <android.support.constraint.ConstraintLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:minHeight="250dp">
+
+                                    <ImageView
+                                        android:id="@+id/imageView73"
+                                        android:layout_width="0dp"
+                                        android:layout_height="2dp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="@+id/textView15"
+                                        app:layout_constraintTop_toBottomOf="@+id/textView15"
+                                        app:srcCompat="@drawable/border6" />
+
+                                    <TextView
+                                        android:id="@+id/textView15"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="8dp"
+                                        android:text="Participantes:"
+                                        android:textStyle="bold"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+                                    <EditText
+                                        android:id="@+id/editText"
+                                        android:layout_width="0dp"
+                                        android:layout_height="47dp"
+                                        android:ems="10"
+                                        android:inputType="textMultiLine"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="@+id/textView14"
+                                        app:layout_constraintTop_toBottomOf="@+id/imageView70" />
+
+                                    <ImageView
+                                        android:id="@+id/imageView70"
+                                        android:layout_width="0dp"
+                                        android:layout_height="2dp"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="@+id/textView15"
+                                        app:layout_constraintTop_toBottomOf="@+id/textView14"
+                                        app:srcCompat="@drawable/border6" />
+
+                                    <TextView
+                                        android:id="@+id/textView14"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="8dp"
+                                        android:text="Descrição:"
+                                        android:textStyle="bold"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/cardContainer" />
+
+                                    <ListView
+                                        android:layout_width="0dp"
+                                        android:layout_height="0dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:layout_marginStart="8dp"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintHorizontal_bias="1.0"
+                                        app:layout_constraintStart_toStartOf="@+id/textView15"
+                                        app:layout_constraintTop_toBottomOf="@+id/imageView73" />
+
+                                </android.support.constraint.ConstraintLayout>
+                            </LinearLayout>
+                        </ScrollView>
+
+                    </android.support.constraint.ConstraintLayout>
+
+                </android.support.constraint.ConstraintLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvEmAndamento"
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                fab:cardBackgroundColor="@android:drawable/screen_background_dark_transparent"
+                fab:cardCornerRadius="8dp"
+                fab:cardElevation="2dp"
+                fab:layout_constraintBottom_toBottomOf="parent"
+                fab:layout_constraintEnd_toEndOf="parent"
+                fab:layout_constraintStart_toStartOf="parent"
+                fab:layout_constraintTop_toTopOf="parent">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardEmAndamento"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        fab:cardBackgroundColor="@color/colorAccent"
+                        fab:cardElevation="2dp"
+                        fab:layout_constraintEnd_toEndOf="parent"
+                        fab:layout_constraintStart_toStartOf="parent"
+                        fab:layout_constraintTop_toTopOf="parent">
+
+                        <android.support.constraint.ConstraintLayout
+                            android:id="@+id/areaAcept"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/imgAcept"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:visibility="invisible"
+                                fab:layout_constraintBottom_toBottomOf="parent"
+                                fab:layout_constraintEnd_toEndOf="parent"
+                                fab:layout_constraintTop_toTopOf="parent"
+                                fab:srcCompat="@mipmap/ic_acept" />
+
+                            <TextView
+                                android:id="@+id/tvEmAndamento"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingBottom="4dp"
+                                android:paddingTop="4dp"
+                                android:text="Em Andamento"
+                                android:textAlignment="center"
+                                android:textColor="@color/branco"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                fab:layout_constraintBottom_toBottomOf="parent"
+                                fab:layout_constraintEnd_toEndOf="parent"
+                                fab:layout_constraintStart_toStartOf="parent"
+                                fab:layout_constraintTop_toTopOf="parent" />
+                        </android.support.constraint.ConstraintLayout>
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recyclerEmAndamento"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        fab:layout_constraintEnd_toEndOf="parent"
+                        fab:layout_constraintStart_toStartOf="parent"
+                        fab:layout_constraintTop_toBottomOf="@+id/cardEmAndamento" />
+
+                </android.support.constraint.ConstraintLayout>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvConcluidas"
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="16dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@android:drawable/screen_background_dark_transparent"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="2dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/cardConcluidos"
+                        android:layout_width="match_parent"
+                        android:layout_height="36dp"
+                        app:cardBackgroundColor="@color/colorAccent"
+                        app:cardElevation="2dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <android.support.constraint.ConstraintLayout
+                            android:id="@+id/areaReset"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/imgReset"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:visibility="invisible"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:srcCompat="@mipmap/ic_refazer" />
+
+                            <TextView
+                                android:id="@+id/tvConcluidos"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingBottom="4dp"
+                                android:paddingTop="4dp"
+                                android:text="Concluidas"
+                                android:textAlignment="center"
+                                android:textColor="@color/branco"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </android.support.constraint.ConstraintLayout>
+
+                    </android.support.v7.widget.CardView>
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recyclerConcluidos"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardConcluidos" />
+
+                </android.support.constraint.ConstraintLayout>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
     <ImageView
-        android:id="@+id/imageView30"
+        android:id="@+id/imgTituloBG"
         android:layout_width="0dp"
         android:layout_height="80dp"
         android:scaleType="centerCrop"
@@ -32,7 +484,6 @@
         android:id="@+id/textView38"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:layout_marginStart="168dp"
         android:layout_marginTop="8dp"
         android:shadowColor="#808080"
@@ -43,10 +494,9 @@
         android:textColor="@android:color/background_light"
         android:textSize="36sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/appBarArea"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView30" />
+        app:layout_constraintTop_toTopOf="@+id/imgTituloBG" />
 
     <ImageView
         android:id="@+id/imageView31"
@@ -55,40 +505,48 @@
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView30"
+        app:layout_constraintTop_toBottomOf="@+id/imgTituloBG"
         app:srcCompat="@drawable/border_toolbar" />
 
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/appBarArea"
-        android:layout_width="0dp"
-        android:layout_height="24dp"
-        android:background="@android:color/transparent"
-        android:theme="@style/AppTheme.AppBarOverlay"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView30"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-    </android.support.design.widget.AppBarLayout>
-
-    <view
-        android:id="@+id/pager"
-        class="android.support.v4.view.ViewPager"
-        id="@+id/view"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView31" />
-
-    <android.support.design.widget.FloatingActionButton
+    <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/add_button6" />
+        android:layout_alignParentBottom="true"
+        android:paddingBottom="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        fab:layout_constraintBottom_toBottomOf="parent"
+        fab:layout_constraintEnd_toEndOf="parent"
+        fab:menu_colorNormal="#1565C0"
+        fab:menu_colorPressed="#2272CD"
+        fab:menu_colorRipple="#62B2FF"
+        fab:menu_fab_size="normal"
+        fab:menu_labels_ellipsize="end"
+        fab:menu_labels_singleLine="true">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add_participante_mini"
+            app:fab_colorNormal="#1565C0"
+            app:fab_colorPressed="#2272CD"
+            app:fab_colorRipple="#62B2FF"
+            fab:fab_label="Participantes"
+            fab:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add_etapa_mini2"
+            app:fab_colorNormal="#1565C0"
+            app:fab_colorPressed="#2272CD"
+            app:fab_colorRipple="#62B2FF"
+            fab:fab_label="Nova Etapa"
+            fab:fab_size="mini" />
+
+    </com.github.clans.fab.FloatingActionMenu>
 
 </android.support.constraint.ConstraintLayout>

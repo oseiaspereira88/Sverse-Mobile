@@ -82,6 +82,7 @@
                 android:id="@+id/recyclerAll"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:layout_marginTop="8dp"
                 android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -106,7 +107,7 @@
                     android:layout_height="112dp">
 
                     <ImageView
-                        android:id="@+id/bgContainer"
+                        android:id="@+id/imgBG"
                         android:layout_width="0dp"
                         android:layout_height="0dp"
                         android:layout_marginEnd="8dp"
@@ -116,8 +117,8 @@
                         app:layout_constraintBottom_toTopOf="@+id/imageView76"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="@+id/imgContainer"
-                        app:layout_constraintTop_toTopOf="@+id/imgContainer"
+                        app:layout_constraintStart_toStartOf="@+id/imgPerfil"
+                        app:layout_constraintTop_toTopOf="@+id/imgPerfil"
                         app:layout_constraintVertical_bias="0.0"
                         app:srcCompat="@drawable/bg11" />
 
@@ -127,12 +128,12 @@
                         android:layout_height="2dp"
                         android:layout_marginBottom="6dp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="@+id/notaTitle"
-                        app:layout_constraintStart_toStartOf="@+id/bgContainer"
+                        app:layout_constraintEnd_toEndOf="@+id/perfilNome"
+                        app:layout_constraintStart_toStartOf="@+id/imgBG"
                         app:srcCompat="@drawable/border6" />
 
                     <ImageView
-                        android:id="@+id/imgContainer"
+                        android:id="@+id/imgPerfil"
                         android:layout_width="110dp"
                         android:layout_height="110dp"
                         android:scaleType="centerCrop"
@@ -152,13 +153,13 @@
                         android:onClick="selecionarImageContainer"
                         android:scaleType="centerCrop"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/notaTitle"
-                        app:layout_constraintStart_toStartOf="@+id/imgContainer"
-                        app:layout_constraintTop_toTopOf="@+id/imgContainer"
+                        app:layout_constraintEnd_toStartOf="@+id/perfilNome"
+                        app:layout_constraintStart_toStartOf="@+id/imgPerfil"
+                        app:layout_constraintTop_toTopOf="@+id/imgPerfil"
                         app:srcCompat="@android:drawable/ic_menu_camera" />
 
                     <TextView
-                        android:id="@+id/notaTitle"
+                        android:id="@+id/perfilNome"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
@@ -178,10 +179,10 @@
                         android:textColor="@android:color/background_light"
                         android:textSize="20sp"
                         android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="@+id/imgContainer"
+                        app:layout_constraintBottom_toBottomOf="@+id/imgPerfil"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="@+id/imgContainer"
-                        app:layout_constraintTop_toTopOf="@+id/imgContainer" />
+                        app:layout_constraintStart_toStartOf="@+id/imgPerfil"
+                        app:layout_constraintTop_toTopOf="@+id/imgPerfil" />
 
                     <TextView
                         android:id="@+id/textView22"
@@ -193,8 +194,8 @@
                         android:textColor="@android:color/background_light"
                         android:textSize="12sp"
                         android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="@+id/bgContainer"
-                        app:layout_constraintEnd_toEndOf="@+id/notaTitle" />
+                        app:layout_constraintBottom_toBottomOf="@+id/imgBG"
+                        app:layout_constraintEnd_toEndOf="@+id/perfilNome" />
 
                 </android.support.constraint.ConstraintLayout>
 

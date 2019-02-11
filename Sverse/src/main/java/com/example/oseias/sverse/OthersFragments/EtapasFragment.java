@@ -1,61 +1,47 @@
 package com.example.oseias.sverse.OthersFragments;
 
-import android.content.ClipData;
-import android.content.ClipDescription;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.constraint.ConstraintLayout;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.TabLayout;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.DragEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.daimajia.androidanimations.library.Techniques;
-import com.daimajia.androidanimations.library.YoYo;
-import com.example.oseias.sverse.Interfaces.AllRecyclerViewOnClickListenerHack;
-import com.example.oseias.sverse.OtherAdapters.EtapaAdapter;
-import com.example.oseias.sverse.OthersClass.SimpleDividerItemDecoration;
-import com.example.oseias.sverse.SQLite.model.Objetivo;
 import com.versaplications.prodesenvelopment.sverse.R;
 
-import java.util.ArrayList;
+public class EtapasFragment extends Fragment {
+//    private RecyclerView rv;
+//    private ConstraintLayout clMore;
+//    private AllEtapaAdapter adapter;
+//    private ArrayList<Etapa> etapa;
+//    private CardView cardTitulo;
+//    public ConstraintLayout areaExcluir;
+//    private TextView textTitulo;
+//    private ImageView imgAction;
+//    private ImageView imgDetalhe;
+//    private boolean isOpenMore = false;
+//
+//    private String aux;
+//    int defaultColor = R.color.colorAccent;
+//    int aceptColor = R.color.green;
+//    int alertColor = R.color.darkred;
+//    boolean isDrag = false;
+//    boolean isDroped = true;
+//    int position;
+//    int defaultSize = 0;
 
-public class EtapasFragment extends Fragment implements AllRecyclerViewOnClickListenerHack {
-    private RecyclerView rv;
-    private ConstraintLayout clMore;
-    private EtapaAdapter adapter;
-    private ArrayList<Objetivo> etapa;
-    private CardView cardTitulo;
-    public ConstraintLayout areaExcluir;
-    private TextView textTitulo;
-    private ImageView imgAction;
-    private ImageView imgDetalhe;
-    private boolean isOpenMore = false;
-
-    private String aux;
-    int defaultColor = R.color.colorAccent;
-    int aceptColor = R.color.green;
-    int alertColor = R.color.darkred;
-    boolean isDrag = false;
-    boolean isDroped = true;
-    int position;
-    int defaultSize = 0;
-
+    @RequiresApi(api = Build.VERSION_CODES.M)
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_etapas, null); //->container, false
-        initializeViews(container, rootView);
+        //initializeViews(container, rootView);
         return rootView;
     }
 
+
+    /*
+    @RequiresApi(api = Build.VERSION_CODES.M)
     public void initializeViews(ViewGroup container, View rootView) {
         View parent = (View) container.getParent();
         AppBarLayout barLayout = (AppBarLayout) parent.findViewById(R.id.appBarArea);
@@ -116,7 +102,7 @@ public class EtapasFragment extends Fragment implements AllRecyclerViewOnClickLi
             }
         });
 
-        areaExcluir.setOnDragListener(new EtapaAdapter.MyOnDragListener());
+        areaExcluir.setOnDragListener(new AllEtapaAdapter.MyOnDragListener());
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -136,6 +122,8 @@ public class EtapasFragment extends Fragment implements AllRecyclerViewOnClickLi
             }
         });
 
+        FloatingActionMenu fab = getActivity().findViewById(R.id.fab);
+
         rv = (RecyclerView) rootView.findViewById(R.id.recyclerAll);
         rv.setOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -148,44 +136,48 @@ public class EtapasFragment extends Fragment implements AllRecyclerViewOnClickLi
                 super.onScrolled(recyclerView, dx, dy);
 
                 LinearLayoutManager llm = (LinearLayoutManager) rv.getLayoutManager();
-                adapter = (EtapaAdapter) rv.getAdapter();
+                adapter = (AllEtapaAdapter) rv.getAdapter();
 
                 if (etapa.size() == llm.findLastCompletelyVisibleItemPosition() + 1) {
                     //Toast.makeText(getActivity(), "Voce chegou ao final da sua lista.", Toast.LENGTH_SHORT).show();
                 }
+
+                if(dy>0){
+
+                    fab.hideMenuButton(true);
+                }else{
+                    fab.showMenuButton(true);
+                }
             }
         });
-
-        rv.addItemDecoration(new SimpleDividerItemDecoration(getActivity()));
 
         rv.setHasFixedSize(true);
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         llm.setOrientation(LinearLayoutManager.VERTICAL);
         rv.setLayoutManager(llm);
-        adapter = new EtapaAdapter(getActivity(), generateItens());
+        adapter = new AllEtapaAdapter(getActivity(), generateItens());
         adapter.setRecyclerViewOnClickListenerHack(this);
         rv.setAdapter(adapter);
-
     }
 
-    public ArrayList<Objetivo> generateItens() {
+    public ArrayList<Etapa> generateItens() {
         etapa = new ArrayList<>();
-        etapa.add(new Objetivo(1, "ALL: Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado.", 1, 100, "Em Andamento"));
-        etapa.add(new Objetivo(2, "ALL: Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado.", 2, 100, "Em Andamento"));
-        etapa.add(new Objetivo(3, "ALL: Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado.", 3, 100, "Em Andamento"));
-        etapa.add(new Objetivo(4, "ALL: Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado.", 4, 100, "Em Andamento"));
-        etapa.add(new Objetivo(7, "ALL: Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado.", 5, 100, "Em Andamento"));
-        etapa.add(new Objetivo(6, "ALL: Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado.", 6, 100, "Concluido"));
+        etapa.add(new Etapa(1, "ALL: Primeiro Etapa", "Nosso primeira Etapa será assim e assado.", 1, 100, "Em Andamento"));
+        etapa.add(new Etapa(2, "ALL: Primeiro Etapa", "Nosso primeira Etapa será assim e assado.", 2, 100, "Em Andamento"));
+        etapa.add(new Etapa(3, "ALL: Primeiro Etapa", "Nosso primeira Etapa será assim e assado.", 3, 100, "Em Andamento"));
+        etapa.add(new Etapa(4, "ALL: Primeiro Etapa", "Nosso primeira Etapa será assim e assado.", 4, 100, "Em Andamento"));
+        etapa.add(new Etapa(7, "ALL: Primeiro Etapa", "Nosso primeira Etapa será assim e assado.", 5, 100, "Em Andamento"));
+        etapa.add(new Etapa(6, "ALL: Primeiro Etapa", "Nosso primeira Etapa será assim e assado.", 6, 100, "Concluido"));
         return etapa;
     }
 
 
     @Override
     public void onClickListener(View view, int position) {
-        adapter = (EtapaAdapter) rv.getAdapter();
+        adapter = (AllEtapaAdapter) rv.getAdapter();
         //adapter.removeItemList(position);
-        //abrir Objetivo ou meta;
-        Toast.makeText(getActivity(), "Vc clicou num item da lista Geral", Toast.LENGTH_SHORT).show();
+        //abrir Etapa ou meta;
+        Toast.makeText(getActivity(), "Vc clicou num item da lista", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -263,4 +255,6 @@ public class EtapasFragment extends Fragment implements AllRecyclerViewOnClickLi
         position = 0;
         defaultSize = 0;
     }
+
+    */
 }

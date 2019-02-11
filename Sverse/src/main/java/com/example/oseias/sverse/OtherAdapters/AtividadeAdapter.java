@@ -75,9 +75,9 @@ public class AtividadeAdapter extends BaseAdapter {
         final Atividade atividade = (Atividade) this.getItem(i);
 
         CardView card = (CardView) view.findViewById(R.id.cardContainer);
-        TextView nameTxt = (TextView) view.findViewById(R.id.notaTitle);
+        TextView nameTxt = (TextView) view.findViewById(R.id.perfilNome);
         TextView nNotifi = (TextView) view.findViewById(R.id.nNotifiContainer);
-        ImageView img = (ImageView) view.findViewById(R.id.bgContainer);
+        ImageView img = (ImageView) view.findViewById(R.id.imgBG);
 
         //Add Values
         card.setPreventCornerOverlap(false);

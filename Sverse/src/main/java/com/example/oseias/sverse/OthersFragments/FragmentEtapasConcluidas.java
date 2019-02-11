@@ -1,36 +1,27 @@
 package com.example.oseias.sverse.OthersFragments;
 
-import android.content.ClipData;
-import android.content.ClipDescription;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
-import android.support.design.widget.AppBarLayout;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.DragEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.oseias.sverse.Interfaces.ConcluidosRecyclerViewOnClickListenerHack;
 import com.example.oseias.sverse.OtherAdapters.EtapasConcluidasAdapter;
-import com.example.oseias.sverse.OthersClass.SimpleDividerItemDecoration;
-import com.example.oseias.sverse.SQLite.model.Objetivo;
+import com.example.oseias.sverse.SQLite.model.Etapa;
 import com.versaplications.prodesenvelopment.sverse.R;
 
 import java.util.ArrayList;
 
-public class FragmentEtapasConcluidas extends Fragment implements ConcluidosRecyclerViewOnClickListenerHack {
+public class FragmentEtapasConcluidas extends Fragment{
     private RecyclerView rv;
     EtapasConcluidasAdapter adapter;
-    private ArrayList<Objetivo> objetivos;
+    private ArrayList<Etapa> etapas;
     private CardView cardTitulo;
     public ConstraintLayout areaReset;
     private TextView textTitulo;
@@ -47,9 +38,11 @@ public class FragmentEtapasConcluidas extends Fragment implements ConcluidosRecy
 
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_etapas_concluidas, null); //->container, false
-        initializeViews(container, rootView);
+        //initializeViews(container, rootView);
         return rootView;
     }
+
+    /*
 
     public void initializeViews(ViewGroup container, View rootView) {
         View parent = (View) container.getParent();
@@ -95,12 +88,11 @@ public class FragmentEtapasConcluidas extends Fragment implements ConcluidosRecy
                 LinearLayoutManager llm = (LinearLayoutManager) rv.getLayoutManager();
                 adapter = (EtapasConcluidasAdapter) rv.getAdapter();
 
-                if (objetivos.size() == llm.findLastCompletelyVisibleItemPosition() + 1) {
+                if (etapas.size() == llm.findLastCompletelyVisibleItemPosition() + 1) {
                     //Toast.makeText(getActivity(), "Voce chegou ao final da sua lista.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
-        rv.addItemDecoration(new SimpleDividerItemDecoration(getActivity()));
 
         rv.setHasFixedSize(true);
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
@@ -112,15 +104,15 @@ public class FragmentEtapasConcluidas extends Fragment implements ConcluidosRecy
 
     }
 
-    public ArrayList<Objetivo> generateItens() {
-        objetivos = new ArrayList<>();
-        //objetivos.add(new Objetivo(1, "Primeiro Objetivo", "Nosso primeira Objetivo será assim e assado.", 1, 100, "Em Andamento"));
-        //objetivos.add(new Objetivo(2, "Segundo Objetivo", "Nosso primeira Objetivo será assim e assado.", 2, 100, "Em Andamento"));
-        //objetivos.add(new Objetivo(3, "Terceiro Objetivo", "Nosso primeira Objetivo será assim e assado.", 3, 100, "Em Andamento"));
-        //objetivos.add(new Objetivo(4, "Quarto Objetivo", "Nosso primeira Objetivo será assim e assado.", 4, 100, "Em Andamento"));
-        //objetivos.add(new Objetivo(7, "Quinto Objetivo", "Nosso primeira Objetivo será assim e assado.", 5, 100, "Em Andamento"));
-        objetivos.add(new Objetivo(6, "Sexto Objetivo", "Nosso primeira Objetivo será assim e assado.", 6, 100, "Concluido"));
-        return objetivos;
+    public ArrayList<Etapa> generateItens() {
+        etapas = new ArrayList<>();
+        //etapas.add(new Etapa(1, "Primeiro Etapa", "Nosso primeira Etapa será assim e assado.", 1, 100, "Em Andamento"));
+        //etapas.add(new Etapa(2, "Segundo Etapa", "Nosso primeira Etapa será assim e assado.", 2, 100, "Em Andamento"));
+        //etapas.add(new Etapa(3, "Terceiro Etapa", "Nosso primeira Etapa será assim e assado.", 3, 100, "Em Andamento"));
+        //etapas.add(new Etapa(4, "Quarto Etapa", "Nosso primeira Etapa será assim e assado.", 4, 100, "Em Andamento"));
+        //etapas.add(new Etapa(7, "Quinto Etapa", "Nosso primeira Etapa será assim e assado.", 5, 100, "Em Andamento"));
+        etapas.add(new Etapa(6, "Sexto Etapa", "Nosso primeira Etapa será assim e assado.", 6, 100, "Concluido"));
+        return etapas;
     }
 
 
@@ -128,7 +120,7 @@ public class FragmentEtapasConcluidas extends Fragment implements ConcluidosRecy
     public void onClickListener(View view, int position) {
         adapter = (EtapasConcluidasAdapter) rv.getAdapter();
         //adapter.removeItemList(position);
-        //abrir Objetivo ou meta;
+        //abrir Etapa ou meta;
         Toast.makeText(getActivity(), "Vc clicou num item concluido", Toast.LENGTH_SHORT).show();
     }
 
@@ -199,6 +191,54 @@ public class FragmentEtapasConcluidas extends Fragment implements ConcluidosRecy
         return true;
     }
 
+    @Override
+    public boolean onDragListener(View view, DragEvent event) {
+        int action = event.getAction();
+        switch (action) {
+            case DragEvent.ACTION_DRAG_STARTED:
+                if(event.getClipDescription().hasMimeType(ClipDescription.MIMETYPE_TEXT_PLAIN)){
+                    return true;
+                }
+                return false;
+            case DragEvent.ACTION_DRAG_ENTERED:
+                ConstraintLayout cl1 = (ConstraintLayout) view;
+                if(cl1 == areaAcept) {
+                    cardTitulo.setBackgroundResource(defaultColor);
+                }
+                break;
+            case DragEvent.ACTION_DRAG_LOCATION:
+                break;
+            case DragEvent.ACTION_DRAG_EXITED:
+                ConstraintLayout cl2 = (ConstraintLayout) view;
+                if(cl2 == areaAcept) {
+                    cardTitulo.setBackgroundResource(aceptColor);
+                }
+                break;
+            case DragEvent.ACTION_DROP:
+                ConstraintLayout cl3 = (ConstraintLayout) view;
+                if(cl3 == areaAcept) {
+                    adapter.removeItemList(position);
+                }
+                if(adapter.getItemCount() == defaultSize){
+                    View viewDroped = (View) event.getLocalState();
+                    viewDroped.setVisibility(View.VISIBLE);
+                }
+                cardTitulo.setBackgroundResource(defaultColor);
+                imgAcept.setVisibility(View.INVISIBLE);
+                textTitulo.setText(aux);
+                break;
+            case DragEvent.ACTION_DRAG_ENDED:
+                if(!isDroped){
+                    View viewDroped = (View) event.getLocalState();
+                    viewDroped.setVisibility(View.VISIBLE);
+                }
+                resetarDefaults();
+                break;
+        }
+
+        return true;
+    }
+
     public void resetarDefaults(){
         cardTitulo.setBackgroundResource(defaultColor);
         imgExcluir.setVisibility(View.INVISIBLE);
@@ -207,4 +247,6 @@ public class FragmentEtapasConcluidas extends Fragment implements ConcluidosRecy
         position = 0;
         defaultSize = 0;
     }
+
+    */
 }

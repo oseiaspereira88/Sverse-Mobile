@@ -13,7 +13,6 @@ import android.graphics.RectF;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
-import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -71,10 +70,10 @@ public class BlocoDeNotasAdapter extends BaseAdapter {
         final NotaModel notaModel = (NotaModel) this.getItem(i);
 
         LinearLayout llNota = (LinearLayout) view.findViewById(R.id.llNota);
-        TextView titleNota = (TextView) view.findViewById(R.id.notaTitle);
+        TextView titleNota = (TextView) view.findViewById(R.id.perfilNome);
         TextView textNota = (TextView) view.findViewById(R.id.txtNota);
         TextView nNotifications = (TextView) view.findViewById(R.id.nNotifications);
-        ImageView imgNotaNotifi = (ImageView) view.findViewById(R.id.imgNotification);
+        ImageView imgNotaNotifi = (ImageView) view.findViewById(R.id.imgConfig);
 
         //Add Values
         //card.setPreventCornerOverlap(false);
