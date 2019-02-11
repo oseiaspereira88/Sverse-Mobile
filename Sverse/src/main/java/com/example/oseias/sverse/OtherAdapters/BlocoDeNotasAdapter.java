@@ -70,7 +70,7 @@ public class BlocoDeNotasAdapter extends BaseAdapter {
         final NotaModel notaModel = (NotaModel) this.getItem(i);
 
         LinearLayout llNota = (LinearLayout) view.findViewById(R.id.llNota);
-        TextView titleNota = (TextView) view.findViewById(R.id.perfilNome);
+        TextView titleNota = (TextView) view.findViewById(R.id.tvNomePerfil);
         TextView textNota = (TextView) view.findViewById(R.id.txtNota);
         TextView nNotifications = (TextView) view.findViewById(R.id.nNotifications);
         ImageView imgNotaNotifi = (ImageView) view.findViewById(R.id.imgConfig);

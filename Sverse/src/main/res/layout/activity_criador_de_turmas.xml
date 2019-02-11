@@ -76,13 +76,13 @@
                             android:layout_marginTop="8dp"
                             android:onClick="selecionarImageContainer"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toStartOf="@+id/perfilNome"
+                            app:layout_constraintEnd_toStartOf="@+id/tvNomePerfil"
                             app:layout_constraintStart_toStartOf="@+id/imgPerfil"
                             app:layout_constraintTop_toTopOf="@+id/imgPerfil"
                             app:srcCompat="@android:drawable/ic_menu_camera" />
 
                         <TextView
-                            android:id="@+id/perfilNome"
+                            android:id="@+id/tvNomePerfil"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="8dp"
@@ -129,7 +129,7 @@
                             app:layout_constraintBottom_toBottomOf="@+id/imgPerfil"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="@+id/imgPerfil"
-                            app:layout_constraintTop_toTopOf="@+id/perfilNome" />
+                            app:layout_constraintTop_toTopOf="@+id/tvNomePerfil" />
 
                         <ImageView
                             android:id="@+id/imgConfig"

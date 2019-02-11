@@ -156,7 +156,7 @@
                                 android:layout_height="2dp"
                                 android:layout_marginBottom="6dp"
                                 app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="@+id/perfilNome"
+                                app:layout_constraintEnd_toEndOf="@+id/tvNomePerfil"
                                 app:layout_constraintStart_toStartOf="@+id/imgBG"
                                 app:srcCompat="@drawable/border6" />
 
@@ -181,13 +181,13 @@
                                 android:onClick="selecionarImageContainer"
                                 android:scaleType="centerCrop"
                                 app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toStartOf="@+id/perfilNome"
+                                app:layout_constraintEnd_toStartOf="@+id/tvNomePerfil"
                                 app:layout_constraintStart_toStartOf="@+id/imgPerfil"
                                 app:layout_constraintTop_toTopOf="@+id/imgPerfil"
                                 app:srcCompat="@android:drawable/ic_menu_camera" />
 
                             <TextView
-                                android:id="@+id/perfilNome"
+                                android:id="@+id/tvNomePerfil"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="8dp"
@@ -223,7 +223,7 @@
                                 android:textSize="12sp"
                                 android:textStyle="bold"
                                 app:layout_constraintBottom_toBottomOf="@+id/imgBG"
-                                app:layout_constraintEnd_toEndOf="@+id/perfilNome" />
+                                app:layout_constraintEnd_toEndOf="@+id/tvNomePerfil" />
 
                         </android.support.constraint.ConstraintLayout>
 

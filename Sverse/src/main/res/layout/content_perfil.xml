@@ -53,10 +53,10 @@
                 android:layout_marginEnd="12dp"
                 android:src="@android:drawable/ic_menu_camera"
                 app:layout_constraintBottom_toBottomOf="@+id/imgPerfil"
-                app:layout_constraintEnd_toStartOf="@+id/perfilNome" />
+                app:layout_constraintEnd_toStartOf="@+id/tvNomePerfil" />
 
             <TextView
-                android:id="@+id/perfilNome"
+                android:id="@+id/tvNomePerfil"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
@@ -103,7 +103,7 @@
                 app:layout_constraintBottom_toBottomOf="@+id/imgPerfil"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/imgPerfil"
-                app:layout_constraintTop_toTopOf="@+id/perfilNome" />
+                app:layout_constraintTop_toTopOf="@+id/tvNomePerfil" />
 
             <ImageView
                 android:id="@+id/imgConfig"
@@ -173,7 +173,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/editNome" />
 
                 <EditText
-                    android:id="@+id/editBiografia"
+                    android:id="@+id/editBio"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
@@ -192,7 +192,7 @@
                     android:layout_marginTop="16dp"
                     android:text="Curso"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editBiografia" />
+                    app:layout_constraintTop_toBottomOf="@+id/editBio" />
 
                 <EditText
                     android:id="@+id/editCurso"
@@ -240,7 +240,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/editHobbies" />
 
                 <EditText
-                    android:id="@+id/editEditTrello"
+                    android:id="@+id/editTrello"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
@@ -259,7 +259,7 @@
                     android:layout_marginTop="16dp"
                     android:text="Github"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editEditTrello" />
+                    app:layout_constraintTop_toBottomOf="@+id/editTrello" />
 
                 <EditText
                     android:id="@+id/editGithub"
@@ -329,7 +329,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tvContainerType6">
+                app:layout_constraintTop_toTopOf="@+id/tvAmigos">
 
                 <TextView
                     android:id="@+id/textView65"
@@ -344,7 +344,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:id="@+id/editBiografiaShow"
+                    android:id="@+id/editBioShow"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
@@ -367,7 +367,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/editBiografiaShow" />
+                    app:layout_constraintTop_toBottomOf="@+id/editBioShow" />
 
                 <EditText
                     android:id="@+id/editCursoShow"
@@ -490,11 +490,11 @@
         android:textColor="@android:color/background_light"
         android:textSize="12sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/tvContainerType6"
+        app:layout_constraintEnd_toStartOf="@+id/tvAmigos"
         app:layout_constraintTop_toBottomOf="@+id/cardCabacalho" />
 
     <TextView
-        android:id="@+id/tvContainerType6"
+        android:id="@+id/tvAmigos"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -512,11 +512,11 @@
         android:textColor="@android:color/background_light"
         android:textSize="12sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/tvContainerType4"
+        app:layout_constraintEnd_toStartOf="@+id/tvSolicitacoes"
         app:layout_constraintTop_toBottomOf="@+id/cardCabacalho" />
 
     <TextView
-        android:id="@+id/tvContainerType4"
+        android:id="@+id/tvSolicitacoes"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"

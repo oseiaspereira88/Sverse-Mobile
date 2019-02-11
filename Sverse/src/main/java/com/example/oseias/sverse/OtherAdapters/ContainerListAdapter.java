@@ -70,7 +70,7 @@ public class ContainerListAdapter extends BaseAdapter {
 
         Container container = (Container) this.getItem(i);
         CardView card = (CardView) view.findViewById(R.id.cardContainer);
-        TextView tvName = (TextView) view.findViewById(R.id.perfilNome);
+        TextView tvName = (TextView) view.findViewById(R.id.tvNomePerfil);
         TextView tvType = (TextView) view.findViewById(R.id.tvEmailOrTipo);
         TextView nNotifications = (TextView) view.findViewById(R.id.nNotifications);
         ImageView imgNotification = (ImageView) view.findViewById(R.id.imgConfig);

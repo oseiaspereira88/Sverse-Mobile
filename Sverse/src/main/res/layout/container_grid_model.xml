@@ -16,7 +16,7 @@
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/perfilNome"
+        app:layout_constraintStart_toStartOf="@+id/tvNomePerfil"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/bg11" />
 
@@ -47,7 +47,7 @@
         app:layout_constraintTop_toTopOf="@+id/imgConfig" />
 
     <TextView
-        android:id="@+id/perfilNome"
+        android:id="@+id/tvNomePerfil"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"

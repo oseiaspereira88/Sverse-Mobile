@@ -44,7 +44,7 @@
             app:srcCompat="@drawable/logo88" />
 
         <TextView
-            android:id="@+id/perfilNome"
+            android:id="@+id/tvNomePerfil"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -91,7 +91,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/imgPerfil"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/imgPerfil"
-            app:layout_constraintTop_toTopOf="@+id/perfilNome" />
+            app:layout_constraintTop_toTopOf="@+id/tvNomePerfil" />
 
         <ImageView
             android:id="@+id/imgConfig"
