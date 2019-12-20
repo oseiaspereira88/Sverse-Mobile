@@ -23,7 +23,7 @@ import android.widget.Toast;
 import com.example.oseias.sverse.DialogFragments.AlertDialogFragment;
 import com.example.oseias.sverse.MainActivity;
 import com.example.oseias.sverse.OthersClass.GestorDeNotas;
-import com.versaplications.prodesenvelopment.sverse.R;
+import com.exemple.oseias.sverse.R;
 import com.example.oseias.sverse.SQLite.model.NotaModel;
 
 import java.util.Calendar;

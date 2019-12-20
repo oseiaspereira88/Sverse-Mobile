@@ -29,8 +29,7 @@ import com.example.oseias.sverse.SQLite.model.Configuracao;
 import com.example.oseias.sverse.SQLite.model.Etapa;
 import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
-import com.versaplications.prodesenvelopment.sverse.R;
-
+import com.exemple.oseias.sverse.R;
 import java.util.ArrayList;
 
 public class AreaDeTrabalhoEmGrupo extends AppCompatActivity implements RecyclerViewOnClickListenerHack {

@@ -29,7 +29,7 @@ import com.example.oseias.sverse.DialogFragments.AlertDialogFragment;
 import com.example.oseias.sverse.OthersClass.GestorDeNotas;
 import com.example.oseias.sverse.SQLite.dao.ConfiguracaoDAO;
 import com.example.oseias.sverse.SQLite.model.Configuracao;
-import com.versaplications.prodesenvelopment.sverse.R;
+import com.exemple.oseias.sverse.R;
 import com.example.oseias.sverse.SQLite.dao.NotaDAO;
 import com.example.oseias.sverse.SQLite.model.NotaModel;
 
@@ -265,7 +265,7 @@ public class CriadorDeNotas extends AppCompatActivity {
         img.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("ResourceType")
             @Override
-            public void onClick(View v) {
+            public void onClick(final View v) {
                 cancelarAlarme();
                 Toast.makeText(CriadorDeNotas.this, "Alarme Cancelado.", Toast.LENGTH_SHORT).show();
                 //View.inflate(CriadorDeNotas.this, R.id.bDelAlarme, CriadorDeNotas.this.findViewById(R.id.vGrup));

@@ -6,15 +6,14 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import com.exemple.oseias.sverse.R;
 
-import com.versaplications.prodesenvelopment.sverse.R;
-
-public class ActivityConfiguracoes extends AppCompatActivity {
+public class Lixeira extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_configuracoes);
+        setContentView(R.layout.activity_lixeira);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

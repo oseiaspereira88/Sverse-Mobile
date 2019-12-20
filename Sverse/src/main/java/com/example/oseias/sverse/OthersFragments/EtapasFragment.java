@@ -9,8 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.versaplications.prodesenvelopment.sverse.R;
-
+import com.exemple.oseias.sverse.R;
 public class EtapasFragment extends Fragment {
 //    private RecyclerView rv;
 //    private ConstraintLayout clMore;

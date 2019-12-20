@@ -15,8 +15,7 @@ import android.widget.TextView;
 import com.example.oseias.sverse.SQLite.dao.UsuarioDAO;
 import com.example.oseias.sverse.SQLite.model.Etapa;
 import com.example.oseias.sverse.SQLite.model.Usuario;
-import com.versaplications.prodesenvelopment.sverse.R;
-
+import com.exemple.oseias.sverse.R;
 /**
  * Created by Oseias on 10/01/2018.
  */

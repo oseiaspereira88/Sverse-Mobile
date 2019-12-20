@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.example.oseias.sverse.OthersClass.ItemArea;
 import com.example.oseias.sverse.OthersClass.UnidadeDeEstudo;
-import com.versaplications.prodesenvelopment.sverse.R;
+import com.exemple.oseias.sverse.R;
 import java.util.ArrayList;
 
 /**

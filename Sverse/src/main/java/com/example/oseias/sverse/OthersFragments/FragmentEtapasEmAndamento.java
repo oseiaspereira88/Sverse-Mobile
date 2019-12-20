@@ -14,8 +14,7 @@ import android.widget.TextView;
 
 import com.example.oseias.sverse.OtherAdapters.EtapasEmAndamentoAdapter;
 import com.example.oseias.sverse.SQLite.model.Etapa;
-import com.versaplications.prodesenvelopment.sverse.R;
-
+import com.exemple.oseias.sverse.R;
 import java.util.ArrayList;
 
 public class FragmentEtapasEmAndamento extends Fragment {

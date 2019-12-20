@@ -12,7 +12,7 @@ import com.example.oseias.sverse.OtherAdapters.ContainerGridAdapter;
 import com.example.oseias.sverse.OtherAdapters.GrupAdapter;
 import com.example.oseias.sverse.OtherAdapters.MateriaAdapter;
 import com.example.oseias.sverse.OtherAdapters.PersonalAdapter;
-import com.versaplications.prodesenvelopment.sverse.R;
+import com.exemple.oseias.sverse.R;
 import com.example.oseias.sverse.SQLite.model.Container;
 
 import java.util.ArrayList;

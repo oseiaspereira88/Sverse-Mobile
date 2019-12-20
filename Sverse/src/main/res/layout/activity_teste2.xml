@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.oseias.sverse.com.example.oseias.sverse.OthersActivitys.EstudoEmCiclo">
+    tools:context="com.example.oseias.sverse.OthersActivitys.EstudoEmCiclo">
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tabLayout"

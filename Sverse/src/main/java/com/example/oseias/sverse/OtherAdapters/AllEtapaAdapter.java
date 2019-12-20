@@ -16,8 +16,7 @@ import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.example.oseias.sverse.Interfaces.RecyclerViewOnClickListenerHack;
 import com.example.oseias.sverse.SQLite.model.Etapa;
-import com.versaplications.prodesenvelopment.sverse.R;
-
+import com.exemple.oseias.sverse.R;
 import java.util.ArrayList;
 
 public class AllEtapaAdapter extends RecyclerView.Adapter<AllEtapaAdapter.MyViewHolder> {
@@ -42,7 +41,7 @@ public class AllEtapaAdapter extends RecyclerView.Adapter<AllEtapaAdapter.MyView
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(final MyViewHolder holder, int position) {
         Log.i("LOG", "onBindViewHolder()");
         holder.titulo.setText(etapas.get(position).getTitulo());
         holder.ordemPosition.setText(etapas.get(position).getIndexOrdem() + "");
@@ -87,7 +86,7 @@ public class AllEtapaAdapter extends RecyclerView.Adapter<AllEtapaAdapter.MyView
         public TextView ordemPosition;
         public CheckBox checkBox;
 
-        public MyViewHolder(View itemView) {
+        public MyViewHolder(final View itemView) {
             super(itemView);
             titulo = (TextView) itemView.findViewById(R.id.textObjetivo);
             ordemPosition = (TextView) itemView.findViewById(R.id.tvPosicao);

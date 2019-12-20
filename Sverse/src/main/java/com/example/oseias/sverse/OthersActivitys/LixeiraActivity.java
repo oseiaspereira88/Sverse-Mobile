@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import com.versaplications.prodesenvelopment.sverse.R;
+import com.exemple.oseias.sverse.R;
 
 public class LixeiraActivity extends AppCompatActivity {
 

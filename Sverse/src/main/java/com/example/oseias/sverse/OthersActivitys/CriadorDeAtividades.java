@@ -9,7 +9,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.oseias.sverse.MainActivity;
-import com.versaplications.prodesenvelopment.sverse.R;
+import com.exemple.oseias.sverse.R;
 import com.example.oseias.sverse.SQLite.dao.AtividadeDAO;
 import com.example.oseias.sverse.SQLite.model.Atividade;
 

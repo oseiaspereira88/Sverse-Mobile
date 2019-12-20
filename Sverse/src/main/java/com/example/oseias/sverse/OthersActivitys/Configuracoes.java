@@ -7,14 +7,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import com.versaplications.prodesenvelopment.sverse.R;
-
-public class ActivityLixeira extends AppCompatActivity {
+import com.exemple.oseias.sverse.R;
+public class Configuracoes extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lixeira);
+        setContentView(R.layout.activity_configuracoes);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

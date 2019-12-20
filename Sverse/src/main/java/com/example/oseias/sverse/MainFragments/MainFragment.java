@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import com.example.oseias.sverse.Adapters.MyFragmentPagerAdapter;
 import com.example.oseias.sverse.OthersClass.ArquivamentoIndexFragment.IndexFragement;
-import com.versaplications.prodesenvelopment.sverse.R;
+import com.exemple.oseias.sverse.R;
 import com.example.oseias.sverse.SQLite.dao.ConfiguracaoDAO;
 import com.example.oseias.sverse.SQLite.model.Configuracao;
 

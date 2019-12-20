@@ -25,7 +25,7 @@ import android.widget.Toast;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.example.oseias.sverse.OthersActivitys.CriadorDeNotas;
-import com.versaplications.prodesenvelopment.sverse.R;
+import com.exemple.oseias.sverse.R;
 import com.example.oseias.sverse.SQLite.model.NotifiModel;
 
 import java.util.ArrayList;
@@ -62,7 +62,7 @@ public class NotifiAdapter extends BaseAdapter {
 
     @RequiresApi(api = Build.VERSION_CODES.DONUT)
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
+    public View getView(final int i, View view, ViewGroup viewGroup) {
 
         if (view == null) {
             view = LayoutInflater.from(c).inflate(R.layout.notifi_model, viewGroup, false);
@@ -85,7 +85,7 @@ public class NotifiAdapter extends BaseAdapter {
         titleNotifi.setText(notifiModel.getTitulo());
         textNotifi.setText(notifiModel.getTexto());
 
-        View finalView = view;
+        final View finalView = view;
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

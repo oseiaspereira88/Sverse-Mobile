@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.example.oseias.sverse.OthersClass.ItemArea;
-import com.versaplications.prodesenvelopment.sverse.R;
+import com.exemple.oseias.sverse.R;
 import java.util.ArrayList;
 
 public class ItensAdapter extends BaseAdapter {
@@ -45,7 +45,7 @@ public class ItensAdapter extends BaseAdapter {
 
         //TextView tvItemNumber = (TextView) view.findViewById(R.id.tvItemNumber);
         //tvItemNumber.setText(i+1);
-        View finalView = view.findViewById(R.id.img);
+        final View finalView = view.findViewById(R.id.img);
         int finalI = i;
         finalView.setOnClickListener(new View.OnClickListener() {
             @Override

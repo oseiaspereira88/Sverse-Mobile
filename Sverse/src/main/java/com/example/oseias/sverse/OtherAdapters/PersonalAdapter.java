@@ -24,8 +24,7 @@ import android.widget.Toast;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.example.oseias.sverse.OthersActivitys.Teste;
-import com.versaplications.prodesenvelopment.sverse.R;
-import com.example.oseias.sverse.SQLite.model.Container;
+import com.exemple.oseias.sverse.R;import com.example.oseias.sverse.SQLite.model.Container;
 
 import java.util.ArrayList;
 
@@ -120,7 +119,7 @@ public class PersonalAdapter extends BaseAdapter {
                 .onto(card);*/
 
 
-        View finalView = view;
+        final View finalView = view;
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

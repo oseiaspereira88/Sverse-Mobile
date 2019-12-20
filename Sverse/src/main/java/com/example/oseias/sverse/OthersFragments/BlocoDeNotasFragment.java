@@ -15,7 +15,7 @@ import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.example.oseias.sverse.OtherAdapters.BlocoDeNotasAdapter;
 import com.example.oseias.sverse.OthersActivitys.CriadorDeNotas;
-import com.versaplications.prodesenvelopment.sverse.R;
+import com.exemple.oseias.sverse.R;
 import com.example.oseias.sverse.SQLite.dao.ConfiguracaoDAO;
 import com.example.oseias.sverse.SQLite.dao.NotaDAO;
 import com.example.oseias.sverse.SQLite.model.Configuracao;

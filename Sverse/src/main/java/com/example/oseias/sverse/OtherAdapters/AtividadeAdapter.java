@@ -27,7 +27,7 @@ import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.example.oseias.sverse.OthersFragments.ContainersFragment;
 import com.example.oseias.sverse.OthersActivitys.CriadorDeAtividades;
-import com.versaplications.prodesenvelopment.sverse.R;
+import com.exemple.oseias.sverse.R;
 import com.example.oseias.sverse.SQLite.model.Atividade;
 
 import java.util.ArrayList;
@@ -66,7 +66,7 @@ public class AtividadeAdapter extends BaseAdapter {
 
     @RequiresApi(api = Build.VERSION_CODES.DONUT)
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
+    public View getView(final int i, View view, ViewGroup viewGroup) {
 
         if (view == null) {
             view = LayoutInflater.from(c).inflate(R.layout.container_grid_model, viewGroup, false);
@@ -125,7 +125,7 @@ public class AtividadeAdapter extends BaseAdapter {
                 .onto(card);*/
 
 
-        View finalView = view;
+        final View finalView = view;
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

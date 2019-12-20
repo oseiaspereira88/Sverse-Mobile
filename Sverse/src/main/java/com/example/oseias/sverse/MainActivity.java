@@ -6,22 +6,22 @@ import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.example.oseias.sverse.OthersActivitys.ActivityConfiguracoes;
+import com.example.oseias.sverse.OthersActivitys.Configuracoes;
 import com.example.oseias.sverse.OthersActivitys.CriadorDeAtividades;
 import com.example.oseias.sverse.OthersActivitys.EstudoEmCiclo;
 import com.example.oseias.sverse.OthersClass.ArquivamentoIndexFragment.IndexFragement;
@@ -31,11 +31,11 @@ import com.example.oseias.sverse.MainFragments.FragmentFerramentas;
 import com.example.oseias.sverse.MainFragments.FragmentPerfil;
 import com.example.oseias.sverse.MainFragments.MainFragment;
 import com.example.oseias.sverse.MainFragments.FragmentSobre;
-import com.example.oseias.sverse.OthersActivitys.LoginActivity;
+import com.example.oseias.sverse.OthersActivitys.Login;
 import com.example.oseias.sverse.SQLite.dao.ConfiguracaoDAO;
 import com.example.oseias.sverse.SQLite.dao.UsuarioDAO;
 import com.example.oseias.sverse.SQLite.model.Configuracao;
-import com.versaplications.prodesenvelopment.sverse.R;
+import com.exemple.oseias.sverse.R;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -49,10 +49,14 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Toast.makeText(this, "A Act Main foi aberta.", Toast.LENGTH_SHORT).show();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_principal);
-        setSupportActionBar(toolbar);
+
+        ///error:
+        // setSupportActionBar(toolbar);
+
         AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.appBar1);
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -127,7 +131,7 @@ public class MainActivity extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_abrir_configuracoes) {
             Toast.makeText(this, "Abrindo Configurações...", Toast.LENGTH_SHORT).show();
-            Intent it = new Intent(this, ActivityConfiguracoes.class);
+            Intent it = new Intent(this, Configuracoes.class);
             startActivity(it);
         } else if (id == R.id.action_reiniciar_activity) {
             GestorDeNotas gn = new GestorDeNotas(this);
@@ -207,7 +211,7 @@ public class MainActivity extends AppCompatActivity
         configsDAO.atualizarConfig(new Configuracao(Configuracao.IS_LOGIN_PERSISTENT, 0));
         configsDAO.atualizarConfig(new Configuracao(Configuracao.ID_LOGIN, 0));
 
-        Intent it = new Intent(this, LoginActivity.class);
+        Intent it = new Intent(this, Login.class);
         startActivity(it);
         finish();
     }

@@ -24,7 +24,7 @@ import android.widget.Toast;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.example.oseias.sverse.OthersActivitys.CriadorDeTurmas;
-import com.versaplications.prodesenvelopment.sverse.R;
+import com.exemple.oseias.sverse.R;
 import com.example.oseias.sverse.SQLite.model.Container;
 
 import java.util.ArrayList;
@@ -68,14 +68,14 @@ public class ContainerListAdapter extends BaseAdapter {
             view = LayoutInflater.from(c).inflate(R.layout.container_list_model , viewGroup, false);
         }
 
-        Container container = (Container) this.getItem(i);
+        final Container container = (Container) this.getItem(i);
         CardView card = (CardView) view.findViewById(R.id.cardContainer);
         TextView tvName = (TextView) view.findViewById(R.id.tvNomePerfil);
         TextView tvType = (TextView) view.findViewById(R.id.tvEmailOrTipo);
         TextView nNotifications = (TextView) view.findViewById(R.id.nNotifications);
         ImageView imgNotification = (ImageView) view.findViewById(R.id.imgConfig);
         ImageView bgContainer = (ImageView) view.findViewById(R.id.imgBG);
-        ImageView imgContainer = (ImageView) view.findViewById(R.id.imgPerfil);
+        final ImageView imgContainer = (ImageView) view.findViewById(R.id.imgPerfil);
 
         //Add Values
         //card.setPreventCornerOverlap(false);
@@ -90,7 +90,7 @@ public class ContainerListAdapter extends BaseAdapter {
             imgNotification.setVisibility(View.INVISIBLE);
         }
 
-        View finalView = view;
+        final View finalView = view;
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

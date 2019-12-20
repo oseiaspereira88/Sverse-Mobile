@@ -19,8 +19,7 @@ import com.example.oseias.sverse.SQLite.dao.ConfiguracaoDAO;
 import com.example.oseias.sverse.SQLite.dao.ContainerDAO;
 import com.example.oseias.sverse.SQLite.model.Configuracao;
 import com.example.oseias.sverse.SQLite.model.Container;
-import com.versaplications.prodesenvelopment.sverse.R;
-
+import com.exemple.oseias.sverse.R;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Random;

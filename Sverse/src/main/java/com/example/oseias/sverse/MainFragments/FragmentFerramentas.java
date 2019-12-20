@@ -13,8 +13,7 @@ import android.widget.Toast;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.example.oseias.sverse.OthersActivitys.AreaDeTrabalhoEmGrupo;
-import com.versaplications.prodesenvelopment.sverse.R;
-
+import com.exemple.oseias.sverse.R;
 /**
  * Created by Oseias on 10/01/2018.
  */

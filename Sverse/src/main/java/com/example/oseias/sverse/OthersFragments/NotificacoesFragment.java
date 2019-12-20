@@ -11,7 +11,7 @@ import android.widget.GridView;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.example.oseias.sverse.OtherAdapters.NotifiAdapter;
-import com.versaplications.prodesenvelopment.sverse.R;
+import com.exemple.oseias.sverse.R;
 import com.example.oseias.sverse.SQLite.dao.NotifiDAO;
 import com.example.oseias.sverse.SQLite.model.NotifiModel;
 

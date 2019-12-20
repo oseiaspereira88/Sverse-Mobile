@@ -20,7 +20,7 @@ import com.example.oseias.sverse.OtherAdapters.ContainerListAdapter;
 import com.example.oseias.sverse.OthersActivitys.CriadorDeTurmas;
 import com.example.oseias.sverse.SQLite.dao.ConfiguracaoDAO;
 import com.example.oseias.sverse.SQLite.model.Configuracao;
-import com.versaplications.prodesenvelopment.sverse.R;
+import com.exemple.oseias.sverse.R;
 import com.example.oseias.sverse.OtherAdapters.AtividadeAdapter;
 import com.example.oseias.sverse.OtherAdapters.GrupAdapter;
 import com.example.oseias.sverse.OtherAdapters.MateriaAdapter;

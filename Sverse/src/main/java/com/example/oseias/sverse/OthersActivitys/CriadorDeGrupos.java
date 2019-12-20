@@ -2,7 +2,7 @@ package com.example.oseias.sverse.OthersActivitys;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import com.versaplications.prodesenvelopment.sverse.R;
+import com.exemple.oseias.sverse.R;
 
 public class CriadorDeGrupos extends AppCompatActivity {
 

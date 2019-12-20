@@ -26,7 +26,6 @@ public class UsuarioDAO {
     }
 
     private SQLiteDatabase getDatabase() {
-
         //Cria um bd se não houver um
         if (database == null) {
             database = dataBaseaseHelper.getWritableDatabase();
@@ -86,7 +85,7 @@ public class UsuarioDAO {
         Cursor cursor = getDatabase().query(DataBaseHelper.Usuarios.TABELA,
                 DataBaseHelper.Usuarios.COLUNAS_COM_ID, "_id = ?", new String[]{Integer.toString(id)}, null, null, null);
         if (cursor.moveToNext()) {
-            Usuario model = criarUsuario(cursor);
+            Usuario model = criarUsuarioComId(cursor);
             cursor.close();
             return model;
         }
@@ -130,6 +129,4 @@ public class UsuarioDAO {
         database.close();
         database = null;
     }
-
-
 }

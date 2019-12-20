@@ -17,14 +17,14 @@ import android.widget.Toast;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.example.oseias.sverse.MainActivity;
-import com.versaplications.prodesenvelopment.sverse.R;
+import com.exemple.oseias.sverse.R;
 import com.example.oseias.sverse.SQLite.dao.ConfiguracaoDAO;
 import com.example.oseias.sverse.SQLite.dao.UsuarioDAO;
 import com.example.oseias.sverse.SQLite.model.Configuracao;
 
 import java.util.ArrayList;
 
-public class LoginActivity extends AppCompatActivity {
+public class Login extends AppCompatActivity {
     ConstraintLayout cl;
     private EditText editeLogin, editeSenha;
     private UsuarioDAO dao;
@@ -43,25 +43,26 @@ public class LoginActivity extends AppCompatActivity {
         configsDAO = new ConfiguracaoDAO(this);
         configuracoes = configsDAO.listarConfigs();
         Toast.makeText(this, "Número de configs:" + configuracoes.size(), Toast.LENGTH_LONG).show();
+        inicializarVariaveis();
+
+        dao = new UsuarioDAO(this);
 
         ///////Animação de intro/////
         ///!!!Falta Implementar!!!///
 
         if (isPrimaryExibition()) {
             //Run Play an Primary Exibition
-            Toast.makeText(this, "Seja bem vindo: Siga o breve tutorial.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Seja bem vindo: Siga um breve tutorial...", Toast.LENGTH_LONG).show();
             //Play an SmartTutor
             //-------------------------//
             setBasicConfig();
-            inicializarVariaveis();
-
-            /// Do IF abaixo /////////
 
         } else if (configuracoes.get(Configuracao.IS_LOGIN_PERSISTENT).getvalorConfig()==1) {
             //Msg de Boas Vindas
-            //Toast.makeText(this, "Seja bem vindo de volta "
-            //+ dao.buscarUsuarioPorId(configuracoes.get(Configuracao.ID_LOGIN).getvalorConfig()).getNome()
-            //+ ".", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Seja bem vindo de volta "
+            + dao.buscarUsuarioPorId(configuracoes.get(Configuracao.ID_LOGIN).getvalorConfig()).getNome()
+            + ".", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Sessão iniciada por persistencia de login.", Toast.LENGTH_SHORT).show();
             YoYo.with(Techniques.Landing)
                     .duration(400)
                     .repeat(0)
@@ -69,6 +70,7 @@ public class LoginActivity extends AppCompatActivity {
 
             //Run an Carregamento com o Progress Bar
             ////Falta Implementar
+
             Intent it = new Intent(this, MainActivity.class);
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
@@ -79,12 +81,8 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }, 1000);
             startActivity(it);
-        } else {
-            inicializarVariaveis();
         }
     }
-
-
 
     public boolean isPrimaryExibition(){
         if(configsDAO.listarConfigs().size() != 0){
@@ -108,8 +106,7 @@ public class LoginActivity extends AppCompatActivity {
         editeSenha = (EditText) findViewById(R.id.editSenha);
         chk_connect = (CheckBox) findViewById(R.id.chk_connect);
         chk_connect.setChecked(true);
-        bEntrar = (Button) findViewById(R.id.bCadastrar);
-        dao = new UsuarioDAO(this);
+        bEntrar = (Button) findViewById(R.id.bEntrar);
     }
 
     public void entrar(View view){
@@ -118,6 +115,8 @@ public class LoginActivity extends AppCompatActivity {
             String senha = editeSenha.getText().toString();
 
           if (dao.logar(login, senha)){
+
+              // Abrindo a Main Act
               Intent it = new Intent(this, MainActivity.class);
               final Handler handler = new Handler();
               handler.postDelayed(new Runnable() {
@@ -129,10 +128,11 @@ public class LoginActivity extends AppCompatActivity {
               }, 1000);
               startActivity(it);
 
-              //Teste de persistencia
               //setando as configurações
               if(chk_connect.isChecked()){
                   configsDAO.atualizarConfig(new Configuracao(Configuracao.IS_LOGIN_PERSISTENT, 1));
+              } else {
+                  configsDAO.atualizarConfig(new Configuracao(Configuracao.IS_LOGIN_PERSISTENT, 0));
               }
               configsDAO.atualizarConfig(new Configuracao(Configuracao.ID_LOGIN, dao.retornUserPorLogin(login, senha).get_id()));
 
@@ -144,6 +144,7 @@ public class LoginActivity extends AppCompatActivity {
                       .duration(400)
                       .repeat(0)
                       .playOn(view);
+
           } else{
               Toast.makeText(this, "Login Não Efetuado.", Toast.LENGTH_SHORT).show();
               Toast.makeText(this, "Verifique os Campos.", Toast.LENGTH_SHORT).show();
@@ -177,8 +178,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void abrirCadastrar(View view){
-        Toast.makeText(this, "Abrindo Editor de Notas...", Toast.LENGTH_SHORT).show();
-        Intent it = new Intent(this, Cadastrar.class);
+        Toast.makeText(this, "Abrindo TELA DE CADASTRO...", Toast.LENGTH_SHORT).show();
+        Intent it = new Intent(this, Cadastro.class);
         startActivity(it);
     }
 
