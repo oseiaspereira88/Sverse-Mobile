@@ -1,25 +1,19 @@
 <resources>
-
-    <!-- Base application theme. -->
-
-    <style name="SverseTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-    </style>
-    <style name="SverseTheme2" parent="Theme.AppCompat.Light">
-        <!-- Customize your theme here. -->
+    <style name="SverseTheme" parent="Theme.AppCompat.Light">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="SverseTheme2.NoActionBar">
-        <item name="android:windowActionBar">false</item>
-        <item name="android:windowNoTitle">true</item>
+    <style name="SverseTheme.NoActionBar" parent="SverseTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="SverseTheme.NoTitle" parent="SverseTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">false</item>
+    </style>
     <style name="SverseTheme.AppBarOverlay" parent="android:ThemeOverlay.Material.Dark.ActionBar" />
 
     <style name="SverseTheme.PopupOverlay" parent="android:ThemeOverlay.Material.Light" />

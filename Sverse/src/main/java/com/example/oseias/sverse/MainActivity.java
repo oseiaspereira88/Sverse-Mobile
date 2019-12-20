@@ -17,8 +17,8 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.Window;
 import android.widget.Toast;
-
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.example.oseias.sverse.OthersActivitys.Configuracoes;
@@ -49,13 +49,11 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Toast.makeText(this, "A Act Main foi aberta.", Toast.LENGTH_SHORT).show();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_principal);
-
         ///error:
-        // setSupportActionBar(toolbar);
+        setSupportActionBar(toolbar);
 
         AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.appBar1);
 

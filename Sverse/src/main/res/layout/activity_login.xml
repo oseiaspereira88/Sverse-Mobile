@@ -189,7 +189,7 @@
                 android:background="@drawable/border_toolbar"
                 android:elevation="4dp"
                 android:onClick="abrirCadastrar"
-                android:text=" Cadastre-se "
+                android:text="  Cadastre-se  "
                 android:textAllCaps="false"
                 android:textColor="@color/branco"
                 android:textSize="18sp"
