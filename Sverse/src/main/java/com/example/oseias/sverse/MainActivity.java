@@ -17,10 +17,11 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.Window;
 import android.widget.Toast;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
+import com.example.oseias.sverse.MainFragments.FragmentConfiguracoes;
+import com.example.oseias.sverse.OthersActivitys.ChronometerTest;
 import com.example.oseias.sverse.OthersActivitys.Configuracoes;
 import com.example.oseias.sverse.OthersActivitys.CriadorDeAtividades;
 import com.example.oseias.sverse.OthersActivitys.EstudoEmCiclo;
@@ -52,7 +53,6 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_principal);
-        ///error:
         setSupportActionBar(toolbar);
 
         AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.appBar1);
@@ -121,9 +121,6 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
@@ -147,16 +144,17 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
         int id = item.getItemId();
         FragmentManager fragmentManager = getSupportFragmentManager();
 
-        if (id == R.id.nav_home) {
+        if (id == R.id.nav_principal) {
             fragmentManager.beginTransaction().replace(R.id.contenedor, new MainFragment()).commit();
-        } else if (id == R.id.nav_perfil) {
+        } else if (id == R.id.nav_explorar) {
             fragmentManager.beginTransaction().replace(R.id.contenedor, new FragmentPerfil()).commit();
         } else if (id == R.id.nav_ferramentas) {
             fragmentManager.beginTransaction().replace(R.id.contenedor, new FragmentFerramentas()).commit();
+        } else if (id == R.id.nav_configuracoes) {
+            fragmentManager.beginTransaction().replace(R.id.contenedor, new FragmentConfiguracoes()).commit();
         } else if (id == R.id.nav_ajuda) {
             fragmentManager.beginTransaction().replace(R.id.contenedor, new FragmentAjuda()).commit();
         } else if (id == R.id.nav_sobre) {
@@ -183,6 +181,12 @@ public class MainActivity extends AppCompatActivity
     public void abrirCriadorDeAtividades() {
         Toast.makeText(this, "Abrindo Criador de Atividades...", Toast.LENGTH_SHORT).show();
         Intent it = new Intent(this, CriadorDeAtividades.class);
+        startActivity(it);
+    }
+
+    public void abrirTestContador(View view) {
+        Toast.makeText(this, "Abrindo Criador de Atividades...", Toast.LENGTH_SHORT).show();
+        Intent it = new Intent(this, ChronometerTest.class);
         startActivity(it);
     }
 

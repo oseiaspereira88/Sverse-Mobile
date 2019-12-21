@@ -9,25 +9,25 @@
         android:roundIcon="@drawable/novalogo"
         android:supportsRtl="true"
         android:theme="@style/SverseTheme.NoActionBar">
-
-        <activity android:name="com.example.oseias.sverse.OthersActivitys.Tutorial"
+        <activity android:name="com.example.oseias.sverse.OthersActivitys.ChronometerTest"></activity>
+        <activity
+            android:name="com.example.oseias.sverse.OthersActivitys.Tutorial"
             android:theme="@style/SverseTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name="com.example.oseias.sverse.OthersActivitys.Login"
             android:configChanges="keyboardHidden|orientation|screenSize"
-            android:windowSoftInputMode="stateHidden"
-            android:theme="@style/SverseTheme.NoActionBar">
-        </activity>
+            android:theme="@style/SverseTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden"></activity>
         <activity
             android:name="com.example.oseias.sverse.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/SverseTheme.NoActionBar">
-        </activity>
+            android:theme="@style/SverseTheme.NoActionBar"></activity>
         <activity
             android:name="com.example.oseias.sverse.OthersActivitys.Configuracoes"
             android:label="@string/title_activity_configuracoes"

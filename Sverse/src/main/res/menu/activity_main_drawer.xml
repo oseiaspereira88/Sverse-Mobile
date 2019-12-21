@@ -3,34 +3,39 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
-            android:icon="@mipmap/ic_launcher_round"
+            android:id="@+id/nav_principal"
+            android:icon="@drawable/ic_vertical_more"
             android:orderInCategory="0"
-            android:title="Home" />
+            android:title="Principal" />
         <item
-            android:id="@+id/nav_perfil"
-            android:icon="@drawable/ic_menu_camera"
+            android:id="@+id/nav_explorar"
+            android:icon="@android:drawable/ic_menu_search"
             android:orderInCategory="1"
-            android:title="@string/lbl_menu_perfil" />
+            android:title="Explorar" />
         <item
             android:id="@+id/nav_ferramentas"
             android:icon="@drawable/ic_menu_manage"
             android:orderInCategory="2"
             android:title="@string/lbl_menu_ferramentas" />
         <item
+            android:id="@+id/nav_configuracoes"
+            android:icon="@mipmap/ic_configuracao"
+            android:orderInCategory="3"
+            android:title="Configurações" />
+        <item
             android:id="@+id/nav_ajuda"
             android:icon="@drawable/ic_menu_gallery"
-            android:orderInCategory="3"
+            android:orderInCategory="4"
             android:title="@string/lbl_menu_ajuda" />
         <item
             android:id="@+id/nav_sobre"
-            android:icon="@drawable/ic_menu_manage"
-            android:orderInCategory="4"
+            android:icon="@android:drawable/ic_dialog_info"
+            android:orderInCategory="5"
             android:title="@string/lbl_menu_sobre" />
     </group>
 
     <item
-        android:orderInCategory="5"
+        android:orderInCategory="6"
         android:title="Communicate">
         <menu>
             <item
