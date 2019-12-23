@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.oseias.sverse.OthersClass.MyCountDownTime;
@@ -18,16 +19,17 @@ import com.exemple.oseias.sverse.R;
  */
 
 public class MuralFragment extends Fragment {
-    View container;
+    View view;
     TextView tvTime, tvInfoTime;
-    ImageView bPlay;
+    ImageView bAlternar, bVincular, bPlay, bRestart, bMarcar;
+    ProgressBar progBar;
     MyCountDownTime time;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        this.container = container;
-        return inflater.inflate(R.layout.mural_fragment, container, false);
+        view = inflater.inflate(R.layout.mural_fragment, container, false);
+        return view;
     }
 
     @Override
@@ -37,16 +39,63 @@ public class MuralFragment extends Fragment {
     }
 
     private void inicializarVars() {
-        time = new MyCountDownTime(container.getContext(), tvTime, 15*60*1000, 1000);
-        tvTime = (TextView) container.findViewById(R.id.tvTime);
-        tvInfoTime = (TextView) container.findViewById(R.id.tvInfoTime);
-        bPlay = (ImageView) container.findViewById(R.id.bPlay);
+        tvTime = (TextView) view.findViewById(R.id.tvTime);
+        tvInfoTime = (TextView) view.findViewById(R.id.tvInfoTime);
+        bAlternar = (ImageView) view.findViewById(R.id.bAlternar);
+        bVincular = (ImageView) view.findViewById(R.id.bVincular);
+        bPlay = (ImageView) view.findViewById(R.id.bPlay);
+        bRestart = (ImageView) view.findViewById(R.id.bRestart);
+        bMarcar = (ImageView) view.findViewById(R.id.bMarcar);
+        progBar = (ProgressBar) view.findViewById(R.id.progressBar);
+
+        bAlternar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Abri uma lista de seleção de itens do ciclo de estudos os 'avuço'
+            }
+        });
+        bVincular.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Abri uma Lista de seleção de outros estudos ou afazeres que não estão no ciclo de estudos
+                // e vincula ao tempo de estudo
+            }
+        });
 
         bPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if(time==null) {
+                    time = new MyCountDownTime(getContext(), tvTime, 15*60*1000, 1000, progBar);
+                } else {
+                    time.cancel();
+                }
+                progBar.setMax(15*60);
                 time.start();
             }
         });
+        bRestart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(time!=null){
+                    time.cancel();
+                    tvTime.setText("00:00");
+                }
+            }
+        });
+        bMarcar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Marca como item estudado na sequência correta do ciclo de estudos;
+            }
+        });
+
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        time.getMillisUntilFinished();
+
     }
 }

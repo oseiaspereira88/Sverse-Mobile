@@ -69,7 +69,7 @@ public class CriadorDeTurmas extends AppCompatActivity {
         imgCamera = (ImageView) this.findViewById(R.id.imgCamera);
         buttonSelectorBG = (ImageView) this.findViewById(R.id.bSeletorBG);
         buttonDescartar = (ImageView) this.findViewById(R.id.bDescartar);
-        buttonCreate = (ImageView) this.findViewById(R.id.bAcept);
+        buttonCreate = (ImageView) this.findViewById(R.id.bMarcar);
         editName = (EditText) this.findViewById(R.id.editNome);
         editDescricao = (EditText) this.findViewById(R.id.editDescricao);
         spinnerDificuldade = (Spinner) this.findViewById(R.id.spinnerDificuldade);

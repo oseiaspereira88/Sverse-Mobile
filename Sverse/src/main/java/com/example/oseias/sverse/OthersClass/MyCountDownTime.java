@@ -2,6 +2,7 @@ package com.example.oseias.sverse.OthersClass;
 
 import android.content.Context;
 import android.os.CountDownTimer;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -12,6 +13,7 @@ public class MyCountDownTime extends CountDownTimer {
     TextView tv;
     private long timeInFuture;
     private long intervalo;
+    private ProgressBar progBar;
 
     public MyCountDownTime(Context ctx, TextView tv, long millisInFuture, long countDownInterval) {
         super(millisInFuture, countDownInterval);
@@ -20,10 +22,19 @@ public class MyCountDownTime extends CountDownTimer {
         this.tv = tv;
     }
 
+    public MyCountDownTime(Context ctx, TextView tv, long millisInFuture, long countDownInterval, ProgressBar progBar) {
+        super(millisInFuture, countDownInterval);
+        intervalo = countDownInterval;
+        this.ctx = ctx;
+        this.tv = tv;
+        this.progBar = progBar;
+    }
+
     @Override
     public void onTick(long millisUntilFinished) {
         timeInFuture = millisUntilFinished;
         tv.setText(getCurrentTime(true, millisUntilFinished) + ":" + getCurrentTime(false, millisUntilFinished));
+        progBar.incrementProgressBy(1);
     }
 
     private String getCurrentTime(boolean isMin, long millisUntilFinished) {

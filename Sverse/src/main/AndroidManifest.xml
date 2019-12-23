@@ -9,7 +9,7 @@
         android:roundIcon="@drawable/novalogo"
         android:supportsRtl="true"
         android:theme="@style/SverseTheme.NoActionBar">
-        <activity android:name="com.example.oseias.sverse.OthersActivitys.ChronometerTest"></activity>
+        <activity android:name="com.example.oseias.sverse.OthersActivitys.TestandoClasses"></activity>
         <activity
             android:name="com.example.oseias.sverse.OthersActivitys.Tutorial"
             android:theme="@style/SverseTheme.NoActionBar">
@@ -19,6 +19,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <service android:name="com.example.oseias.sverse.OthersClass.ContBackgroundService" android:label="ServicoTest" android:exported="false">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"></category>
+                <action android:name="com.example.oseias.sverse.OthersClass.ContBackgroundService"></action>
+            </intent-filter>
+        </service>
         <activity
             android:name="com.example.oseias.sverse.OthersActivitys.Login"
             android:configChanges="keyboardHidden|orientation|screenSize"

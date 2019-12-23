@@ -21,7 +21,7 @@ import android.widget.Toast;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.example.oseias.sverse.MainFragments.FragmentConfiguracoes;
-import com.example.oseias.sverse.OthersActivitys.ChronometerTest;
+import com.example.oseias.sverse.OthersActivitys.TestandoClasses;
 import com.example.oseias.sverse.OthersActivitys.Configuracoes;
 import com.example.oseias.sverse.OthersActivitys.CriadorDeAtividades;
 import com.example.oseias.sverse.OthersActivitys.EstudoEmCiclo;
@@ -186,7 +186,7 @@ public class MainActivity extends AppCompatActivity
 
     public void abrirTestContador(View view) {
         Toast.makeText(this, "Abrindo Criador de Atividades...", Toast.LENGTH_SHORT).show();
-        Intent it = new Intent(this, ChronometerTest.class);
+        Intent it = new Intent(this, TestandoClasses.class);
         startActivity(it);
     }
 

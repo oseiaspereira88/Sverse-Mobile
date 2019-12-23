@@ -194,12 +194,12 @@
                     android:contentDescription="@string/lbl_excluir"
                     android:onClick="cancelarCriacao"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/bAcept"
+                    app:layout_constraintEnd_toStartOf="@+id/bMarcar"
                     app:layout_constraintTop_toBottomOf="@+id/bBackground"
                     app:srcCompat="@mipmap/ic_lexcluir_c" />
 
                 <ImageView
-                    android:id="@+id/bAcept"
+                    android:id="@+id/bMarcar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
