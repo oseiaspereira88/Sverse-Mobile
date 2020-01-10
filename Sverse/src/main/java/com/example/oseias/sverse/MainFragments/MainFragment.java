@@ -43,11 +43,17 @@ public class MainFragment extends Fragment {
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         appBar.addView(tabLayout);
         viewPager = (ViewPager) view.findViewById(R.id.pager);
-        myFragmentPagerAdapter = new MyFragmentPagerAdapter(getFragmentManager(), getResources().getStringArray(R.array.titles_tabs));
+        myFragmentPagerAdapter = new MyFragmentPagerAdapter(
+                getFragmentManager(), getResources().getStringArray(R.array.titles_tabs), tabLayout);
         viewPager.setAdapter(myFragmentPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
-        tabLayout.setTabTextColors(Color.WHITE,Color.DKGRAY);
+        tabLayout.setTabTextColors(Color.DKGRAY,Color.WHITE);
 
+        AppBarLayout.LayoutParams params = (AppBarLayout.LayoutParams) tabLayout.getLayoutParams();
+        params.setScrollFlags
+                (AppBarLayout.LayoutParams.SCROLL_FLAG_SCROLL
+                | AppBarLayout.LayoutParams.SCROLL_FLAG_ENTER_ALWAYS
+                | AppBarLayout.LayoutParams.SCROLL_FLAG_SNAP);
 
         lerPredefinicoes();
         viewPager.setCurrentItem(lastIndexFragment);

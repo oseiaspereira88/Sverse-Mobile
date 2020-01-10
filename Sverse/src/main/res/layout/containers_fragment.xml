@@ -22,9 +22,8 @@
         android:id="@+id/textView41"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:shadowColor="#808080"
         android:shadowDx="3"
         android:shadowDy="3"
@@ -48,6 +47,60 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView10"
         app:srcCompat="@drawable/border_toolbar" />
 
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView10"
+        app:layout_constraintEnd_toEndOf="@+id/textView41"
+        app:layout_constraintStart_toStartOf="@+id/textView41"
+        app:layout_constraintTop_toBottomOf="@+id/textView41">
+
+        <ImageView
+            android:id="@+id/imageView43"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/border4" />
+
+        <ImageView
+            android:id="@+id/imageView42"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/border6" />
+
+        <ImageView
+            android:id="@+id/imageView41"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/border4" />
+
+        <ImageView
+            android:id="@+id/imageView40"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/border4" />
+    </LinearLayout>
+
     <GridView
         android:id="@+id/gvContainers"
         android:layout_width="0dp"
@@ -57,15 +110,16 @@
         android:gravity="center"
         android:horizontalSpacing="2dp"
         android:numColumns="auto_fit"
-        android:paddingBottom="104dp"
         android:paddingLeft="4dp"
         android:paddingRight="4dp"
+        android:paddingBottom="68dp"
         android:stretchMode="spacingWidthUniform"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView11">
+        app:layout_constraintTop_toBottomOf="@+id/imageView11"
+        app:layout_behavior = "@string/appbar_scrolling_view_behavior">
 
     </GridView>
 
@@ -73,12 +127,13 @@
         android:id="@+id/lvContainers"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:paddingBottom="104dp"
+        android:paddingBottom="68dp"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView11" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView11"
+        app:layout_behavior = "@string/appbar_scrolling_view_behavior"/>
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -93,8 +148,8 @@
             android:id="@+id/imgListGrid"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:layout_marginTop="68dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@mipmap/ic_list_mode" />

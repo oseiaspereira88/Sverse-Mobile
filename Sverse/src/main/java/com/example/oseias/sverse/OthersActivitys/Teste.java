@@ -58,7 +58,7 @@ public class Teste extends AppCompatActivity {
         //containers.add(new Container(R.drawable.bg10,"Clude de Programação Web", "0"));
         //containers.add(new Container(R.drawable.bg11,"Preparatório para o ENEM", "0"));
         //containers.add(new Container(R.drawable.bg16_min,"Projeto TCC", "0"));
-        //containers.add(new Container(R.drawable.bg13,"Estudo Bíblico", "0"));
+        //containers.add(new Container(R.drawable.bg13,"ItemDeEstudo Bíblico", "0"));
         //containers.add(new Container(R.drawable.bg14,"Estudos Pessoais", "0"));
         //containers.add(new Container(R.drawable.bg1,"Info1V", "0"));
         //containers.add(new Container(R.drawable.bg2,"Info2V", "0"));

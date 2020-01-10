@@ -24,7 +24,7 @@ import com.example.oseias.sverse.MainFragments.FragmentConfiguracoes;
 import com.example.oseias.sverse.OthersActivitys.TestandoClasses;
 import com.example.oseias.sverse.OthersActivitys.Configuracoes;
 import com.example.oseias.sverse.OthersActivitys.CriadorDeAtividades;
-import com.example.oseias.sverse.OthersActivitys.EstudoEmCiclo;
+import com.example.oseias.sverse.OthersActivitys.CicloActivity;
 import com.example.oseias.sverse.OthersClass.ArquivamentoIndexFragment.IndexFragement;
 import com.example.oseias.sverse.OthersClass.GestorDeNotas;
 import com.example.oseias.sverse.MainFragments.FragmentAjuda;
@@ -174,7 +174,7 @@ public class MainActivity extends AppCompatActivity
                 .repeat(0)
                 .playOn(view);
         Toast.makeText(this, "Abrindo Ciclo...", Toast.LENGTH_SHORT).show();
-        Intent it = new Intent(this, EstudoEmCiclo.class);
+        Intent it = new Intent(this, CicloActivity.class);
         startActivity(it);
     }
 

@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.LinearLayout;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
@@ -41,11 +40,11 @@ public class ItensAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup parent) {
-        view = LayoutInflater.from(ctx).inflate(R.layout.intermediaria_tarefa_modelo, null);
+        view = LayoutInflater.from(ctx).inflate(R.layout.ciclo_item_model, null);
 
         //TextView tvItemNumber = (TextView) view.findViewById(R.id.tvItemNumber);
         //tvItemNumber.setText(i+1);
-        final View finalView = view.findViewById(R.id.img);
+        final View finalView = view.findViewById(R.id.imgItem);
         int finalI = i;
         finalView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,17 +76,6 @@ public class ItensAdapter extends BaseAdapter {
                 return false;
             }
         });
-
-        LinearLayout llButtons = view.findViewById(R.id.llButtons);
-        int nButtons = llButtons.getChildCount();
-        for(int j = 0; i<nButtons; i++){
-            llButtons.getChildAt(j).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    actionButton(v);
-                }
-            });
-        }
 
         return view;
     }

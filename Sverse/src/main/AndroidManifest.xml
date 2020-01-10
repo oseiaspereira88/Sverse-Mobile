@@ -9,10 +9,13 @@
         android:roundIcon="@drawable/novalogo"
         android:supportsRtl="true"
         android:theme="@style/SverseTheme.NoActionBar">
-        <activity android:name="com.example.oseias.sverse.OthersActivitys.TestandoClasses"></activity>
+        <activity android:name="com.example.oseias.sverse.OthersActivitys.TestandoClasses"
+            android:screenOrientation="portrait">
+        </activity>
         <activity
             android:name="com.example.oseias.sverse.OthersActivitys.Tutorial"
-            android:theme="@style/SverseTheme.NoActionBar">
+            android:theme="@style/SverseTheme.NoActionBar"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,75 +32,96 @@
             android:name="com.example.oseias.sverse.OthersActivitys.Login"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:theme="@style/SverseTheme.NoActionBar"
-            android:windowSoftInputMode="stateHidden"></activity>
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name="com.example.oseias.sverse.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/SverseTheme.NoActionBar"></activity>
+            android:theme="@style/SverseTheme.NoActionBar"
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name="com.example.oseias.sverse.OthersActivitys.Configuracoes"
             android:label="@string/title_activity_configuracoes"
-            android:theme="@style/SverseTheme.NoActionBar" />
+            android:theme="@style/SverseTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.example.oseias.sverse.OthersActivitys.CriadorDeNotas"
             android:label="@string/title_activity_criador_de_notas"
-            android:theme="@style/SverseTheme.NoActionBar" />
+            android:theme="@style/SverseTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.example.oseias.sverse.OthersActivitys.CriadorDeAtividades"
             android:label="@string/title_activity_criador_de_atividades"
-            android:theme="@style/SverseTheme.NoActionBar" />
+            android:theme="@style/SverseTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.example.oseias.sverse.OthersActivitys.OrganizadorDeHorarios"
             android:label="@string/title_activity_organizador_de_horarios"
-            android:theme="@style/SverseTheme.NoActionBar" />
+            android:theme="@style/SverseTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.example.oseias.sverse.OthersActivitys.Lixeira"
             android:label="@string/title_activity_lixeira"
-            android:theme="@style/SverseTheme.NoActionBar" />
+            android:theme="@style/SverseTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.example.oseias.sverse.SQLite.TesteSQLite"
             android:label="@string/title_activity_teste_sqlite"
-            android:theme="@style/SverseTheme.NoActionBar" />
+            android:theme="@style/SverseTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.example.oseias.sverse.OthersActivitys.EditorDeNotas"
             android:label="@string/title_activity_editor_de_notas"
-            android:theme="@style/SverseTheme.NoActionBar" />
+            android:theme="@style/SverseTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.example.oseias.sverse.OthersActivitys.Cadastro"
             android:label="@string/title_activity_cadastrar"
-            android:theme="@style/SverseTheme.NoActionBar" />
+            android:theme="@style/SverseTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.example.oseias.sverse.OthersActivitys.Teste"
             android:label="@string/title_activity_teste"
-            android:theme="@style/SverseTheme.NoActionBar" />
+            android:theme="@style/SverseTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.example.oseias.sverse.OthersActivitys.LixeiraActivity"
             android:label="@string/title_activity_lixeira"
-            android:theme="@style/SverseTheme.NoActionBar" />
+            android:theme="@style/SverseTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.example.oseias.sverse.OthersActivitys.TurmaLayout"
             android:label="@string/title_activity_turma_layout"
-            android:theme="@style/SverseTheme.NoActionBar" />
+            android:theme="@style/SverseTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.example.oseias.sverse.OthersActivitys.PomodoroConfig"
             android:label="@string/title_activity_pomodoro_config"
-            android:theme="@style/SverseTheme.NoActionBar" />
-        <activity android:name="com.example.oseias.sverse.OthersActivitys.EstudoEmCiclo" />
+            android:theme="@style/SverseTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.example.oseias.sverse.OthersActivitys.CicloActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.example.oseias.sverse.OthersActivitys.PerfilActivity"
             android:label="@string/title_activity_perfil"
-            android:theme="@style/SverseTheme.NoActionBar" />
-        <activity android:name="com.example.oseias.sverse.OthersActivitys.CriadorDeTurmas" />
-        <activity android:name="com.example.oseias.sverse.OthersActivitys.CriadorDeGrupos" />
-        <activity android:name="com.example.oseias.sverse.OthersActivitys.CriadorDeEstudoPessoal" />
+            android:theme="@style/SverseTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.example.oseias.sverse.OthersActivitys.CriadorDeTurmas"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.example.oseias.sverse.OthersActivitys.CriadorDeGrupos"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.example.oseias.sverse.OthersActivitys.CriadorDeEstudoPessoal"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.example.oseias.sverse.OthersActivitys.AreaDeTrabalho"
             android:label="@string/title_activity_area_de_trabalho"
-            android:theme="@style/SverseTheme.NoActionBar" />
+            android:theme="@style/SverseTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name="com.example.oseias.sverse.OthersActivitys.AreaDeTrabalhoEmGrupo"
             android:label="@string/title_activity_area_de_trabalho_em_grupo"
-            android:theme="@style/SverseTheme.NoActionBar" />
+            android:theme="@style/SverseTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
