@@ -28,10 +28,10 @@
             android:id="@+id/tabItem2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="C&T" />
+            android:text="CeT" />
 
         <android.support.design.widget.TabItem
-            android:id="@+idv/tabItem3"
+            android:id="@+id/tabItem3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Estudo Bíblico" />
