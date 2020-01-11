@@ -19,9 +19,22 @@
         app:tabMode="scrollable">
 
         <android.support.design.widget.TabItem
+            android:id="@+id/tabItem1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ciclo 1" />
+            android:text="Todos os Estudos" />
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/tabItem2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="C&T" />
+
+        <android.support.design.widget.TabItem
+            android:id="@+idv/tabItem3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estudo Bíblico" />
 
     </android.support.design.widget.TabLayout>
 
