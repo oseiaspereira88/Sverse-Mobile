@@ -12,7 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
-        app:layout_constraintEnd_toStartOf="@+id/linearLayout8"
+        app:layout_constraintEnd_toStartOf="@+id/llButtons"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_scrollFlags="scroll|enterAlways|snap"
@@ -36,10 +36,16 @@
             android:layout_height="wrap_content"
             android:text="Estudo Bíblico" />
 
+        <android.support.design.widget.TabItem
+            android:id="@+id/tabItem4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Momentos de Leitura" />
+
     </android.support.design.widget.TabLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout8"
+        android:id="@+id/llButtons"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:background="@color/colorAccent"
@@ -66,13 +72,10 @@
             android:src="@mipmap/ic_configuracao" />
     </LinearLayout>
 
-    <ListView
-        android:id="@+id/lv9"
-        android:layout_width="0dp"
+    <android.support.v4.view.ViewPager
+        android:id="@+id/cicloPager"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
