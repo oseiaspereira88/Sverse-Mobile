@@ -43,7 +43,7 @@ public class CicloFragment extends Fragment {
         ordenarLista(lista);
         cicloAdapter = new CicloAdapter(getContext(), lista);
         lv.setAdapter(cicloAdapter);
-        //findFabs(container);
+        findFabs();
 
         lv.setOnScrollListener(new ListView.OnScrollListener() {
             private int mLastFirstVisibleItem;
@@ -59,11 +59,11 @@ public class CicloFragment extends Fragment {
 
                 if(mLastFirstVisibleItem<firstVisibleItem)
                 {
-                    //fab.hideMenuButton(true);
+                    fab.hideMenuButton(true);
                 }
                 if(mLastFirstVisibleItem>firstVisibleItem)
                 {
-                    //fab.showMenuButton(true);
+                    fab.showMenuButton(true);
                 }
                 mLastFirstVisibleItem=firstVisibleItem;
 
@@ -71,8 +71,8 @@ public class CicloFragment extends Fragment {
         });
     }
 
-    public void findFabs(ViewGroup container){
-        fab = (FloatingActionMenu) container.findViewById(R.id.fab);
+    public void findFabs(){
+        fab = (FloatingActionMenu) getActivity().findViewById(R.id.fab);
         fab.setOnMenuToggleListener(new FloatingActionMenu.OnMenuToggleListener() {
             @Override
             public void onMenuToggle(boolean opened) {
@@ -80,8 +80,8 @@ public class CicloFragment extends Fragment {
             }
         });
 
-        FloatingActionButton fab1 = (FloatingActionButton) container.findViewById(R.id.fab1);
-        FloatingActionButton fab2 = (FloatingActionButton) container.findViewById(R.id.fab2);
+        FloatingActionButton fab1 = (FloatingActionButton) getActivity().findViewById(R.id.fab1);
+        FloatingActionButton fab2 = (FloatingActionButton) getActivity().findViewById(R.id.fab2);
         fab1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
