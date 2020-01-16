@@ -120,7 +120,6 @@
         android:gravity="center"
         android:horizontalSpacing="2dp"
         android:numColumns="auto_fit"
-        android:paddingBottom="104dp"
         android:paddingLeft="4dp"
         android:paddingRight="4dp"
         android:stretchMode="spacingWidthUniform"

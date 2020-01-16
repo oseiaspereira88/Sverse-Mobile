@@ -116,7 +116,6 @@
         android:gravity="center"
         android:horizontalSpacing="2dp"
         android:numColumns="1"
-        android:paddingBottom="104dp"
         android:paddingLeft="4dp"
         android:paddingRight="4dp"
         app:layout_constraintBottom_toBottomOf="parent"

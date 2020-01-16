@@ -7,14 +7,59 @@
     android:layout_height="match_parent"
     tools:context="com.example.oseias.sverse.OthersActivitys.CicloActivity">
 
+    <ImageView
+        android:id="@+id/imgBGTitle"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@color/colorAccent" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/bgButtons"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="@+id/tabLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imgPlay"
+        app:layout_constraintTop_toBottomOf="@+id/imgBGTitle">
+
+    </android.support.constraint.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imgPlay"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_marginEnd="4dp"
+        android:layout_weight="1"
+        android:onClick="actionButton"
+        android:src="@mipmap/ic_play_pomodoro"
+        app:layout_constraintBottom_toBottomOf="@+id/bgButtons"
+        app:layout_constraintEnd_toStartOf="@+id/imgConfig"
+        app:layout_constraintTop_toBottomOf="@+id/imgBGTitle" />
+
+    <ImageView
+        android:id="@+id/imgConfig"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1"
+        android:onClick="actionButton"
+        android:src="@mipmap/ic_configuracao"
+        app:layout_constraintBottom_toBottomOf="@+id/tabLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgBGTitle" />
+
     <android.support.design.widget.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
-        app:layout_constraintEnd_toStartOf="@+id/llButtons"
+        app:layout_constraintEnd_toStartOf="@+id/imgPlay"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgBGTitle"
         app:layout_scrollFlags="scroll|enterAlways|snap"
         app:tabMode="scrollable">
 
@@ -44,34 +89,6 @@
 
     </android.support.design.widget.TabLayout>
 
-    <LinearLayout
-        android:id="@+id/llButtons"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:background="@color/colorAccent"
-        android:orientation="horizontal"
-        android:padding="4dp"
-        app:layout_constraintBottom_toBottomOf="@+id/tabLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/imgPlay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="actionButton"
-            android:src="@mipmap/ic_play_pomodoro" />
-
-        <ImageView
-            android:id="@+id/imgConfig"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="actionButton"
-            android:src="@mipmap/ic_configuracao" />
-    </LinearLayout>
-
     <android.support.v4.view.ViewPager
         android:id="@+id/cicloPager"
         android:layout_width="match_parent"
@@ -79,7 +96,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout" >
+
+    </android.support.v4.view.ViewPager>
 
     <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/fab"
@@ -121,5 +140,27 @@
             fab:fab_size="mini" />
 
     </com.github.clans.fab.FloatingActionMenu>
+
+    <TextView
+        android:id="@+id/textView42"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ciclos de Estudo"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imgBGTitle"
+        app:layout_constraintEnd_toEndOf="@+id/imgBGTitle"
+        app:layout_constraintStart_toStartOf="@+id/imgBGTitle"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageButton"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgBGTitle"
+        app:layout_constraintEnd_toEndOf="@+id/imgBGTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        fab:srcCompat="@android:color/white" />
 
 </android.support.constraint.ConstraintLayout>

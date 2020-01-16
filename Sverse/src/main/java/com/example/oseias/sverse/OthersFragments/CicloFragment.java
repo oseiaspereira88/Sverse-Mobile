@@ -1,7 +1,5 @@
 package com.example.oseias.sverse.OthersFragments;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -32,7 +30,7 @@ public class CicloFragment extends Fragment {
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_ciclo, null); //->container, false
+        View rootView = inflater.inflate(R.layout.fragment_ciclo, null);
         initializeViews(container, rootView);
         return rootView;
     }
@@ -40,12 +38,12 @@ public class CicloFragment extends Fragment {
     public void initializeViews(ViewGroup container, View rootView) {
         lista = new ArrayList<>();
         lv = new ListView(getContext());
-        lv = rootView.findViewById(R.id.lv9);
+        lv = rootView.findViewById(R.id.lvEstudos);
         crieDados();
         ordenarLista(lista);
         cicloAdapter = new CicloAdapter(getContext(), lista);
         lv.setAdapter(cicloAdapter);
-        findFabs(container);
+        //findFabs(container);
 
         lv.setOnScrollListener(new ListView.OnScrollListener() {
             private int mLastFirstVisibleItem;
@@ -103,9 +101,9 @@ public class CicloFragment extends Fragment {
         lista.add(new ItemDeEstudo(2, 2, 14, 00, 2, 15, 8, 2, 1));
         lista.add(new ItemDeEstudo(3, 3, 15, 00, 3, 20, 5, 3, 1));
         lista.add(new ItemDeEstudo(4, 4, 20, 20, 4, 10, 5, 4, 1));
-        lista.add(new ItemDeEstudo(5, 5, 17, 00, 1, 30, 0, 5, 1));
-        lista.add(new ItemDeEstudo(6, 6, 18, 00, 2, 15, 5, 6, 1));
-        lista.add(new ItemDeEstudo(7, 7, 1, 00, 3, 10, 5, 7, 1));
+        lista.add(new ItemDeEstudo(5, 4, 17, 00, 1, 30, 0, 5, 1));
+        lista.add(new ItemDeEstudo(6, 4, 18, 00, 2, 15, 5, 6, 1));
+        lista.add(new ItemDeEstudo(7, 4, 1, 00, 3, 10, 5, 7, 1));
         lista.add(new ItemDeEstudo(8, 1, 7, 30, 4, 15, 5, 2, 1));
         lista.add(new ItemDeEstudo(9, 2, 8, 10, 1, 25, 0, 1, 1));
         lista.get(0).setConcluido(true);
