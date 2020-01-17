@@ -25,9 +25,6 @@ import com.example.oseias.sverse.OtherAdapters.AtividadeAdapter;
 import com.example.oseias.sverse.OtherAdapters.GrupAdapter;
 import com.example.oseias.sverse.OtherAdapters.MateriaAdapter;
 import com.example.oseias.sverse.SQLite.dao.ContainerDAO;
-import com.example.oseias.sverse.SQLite.model.Container;
-
-import java.util.ArrayList;
 
 /**
  * Created by Oseias on 10/01/2018.
@@ -52,7 +49,7 @@ public class ContainersFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.containers_fragment, null); //->container, false
+        View rootView = inflater.inflate(R.layout.fragment_grupos, null); //->container, false
         lerConfigs(rootView);
         initializeViews(rootView);
         return rootView;

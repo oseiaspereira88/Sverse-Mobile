@@ -16,9 +16,7 @@ import com.daimajia.androidanimations.library.YoYo;
 import com.example.oseias.sverse.OtherAdapters.BlocoDeNotasAdapter;
 import com.example.oseias.sverse.OthersActivitys.CriadorDeNotas;
 import com.exemple.oseias.sverse.R;
-import com.example.oseias.sverse.SQLite.dao.ConfiguracaoDAO;
 import com.example.oseias.sverse.SQLite.dao.NotaDAO;
-import com.example.oseias.sverse.SQLite.model.Configuracao;
 import com.example.oseias.sverse.SQLite.model.NotaModel;
 
 import java.util.ArrayList;
@@ -37,7 +35,7 @@ public class BlocoDeNotasFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.bloco_de_notas_fragment, null); //->container, false
+        View rootView = inflater.inflate(R.layout.fragment_bloco_de_notas, null); //->container, false
         initializeViews(rootView);
         return rootView;
     }
