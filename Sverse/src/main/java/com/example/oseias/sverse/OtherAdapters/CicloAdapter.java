@@ -11,15 +11,13 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.example.oseias.sverse.MainActivity;
-import com.example.oseias.sverse.OthersActivitys.CriadorDeNotas;
 import com.example.oseias.sverse.SQLite.dao.ContainerDAO;
+import com.example.oseias.sverse.SQLite.model.CicloItem;
 import com.example.oseias.sverse.SQLite.model.Container;
-import com.example.oseias.sverse.SQLite.model.ItemDeEstudo;
 import com.exemple.oseias.sverse.R;
 
 import java.text.DateFormatSymbols;
@@ -35,13 +33,13 @@ public class CicloAdapter extends BaseAdapter {
     ImageView imgSegmento1, imgSegmento2, imgYes, imgBGItem, imgItem;
     TextView tvDia, tvHora, tvNome;
     CardView cardItem;
-    ArrayList<ItemDeEstudo> itens;
+    ArrayList<CicloItem> itens;
     ContainerDAO containerDAO;
     ArrayList<Container> containers;
     boolean isLongeClick;
     Context ctx;
 
-    public CicloAdapter(Context ctx, ArrayList<ItemDeEstudo> itens) {
+    public CicloAdapter(Context ctx, ArrayList<CicloItem> itens) {
         this.ctx = ctx;
         this.itens = itens;
         isLongeClick = false;
@@ -89,7 +87,7 @@ public class CicloAdapter extends BaseAdapter {
     private void initAllViews(View view, int i) {
         containerDAO = new ContainerDAO(ctx);
         containers = containerDAO.listarContainers();
-        ItemDeEstudo item = itens.get(i);
+        CicloItem item = itens.get(i);
         Container container = new Container(
                 "Indefinido",
                 "Indefinido",
@@ -115,7 +113,7 @@ public class CicloAdapter extends BaseAdapter {
         imgItem.setImageResource(R.mipmap.ic_play_pomodoro);
 
         ArrayList<String> dias = listarDias();
-        tvDia.setText(dias.get(item.getDia()-1).toString());
+        tvDia.setText(dias.get(item.getDiaDaSemana()-1).toString());
 
         //Seta bgItem como Green e dá yes no estudo
         if(item.isConcluido()){
@@ -187,19 +185,19 @@ public class CicloAdapter extends BaseAdapter {
         });
     }
 
-    private void verificarEstadoDoItem(ItemDeEstudo item, ArrayList<String> dias) {
+    private void verificarEstadoDoItem(CicloItem item, ArrayList<String> dias) {
         Calendar calendar = Calendar.getInstance();
         Date date = new Date();
         String weekDay = weekDay(calendar);
         int diaAtual = dias.indexOf(weekDay)+1;
 
-        if(item.getDia() < diaAtual && !item.isConcluido()){
+        if(item.getDiaDaSemana() < diaAtual && !item.isConcluido()){
             cardItem.setCardBackgroundColor(Color.RED);
             imgBGItem.setImageResource(R.mipmap.ic_item_red);
-        } else if (item.getDia() > diaAtual && !item.isConcluido()){
+        } else if (item.getDiaDaSemana() > diaAtual && !item.isConcluido()){
             cardItem.setCardBackgroundColor(Color.BLUE);
             imgBGItem.setImageResource(R.mipmap.ic_item_blue2);
-        } else if (item.getDia() == diaAtual && !item.isConcluido()){
+        } else if (item.getDiaDaSemana() == diaAtual && !item.isConcluido()){
             if(item.getHora() < date.getHours() && !item.isConcluido()){
                 cardItem.setCardBackgroundColor(Color.RED);
                 imgBGItem.setImageResource(R.mipmap.ic_item_red);

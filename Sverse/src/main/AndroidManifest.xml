@@ -78,11 +78,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/SverseTheme.NoActionBar" />
         <activity
-            android:name="com.example.oseias.sverse.OthersActivitys.EditorDeNotas"
-            android:label="@string/title_activity_editor_de_notas"
-            android:screenOrientation="portrait"
-            android:theme="@style/SverseTheme.NoActionBar" />
-        <activity
             android:name="com.example.oseias.sverse.OthersActivitys.Cadastro"
             android:label="@string/title_activity_cadastrar"
             android:screenOrientation="portrait"

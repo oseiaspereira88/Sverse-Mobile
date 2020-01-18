@@ -118,17 +118,6 @@
         fab:menu_labels_singleLine="true">
 
         <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/fab2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_add"
-            app:fab_colorNormal="#1565C0"
-            app:fab_colorPressed="#2272CD"
-            app:fab_colorRipple="#62B2FF"
-            app:fab_label="Novo Estudo"
-            fab:fab_size="mini" />
-
-        <com.github.clans.fab.FloatingActionButton
             android:id="@+id/fab1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -137,6 +126,17 @@
             app:fab_colorPressed="#2272CD"
             app:fab_colorRipple="#62B2FF"
             app:fab_label="Novo Ciclo"
+            fab:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add"
+            app:fab_colorNormal="#1565C0"
+            app:fab_colorPressed="#2272CD"
+            app:fab_colorRipple="#62B2FF"
+            app:fab_label="Novo Estudo"
             fab:fab_size="mini" />
 
     </com.github.clans.fab.FloatingActionMenu>

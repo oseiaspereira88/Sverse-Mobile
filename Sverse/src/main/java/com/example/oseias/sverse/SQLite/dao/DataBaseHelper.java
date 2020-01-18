@@ -44,7 +44,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         //Criando Tabela de Notas
         //Obs: data_de_criacao datetime default() current_timestamp
-
         bd.execSQL("create table notas(" +
                 "_id integer primary key autoincrement," +
                 "titulo text," +
@@ -56,6 +55,13 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 "data_de_criacao datetime default current_timestamp," +
                 "data_de_atualizacao datetime," +
                 "data_de_completada datetime," +
+                "id_usuario integer not null)");
+
+        //Criando Tabela de Cicloss
+        //Obs: data_de_criacao datetime default() current_timestamp
+        bd.execSQL("create table ciclos(" +
+                "_id integer primary key autoincrement," +
+                "titulo text," +
                 "id_usuario integer not null)");
 
         //Criando Tabela de Atividades
@@ -184,6 +190,22 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         public static final String[] COLUNAS_COM_ID = new String[]{
                 _ID, TITULO, NOTA, N_EMOJI, TAG, DATA_ALARME, COR,
                 DATA_DE_CRIACAO, DATA_DE_ATUALIZACAO, DATA_DE_COMPLETADA, ID_USUARIO
+        };
+    }
+
+    public static class Ciclos{
+
+        public static final String TABELA = "ciclos";
+        public static final String _ID = "_id";
+        public static final String TITULO = "titulo";
+        public static final String ID_USUARIO = "id_usuario";
+
+        public static final String[] COLUNAS = new String[]{
+                TITULO, ID_USUARIO
+        };
+
+        public static final String[] COLUNAS_COM_ID = new String[]{
+                _ID, TITULO, ID_USUARIO
         };
     }
 

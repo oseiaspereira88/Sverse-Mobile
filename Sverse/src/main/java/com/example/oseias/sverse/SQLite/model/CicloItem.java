@@ -4,7 +4,7 @@ package com.example.oseias.sverse.SQLite.model;
  * Created by IUser on 18/02/2018.
  */
 
-public class ItemDeEstudo {
+public class CicloItem {
     private Integer _id;
     private Integer diaDaSemana;
     private Integer hora;
@@ -12,13 +12,16 @@ public class ItemDeEstudo {
     private Integer nPomodoros;
     private Integer pomodoroTime;
     private Integer intervaloTime;
+    private String observacao;
     private Integer idContainer;
+    private Integer idCiclo;
     private Integer idUsuario;
     private boolean isConcluido;
 
-    public ItemDeEstudo(){}
+    public CicloItem() {
+    }
 
-    public ItemDeEstudo(Integer _id, Integer diaDaSemana, Integer hora, Integer minuto, Integer nPomodoros, Integer pomodoroTime, Integer intervaloTime, Integer idContainer, Integer idUsuario) {
+    public CicloItem(Integer _id, Integer diaDaSemana, Integer hora, Integer minuto, Integer nPomodoros, Integer pomodoroTime, Integer intervaloTime, String observacao, Integer idContainer, Integer idCiclo, Integer idUsuario) {
         this._id = _id;
         this.diaDaSemana = diaDaSemana;
         this.hora = hora;
@@ -26,7 +29,9 @@ public class ItemDeEstudo {
         this.nPomodoros = nPomodoros;
         this.pomodoroTime = pomodoroTime;
         this.intervaloTime = intervaloTime;
+        this.observacao = observacao;
         this.idContainer = idContainer;
+        this.idCiclo = idCiclo;
         this.idUsuario = idUsuario;
         isConcluido = false;
     }
@@ -39,11 +44,11 @@ public class ItemDeEstudo {
         this._id = _id;
     }
 
-    public Integer getDia() {
+    public Integer getDiaDaSemana() {
         return diaDaSemana;
     }
 
-    public void setDia(Integer diaDaSemana) {
+    public void setDiaDaSemana(Integer diaDaSemana) {
         this.diaDaSemana = diaDaSemana;
     }
 
@@ -87,12 +92,28 @@ public class ItemDeEstudo {
         this.intervaloTime = intervaloTime;
     }
 
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public void setObservacao(String observacao) {
+        this.observacao = observacao;
+    }
+
     public Integer getIdContainer() {
         return idContainer;
     }
 
     public void setIdContainer(Integer idContainer) {
         this.idContainer = idContainer;
+    }
+
+    public Integer getIdCiclo() {
+        return idCiclo;
+    }
+
+    public void setIdCiclo(Integer idCiclo) {
+        this.idCiclo = idCiclo;
     }
 
     public Integer getIdUsuario() {

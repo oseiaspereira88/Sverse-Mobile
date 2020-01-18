@@ -166,7 +166,7 @@
                     android:layout_height="19dp"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="16dp"
-                    android:text="O que prentende estudar?"
+                    android:text="Pretenção de estudo:"
                     android:textAllCaps="false"
                     android:textSize="14sp"
                     android:textStyle="bold"
