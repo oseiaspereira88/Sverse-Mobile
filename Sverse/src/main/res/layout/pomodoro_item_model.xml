@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardItem"
+    android:layout_width="48dp"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imgBGItem"
+        android:layout_width="48dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/ic_item_green" />
+
+    <ImageView
+        android:id="@+id/imgItem"
+        android:layout_width="44dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imgBGItem"
+        app:layout_constraintEnd_toEndOf="@+id/imgBGItem"
+        app:layout_constraintStart_toStartOf="@+id/imgBGItem"
+        app:layout_constraintTop_toTopOf="@+id/imgBGItem"
+        app:srcCompat="@mipmap/ic_play_pomodoro" />
+
+    <ImageView
+        android:id="@+id/imgYes"
+        android:layout_width="50dp"
+        android:layout_height="56dp"
+        android:paddingLeft="4dp"
+        android:paddingBottom="8dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imgItem"
+        app:srcCompat="@drawable/ic_yes" />
+</android.support.constraint.ConstraintLayout>

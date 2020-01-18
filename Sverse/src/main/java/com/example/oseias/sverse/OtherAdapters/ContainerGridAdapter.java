@@ -70,7 +70,7 @@ public class ContainerGridAdapter extends BaseAdapter {
         //CardView card = (CardView) view.findViewById(R.id.cardContainer);
         TextView nameTxt = (TextView) view.findViewById(R.id.tvNomePerfil);
         TextView nNotifi = (TextView) view.findViewById(R.id.nNotifiContainer);
-        ImageView imgContainerNotifi = (ImageView) view.findViewById(R.id.imgConfig);
+        ImageView imgContainerNotifi = (ImageView) view.findViewById(R.id.imgExcluir);
         ImageView img = (ImageView) view.findViewById(R.id.imgBG);
 
         //Add Values

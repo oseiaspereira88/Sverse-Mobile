@@ -36,6 +36,20 @@ public class CicloItem {
         isConcluido = false;
     }
 
+    public CicloItem(Integer diaDaSemana, Integer hora, Integer minuto, Integer nPomodoros, Integer pomodoroTime, Integer intervaloTime, String observacao, Integer idContainer, Integer idCiclo, Integer idUsuario) {
+        this.diaDaSemana = diaDaSemana;
+        this.hora = hora;
+        this.minuto = minuto;
+        this.nPomodoros = nPomodoros;
+        this.pomodoroTime = pomodoroTime;
+        this.intervaloTime = intervaloTime;
+        this.observacao = observacao;
+        this.idContainer = idContainer;
+        this.idCiclo = idCiclo;
+        this.idUsuario = idUsuario;
+        isConcluido = false;
+    }
+
     public Integer get_id() {
         return _id;
     }

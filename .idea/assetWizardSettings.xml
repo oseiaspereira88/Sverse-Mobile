@@ -82,7 +82,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="color" value="4a5ec6" />
+                                                <entry key="color" value="cccccc" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -104,9 +104,8 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="TEXT" />
-                                      <entry key="backgroundColor" value="5d86c6" />
                                       <entry key="iconShape" value="CIRCLE" />
-                                      <entry key="outputName" value="ic_item_blue2" />
+                                      <entry key="outputName" value="ic_item_white" />
                                     </map>
                                   </option>
                                 </PersistentState>

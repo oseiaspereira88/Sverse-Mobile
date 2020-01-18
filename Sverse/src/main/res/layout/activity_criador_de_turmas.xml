@@ -132,7 +132,7 @@
                             app:layout_constraintTop_toTopOf="@+id/tvNomePerfil" />
 
                         <ImageView
-                            android:id="@+id/imgConfig"
+                            android:id="@+id/imgExcluir"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_marginEnd="2dp"
@@ -150,10 +150,10 @@
                             android:textColor="@color/branco"
                             android:textSize="10sp"
                             android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="@+id/imgConfig"
-                            app:layout_constraintEnd_toEndOf="@+id/imgConfig"
-                            app:layout_constraintStart_toStartOf="@+id/imgConfig"
-                            app:layout_constraintTop_toTopOf="@+id/imgConfig" />
+                            app:layout_constraintBottom_toBottomOf="@+id/imgExcluir"
+                            app:layout_constraintEnd_toEndOf="@+id/imgExcluir"
+                            app:layout_constraintStart_toStartOf="@+id/imgExcluir"
+                            app:layout_constraintTop_toTopOf="@+id/imgExcluir" />
 
                     </android.support.constraint.ConstraintLayout>
 

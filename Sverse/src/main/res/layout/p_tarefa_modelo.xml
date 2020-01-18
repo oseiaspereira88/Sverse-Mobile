@@ -15,7 +15,7 @@
             android:layout_height="10dp"
             android:layout_marginEnd="120dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/llButtons"
+            app:layout_constraintEnd_toEndOf="@+id/llChecks"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/border5" />
 
@@ -46,10 +46,10 @@
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="120dp"
             android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="@+id/llButtons"
+            app:layout_constraintBottom_toBottomOf="@+id/llChecks"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/llButtons"
+            app:layout_constraintTop_toTopOf="@+id/llChecks"
             app:srcCompat="@mipmap/ic_play_pomodoro" />
 
         <TextView
@@ -64,12 +64,12 @@
             android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/llButtons"
+            app:layout_constraintEnd_toStartOf="@+id/llChecks"
             app:layout_constraintStart_toEndOf="@+id/img3"
             app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
-            android:id="@+id/llButtons"
+            android:id="@+id/llChecks"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
             android:background="@drawable/border3"

@@ -13,7 +13,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.oseias.sverse.SQLite.dao.UsuarioDAO;
-import com.example.oseias.sverse.SQLite.model.Etapa;
 import com.example.oseias.sverse.SQLite.model.Usuario;
 import com.exemple.oseias.sverse.R;
 /**
@@ -68,7 +67,7 @@ public class FragmentPerfil extends Fragment {
         imgBG = (ImageView) view.findViewById(R.id.imgBG);
         imgPerfil = (ImageView) view.findViewById(R.id.imgPerfil);
         imgCamera = (ImageView) view.findViewById(R.id.imgCamera);
-        imgConfig = (ImageView) view.findViewById(R.id.imgConfig);
+        imgConfig = (ImageView) view.findViewById(R.id.imgExcluir);
         tvNomePerfil = (TextView) view.findViewById(R.id.tvNomePerfil);
         tvEmail = (TextView) view.findViewById(R.id.tvEmail);
 

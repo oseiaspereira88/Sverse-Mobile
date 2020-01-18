@@ -71,7 +71,7 @@
     </LinearLayout>
 
     <ImageView
-        android:id="@+id/imgConfig"
+        android:id="@+id/imgExcluir"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:visibility="visible"
@@ -86,9 +86,9 @@
         android:text="!"
         android:textSize="10sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imgConfig"
+        app:layout_constraintBottom_toBottomOf="@+id/imgExcluir"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imgConfig"
-        app:layout_constraintTop_toTopOf="@+id/imgConfig" />
+        app:layout_constraintStart_toStartOf="@+id/imgExcluir"
+        app:layout_constraintTop_toTopOf="@+id/imgExcluir" />
 
 </android.support.constraint.ConstraintLayout>

@@ -1,20 +1,27 @@
 package com.example.oseias.sverse.OthersFragments;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.text.InputType;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
+
+import com.example.oseias.sverse.Adapters.CicloFragmentPagerAdapter;
 import com.example.oseias.sverse.OtherAdapters.CicloAdapter;
+import com.example.oseias.sverse.OthersActivitys.CicloItemCreator;
 import com.example.oseias.sverse.SQLite.dao.CicloDAO;
 import com.example.oseias.sverse.SQLite.dao.EstudoDAO;
 import com.example.oseias.sverse.SQLite.model.Ciclo;
@@ -27,13 +34,21 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+@SuppressLint("ValidFragment")
 public class CicloFragment extends Fragment {
-    ArrayList<CicloItem> lista;
-    EstudoDAO estudoDAO;
+    private ArrayList<CicloItem> lista;
+    private EstudoDAO estudoDAO;
     private FloatingActionMenu fab;
-    CicloAdapter cicloAdapter;
-    CicloDAO cicloDAO;
-    ListView lv;
+    private FloatingActionButton fab1, fab2;
+    private CicloAdapter cicloAdapter;
+    private CicloDAO cicloDAO;
+    private ListView lv;
+    private int cicloPosition;
+
+    @SuppressLint("ValidFragment")
+    public CicloFragment(int cicloPosition) {
+        cicloPosition = cicloPosition;
+    }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -47,12 +62,15 @@ public class CicloFragment extends Fragment {
         lista = new ArrayList<>();
         lv = new ListView(getContext());
         lv = rootView.findViewById(R.id.lvEstudos);
-        crieDados();
-        ordenarLista(lista);
-        cicloAdapter = new CicloAdapter(getContext(), lista);
-        lv.setAdapter(cicloAdapter);
-        findFabs();
 
+        //crieDados(); ou //Buscar dados do banco via CicloItemDAO
+
+        if(!lista.isEmpty()){
+            ordenarLista(lista);
+            cicloAdapter = new CicloAdapter(getContext(), lista);
+            lv.setAdapter(cicloAdapter);
+        }
+        findFabs();
         lv.setOnScrollListener(new ListView.OnScrollListener() {
             private int mLastFirstVisibleItem;
 
@@ -88,19 +106,33 @@ public class CicloFragment extends Fragment {
             }
         });
 
-        FloatingActionButton fab1 = (FloatingActionButton) getActivity().findViewById(R.id.fab1);
-        FloatingActionButton fab2 = (FloatingActionButton) getActivity().findViewById(R.id.fab2);
+        fab1 = (FloatingActionButton) getActivity().findViewById(R.id.fab1);
+        fab2 = (FloatingActionButton) getActivity().findViewById(R.id.fab2);
+        ImageView bExcluirCiclo = getActivity().findViewById(R.id.imgExcluir);
+
         fab1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Receber input do usuario para criar novo ciclo
+                //Recebendo input do usuario para criar novo ciclo
                 openInputDialogCreator();
             }
         });
         fab2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Adicionar Participantes
+                //Abrindo Act CicloItemCreator
+                Intent it = new Intent(getContext(), CicloItemCreator.class);
+                Bundle b = new Bundle();
+                b.putInt("cicloId", cicloDAO.returnAllCiclos().get(cicloPosition).get_id());
+                getActivity().startActivity(it);
+            }
+        });
+        bExcluirCiclo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!cicloDAO.returnAllCiclos().isEmpty() && cicloPosition != 0){
+                    confirmDialogDelete(cicloDAO.returnAllCiclos().get(cicloPosition-1).get_id());
+                }
             }
         });
     }
@@ -140,19 +172,16 @@ public class CicloFragment extends Fragment {
             public int compare(CicloItem o1, CicloItem o2) {
                 return o1.getDiaDaSemana().compareTo(o2.getDiaDaSemana());
             }
-
         });
     }
 
     public void openInputDialogCreator(){
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle("Qual será o titulo do ciclo?");
+        builder.setTitle("Qual será o titulo?");
 
-        // Set up the input
-        final EditText input = new EditText(getActivity());
-        // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
-        input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_CAP_WORDS);
-        builder.setView(input);
+        View view = View.inflate(getActivity(), R.layout.input_dialog_ciclo_model, null);
+        final EditText input = view.findViewById(R.id.editTitulo);
+        builder.setView(view);
 
         // Set up the buttons
         builder.setPositiveButton("Criar", new DialogInterface.OnClickListener() {
@@ -160,6 +189,7 @@ public class CicloFragment extends Fragment {
             public void onClick(DialogInterface dialog, int which) {
                 //Criando novo ciclo:
                 cicloDAO.salvarCiclo(new Ciclo(input.getText().toString(), 1));
+                atualizarPaginador();
             }
         });
         builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -171,4 +201,50 @@ public class CicloFragment extends Fragment {
 
         builder.show();
     }
+
+    public void confirmDialogDelete(final Integer id){
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        builder.setTitle("Tem certeza de que deseja excluir esse ciclo?");
+        builder.setMessage("Com essa ação voce deleta juntamente com o ciclo todos os itens relacionados.");
+
+        View view = View.inflate(getActivity(), R.layout.input_dialog_ciclo_model, null);
+        final EditText input = view.findViewById(R.id.editTitulo);
+        builder.setView(view);
+
+        // Set up the buttons
+        builder.setPositiveButton("Excuir mesmo assim!", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                //Excluindo e atualizando o paginador
+                cicloDAO.removerCiclo(id);
+                atualizarPaginador();
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+
+        builder.show();
+    }
+
+    private void atualizarPaginador() {
+        ViewPager pager = (ViewPager) getActivity().findViewById(R.id.cicloPager);
+        ArrayList<Ciclo> ciclos = cicloDAO.returnAllCiclos();
+        ArrayList<String> titulos = new ArrayList<>();
+        TabLayout tabLayout = (TabLayout) getActivity().findViewById(R.id.tabLayout);
+        //Setando os titulos e instanciando o pagerAdapter
+        titulos.add("TODOS OS ESTUDOS");
+        if(!ciclos.isEmpty()){
+            for (Ciclo ciclo : ciclos){
+                titulos.add(ciclo.getTitulo());
+            }
+        }
+        CicloFragmentPagerAdapter pagerAdapter = new CicloFragmentPagerAdapter(getActivity().getSupportFragmentManager(),titulos, tabLayout);
+        pager.setAdapter(pagerAdapter);
+    }
+
+
 }

@@ -11,6 +11,8 @@ import com.example.oseias.sverse.OthersFragments.ContainersFragment;
 import com.example.oseias.sverse.OthersFragments.MuralFragment;
 import com.example.oseias.sverse.OthersFragments.NotificacoesFragment;
 
+import java.util.ArrayList;
+
 /**
  * Created by Oseias on 10/01/2018.
  */
@@ -18,11 +20,11 @@ import com.example.oseias.sverse.OthersFragments.NotificacoesFragment;
 public class CicloFragmentPagerAdapter extends FragmentPagerAdapter {
     private String aux;
     private int indexAux = 0;
-    private String[] tabTitles;
+    private ArrayList<String> tabTitles;
     private TabLayout tabLayout;
 
 
-    public CicloFragmentPagerAdapter(FragmentManager fm, String[] tabTitles, TabLayout tabLayout) {
+    public CicloFragmentPagerAdapter(FragmentManager fm, ArrayList<String> tabTitles, TabLayout tabLayout) {
         super(fm);
         this.tabTitles = tabTitles;
         this.tabLayout = tabLayout;
@@ -30,17 +32,16 @@ public class CicloFragmentPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return this.tabTitles.length;
+        return this.tabTitles.size();
     }
 
     @Override
     public Fragment getItem(int position) {
-        return new CicloFragment();
+        return new CicloFragment(position);
     }
-
 
     @Override
     public CharSequence getPageTitle(int position) {
-        return this.tabTitles[position];
+        return this.tabTitles.get(position);
     }
 }

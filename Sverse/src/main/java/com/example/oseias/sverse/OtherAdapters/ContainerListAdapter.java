@@ -73,7 +73,7 @@ public class ContainerListAdapter extends BaseAdapter {
         TextView tvName = (TextView) view.findViewById(R.id.tvNomePerfil);
         TextView tvType = (TextView) view.findViewById(R.id.tvEmailOrTipo);
         TextView nNotifications = (TextView) view.findViewById(R.id.nNotifications);
-        ImageView imgNotification = (ImageView) view.findViewById(R.id.imgConfig);
+        ImageView imgNotification = (ImageView) view.findViewById(R.id.imgExcluir);
         ImageView bgContainer = (ImageView) view.findViewById(R.id.imgBG);
         final ImageView imgContainer = (ImageView) view.findViewById(R.id.imgPerfil);
 

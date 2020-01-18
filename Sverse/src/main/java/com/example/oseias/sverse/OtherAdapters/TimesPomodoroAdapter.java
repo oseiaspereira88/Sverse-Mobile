@@ -30,17 +30,15 @@ import java.util.Date;
  * Created by oseias on 03/04/2018.
  */
 
-public class CicloAdapter extends BaseAdapter {
-    ImageView imgSegmento1, imgSegmento2, imgYes, imgBGItem, imgItem;
-    TextView tvDia, tvHora, tvNome;
-    CardView cardItem;
+public class TimesPomodoroAdapter extends BaseAdapter {
+    ImageView imgYes, imgBGItem, imgItem;
     ArrayList<CicloItem> itens;
     ContainerDAO containerDAO;
     ArrayList<Container> containers;
     boolean isLongeClick;
     Context ctx;
 
-    public CicloAdapter(Context ctx, ArrayList<CicloItem> itens) {
+    public TimesPomodoroAdapter(Context ctx, ArrayList<CicloItem> itens) {
         this.ctx = ctx;
         this.itens = itens;
         isLongeClick = false;
@@ -74,15 +72,9 @@ public class CicloAdapter extends BaseAdapter {
     }
 
     private void findAllViews(View view) {
-        imgSegmento1 = view.findViewById(R.id.imgSegmento1);
-        imgSegmento2 = view.findViewById(R.id.imgSegmento2);
         imgYes = view.findViewById(R.id.imgYes);
         imgBGItem = view.findViewById(R.id.imgBGItem);
         imgItem = view.findViewById(R.id.imgItem);
-        tvDia = (TextView) view.findViewById(R.id.tvDia);
-        tvHora = (TextView) view.findViewById(R.id.tvHora);
-        tvNome = (TextView) view.findViewById(R.id.tvNome);
-        cardItem = (CardView) view.findViewById(R.id.cardItem);
     }
 
     private void initAllViews(View view, int i) {
@@ -109,16 +101,13 @@ public class CicloAdapter extends BaseAdapter {
             }
         }
 
-        tvNome.setText(container.getName());
         //imgItem.setImageResource(container.getImageContainer());
         imgItem.setImageResource(R.mipmap.ic_play_pomodoro);
 
         ArrayList<String> dias = listarDias();
-        tvDia.setText(dias.get(item.getDiaDaSemana()-1).toString());
 
         //Seta bgItem como Green e dá yes no estudo
         if(item.isConcluido()){
-            cardItem.setCardBackgroundColor(Color.GREEN);
             imgBGItem.setImageResource(R.mipmap.ic_item_green);
             imgYes.setVisibility(View.VISIBLE);
         } else{
@@ -128,18 +117,6 @@ public class CicloAdapter extends BaseAdapter {
         //verifica o momento do item e seta a cor de acordo com o dia atual
         //(se já passou e não foi estudado, se já foi estudado, ou se ainda não foi estudado)
         verificarEstadoDoItem(item, dias);
-
-        //seta as horas e minutos no formato 00:00
-        tvHora.setText(item.getHora()<10 ? "0" + item.getHora().toString() : item.getHora().toString());
-        tvHora.setText(item.getMinuto()<10 ? tvHora.getText() + ":0" + item.getMinuto().toString() :tvHora.getText() + ":" + item.getMinuto().toString());
-
-
-        //estiliza a img de segmento do primeiro e ultimo item listados.
-        if(i == 0){
-            imgSegmento1.setVisibility(View.INVISIBLE);
-        } else if (i == itens.size()-1){
-            imgSegmento2.setVisibility(View.INVISIBLE);
-        }
 
         //setando OnLongClick
         final int finalId = item.get_id();
@@ -175,12 +152,8 @@ public class CicloAdapter extends BaseAdapter {
                             .repeat(0)
                             .playOn(imgItem);
 
-                    //Abrir a ferramenta de Pomodoro (na MainActivity) com as info do item selected.
-                    Intent it = new Intent(ctx, MainActivity.class);
-                    Bundle b = new Bundle();
-                    b.putInt("cicloItemId", finalId +1);
-                    it.putExtra("cicloItemId", b);
-                    ctx.startActivity(it);
+                    //Setar item na ferramenta de Pomodoro.
+
                 }
             }
         });
@@ -193,27 +166,20 @@ public class CicloAdapter extends BaseAdapter {
         int diaAtual = dias.indexOf(weekDay)+1;
 
         if(item.getDiaDaSemana() < diaAtual && !item.isConcluido()){
-            cardItem.setCardBackgroundColor(Color.RED);
             imgBGItem.setImageResource(R.mipmap.ic_item_red);
         } else if (item.getDiaDaSemana() > diaAtual && !item.isConcluido()){
-            cardItem.setCardBackgroundColor(Color.BLUE);
             imgBGItem.setImageResource(R.mipmap.ic_item_blue2);
         } else if (item.getDiaDaSemana() == diaAtual && !item.isConcluido()){
             if(item.getHora() < date.getHours() && !item.isConcluido()){
-                cardItem.setCardBackgroundColor(Color.RED);
                 imgBGItem.setImageResource(R.mipmap.ic_item_red);
             } else if (item.getHora() > date.getHours() && !item.isConcluido()){
-                cardItem.setCardBackgroundColor(Color.BLUE);
                 imgBGItem.setImageResource(R.mipmap.ic_item_blue2);
             } else if (item.getHora() == date.getHours()){
                 if(item.getMinuto() < date.getMinutes() && !item.isConcluido()){
-                    cardItem.setCardBackgroundColor(Color.RED);
                     imgBGItem.setImageResource(R.mipmap.ic_item_red);
                 } else if (item.getMinuto() > date.getMinutes() && !item.isConcluido()){
-                    cardItem.setCardBackgroundColor(Color.BLUE);
                     imgBGItem.setImageResource(R.mipmap.ic_item_red);
                 } else if(item.getMinuto() == date.getMinutes()){
-                    cardItem.setCardBackgroundColor(Color.YELLOW);
                     imgBGItem.setImageResource(R.mipmap.ic_item_blue2);
                 }
             }

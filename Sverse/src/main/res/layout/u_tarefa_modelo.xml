@@ -39,7 +39,7 @@
             android:layout_marginEnd="24dp"
             android:layout_marginTop="8dp"
             android:orientation="vertical"
-            app:layout_constraintBottom_toTopOf="@+id/llButtons"
+            app:layout_constraintBottom_toTopOf="@+id/llChecks"
             app:layout_constraintEnd_toStartOf="@+id/imageView47"
             app:layout_constraintStart_toEndOf="@+id/imgItem"
             app:layout_constraintTop_toTopOf="@+id/imgItem">
@@ -65,7 +65,7 @@
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/llButtons"
+            android:id="@+id/llChecks"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"

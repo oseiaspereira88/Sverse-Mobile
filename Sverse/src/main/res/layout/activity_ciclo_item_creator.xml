@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.oseias.sverse.OtherAdapters.CicloItemCreator">
+    tools:context="com.example.oseias.sverse.OthersActivitys.CicloItemCreator">
 
     <ScrollView
         android:layout_width="0dp"
@@ -133,7 +133,7 @@
                             app:layout_constraintTop_toTopOf="@+id/tvNomePerfil" />
 
                         <ImageView
-                            android:id="@+id/imgConfig"
+                            android:id="@+id/imgExcluir"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
                             android:layout_marginTop="4dp"
@@ -151,10 +151,10 @@
                             android:textColor="@color/branco"
                             android:textSize="10sp"
                             android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="@+id/imgConfig"
-                            app:layout_constraintEnd_toEndOf="@+id/imgConfig"
-                            app:layout_constraintStart_toStartOf="@+id/imgConfig"
-                            app:layout_constraintTop_toTopOf="@+id/imgConfig" />
+                            app:layout_constraintBottom_toBottomOf="@+id/imgExcluir"
+                            app:layout_constraintEnd_toEndOf="@+id/imgExcluir"
+                            app:layout_constraintStart_toStartOf="@+id/imgExcluir"
+                            app:layout_constraintTop_toTopOf="@+id/imgExcluir" />
 
                     </android.support.constraint.ConstraintLayout>
 
@@ -377,7 +377,6 @@
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="8dp"
                     android:contentDescription="@string/lbl_excluir"
-                    android:onClick="cancelarCriacao"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/bMarcar"
                     app:layout_constraintTop_toBottomOf="@+id/bBackground"
@@ -389,7 +388,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
                     android:contentDescription="@string/lbl_confirmar"
-                    android:onClick="addAct"
                     app:layout_constraintBottom_toBottomOf="@+id/bDescartar"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/bDescartar"

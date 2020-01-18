@@ -7,6 +7,20 @@
     android:layout_height="match_parent"
     tools:context="com.example.oseias.sverse.OthersActivitys.CicloActivity">
 
+    <TextView
+        android:id="@+id/tvCicloInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center_horizontal"
+        android:text="Crie um ciclo de estudos!"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cicloPager" />
+
     <ImageView
         android:id="@+id/imgBGTitle"
         android:layout_width="match_parent"
@@ -14,13 +28,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@color/colorAccent" />
+        app:srcCompat="@color/colorPrimaryDark2" />
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/bgButtons"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/colorAccent"
+        android:background="@color/colorPrimary2"
         app:layout_constraintBottom_toBottomOf="@+id/tabLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/imgPlay"
@@ -37,11 +51,11 @@
         android:onClick="actionButton"
         android:src="@mipmap/ic_play_pomodoro"
         app:layout_constraintBottom_toBottomOf="@+id/bgButtons"
-        app:layout_constraintEnd_toStartOf="@+id/imgConfig"
+        app:layout_constraintEnd_toStartOf="@+id/imgExcluir"
         app:layout_constraintTop_toBottomOf="@+id/imgBGTitle" />
 
     <ImageView
-        android:id="@+id/imgConfig"
+        android:id="@+id/imgExcluir"
         android:layout_width="34dp"
         android:layout_height="34dp"
         android:layout_marginEnd="8dp"
@@ -50,13 +64,14 @@
         android:src="@mipmap/ic_configuracao"
         app:layout_constraintBottom_toBottomOf="@+id/tabLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgBGTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/imgBGTitle"
+        app:srcCompat="@mipmap/ic_lexcluir_c" />
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
+        android:background="@color/colorPrimary2"
         app:layout_constraintEnd_toStartOf="@+id/imgPlay"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgBGTitle"
@@ -67,7 +82,7 @@
             android:id="@+id/tabItem1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Todos os Estudos" />
+            android:text="Todos os estudos" />
 
         <android.support.design.widget.TabItem
             android:id="@+id/tabItem2"
@@ -118,6 +133,18 @@
         fab:menu_labels_singleLine="true">
 
         <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/fab2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_add"
+            android:visibility="gone"
+            app:fab_colorNormal="#1565C0"
+            app:fab_colorPressed="#2272CD"
+            app:fab_colorRipple="#62B2FF"
+            app:fab_label="Novo item"
+            fab:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionButton
             android:id="@+id/fab1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -126,17 +153,6 @@
             app:fab_colorPressed="#2272CD"
             app:fab_colorRipple="#62B2FF"
             app:fab_label="Novo Ciclo"
-            fab:fab_size="mini" />
-
-        <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/fab2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_add"
-            app:fab_colorNormal="#1565C0"
-            app:fab_colorPressed="#2272CD"
-            app:fab_colorRipple="#62B2FF"
-            app:fab_label="Novo Estudo"
             fab:fab_size="mini" />
 
     </com.github.clans.fab.FloatingActionMenu>

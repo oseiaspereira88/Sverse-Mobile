@@ -73,7 +73,7 @@ public class BlocoDeNotasAdapter extends BaseAdapter {
         TextView titleNota = (TextView) view.findViewById(R.id.tvNomePerfil);
         TextView textNota = (TextView) view.findViewById(R.id.txtNota);
         TextView nNotifications = (TextView) view.findViewById(R.id.nNotifications);
-        ImageView imgNotaNotifi = (ImageView) view.findViewById(R.id.imgConfig);
+        ImageView imgNotaNotifi = (ImageView) view.findViewById(R.id.imgExcluir);
 
         //Add Values
         //card.setPreventCornerOverlap(false);

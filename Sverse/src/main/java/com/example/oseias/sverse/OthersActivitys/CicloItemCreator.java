@@ -1,4 +1,4 @@
-package com.example.oseias.sverse.OtherAdapters;
+package com.example.oseias.sverse.OthersActivitys;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

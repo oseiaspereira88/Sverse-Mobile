@@ -9,8 +9,8 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 
 public class DataBaseHelper extends SQLiteOpenHelper {
-    private static final String BANCO_DE_DADOS = "BD_Assistente_Academico01";
-    private static final int VERSAO = 1;
+    private static final String BANCO_DE_DADOS = "Sverse_BD01";
+    private static final int VERSAO = 2;
 
     public DataBaseHelper(Context context) {
         super(context, BANCO_DE_DADOS, null, VERSAO);
@@ -57,11 +57,25 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 "data_de_completada datetime," +
                 "id_usuario integer not null)");
 
-        //Criando Tabela de Cicloss
+        //Criando Tabela de Ciclos
         //Obs: data_de_criacao datetime default() current_timestamp
         bd.execSQL("create table ciclos(" +
                 "_id integer primary key autoincrement," +
                 "titulo text," +
+                "id_usuario integer not null)");
+
+        //Criando Tabela de CicloItens
+        //Obs: data_de_criacao datetime default() current_timestamp
+        bd.execSQL("create table ciclo_itens(" +
+                "_id integer primary key autoincrement," +
+                "dia_da_semana integer not null," +
+                "minuto integer not null," +
+                "n_pomodoros integer not null," +
+                "pomodoro_time integer not null," +
+                "intervalo_time integer not null," +
+                "observacao text," +
+                "id_container integer not null," +
+                "id_ciclo integer not null," +
                 "id_usuario integer not null)");
 
         //Criando Tabela de Atividades
@@ -206,6 +220,30 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         public static final String[] COLUNAS_COM_ID = new String[]{
                 _ID, TITULO, ID_USUARIO
+        };
+    }
+
+    public static class CicloItens{
+
+        public static final String TABELA = "ciclo_itens";
+        public static final String _ID = "_id";
+        public static final String DIA_DA_SEMANA = "dia_da_semana";
+        public static final String HORA = "hora";
+        public static final String MINUTO = "minuto";
+        public static final String N_POMODOROS = "n_pomodoros";
+        public static final String POMODORO_TIME = "pomodoro_time";
+        public static final String INTERVALO_TIME = "intervalo_time";
+        public static final String OBSERVACAO = "observacao";
+        public static final String ID_CONTAINER = "id_container";
+        public static final String ID_CICLO = "id_ciclo";
+        public static final String ID_USUARIO = "id_usuario";
+
+        public static final String[] COLUNAS = new String[]{
+                DIA_DA_SEMANA, HORA, MINUTO, N_POMODOROS, INTERVALO_TIME, OBSERVACAO, ID_CONTAINER, ID_CICLO, ID_USUARIO
+        };
+
+        public static final String[] COLUNAS_COM_ID = new String[]{
+                _ID, DIA_DA_SEMANA, HORA, MINUTO, N_POMODOROS, INTERVALO_TIME, OBSERVACAO, ID_CONTAINER, ID_CICLO, ID_USUARIO
         };
     }
 
