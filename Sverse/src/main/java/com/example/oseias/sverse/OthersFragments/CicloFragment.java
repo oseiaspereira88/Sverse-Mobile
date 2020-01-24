@@ -69,7 +69,8 @@ public class CicloFragment extends Fragment {
         cicloItens = new ArrayList<>();
         lvItens = new ListView(getContext());
 
-        //crieDados(); ou //Buscar dados do banco via CicloItemDAO
+        crieDados();
+        //Buscar dados do banco via CicloItemDAO
 
         if (!cicloItens.isEmpty()) {
             ordenarLista(cicloItens);
