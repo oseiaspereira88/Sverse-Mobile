@@ -37,7 +37,7 @@ public class CicloFragmentPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return new CicloFragment(position);
+        return new CicloFragment();
     }
 
     @Override

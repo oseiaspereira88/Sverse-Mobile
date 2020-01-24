@@ -31,36 +31,179 @@
         app:layout_constraintTop_toBottomOf="@+id/textView50">
 
         <ImageView
-            android:id="@+id/imgBGItem18"
+            android:id="@+id/imgBGItem1"
             android:layout_width="wrap_content"
-            android:layout_height="38dp"
+            android:layout_height="32dp"
             android:layout_weight="1"
             android:onClick="actionButton"
-            app:srcCompat="@mipmap/ic_item_green" />
+            android:paddingBottom="2dp"
+            app:srcCompat="@drawable/item_color_green" />
 
         <ImageView
-            android:id="@+id/imgBGItem16"
+            android:id="@+id/imgBGItem2"
             android:layout_width="wrap_content"
-            android:layout_height="38dp"
+            android:layout_height="32dp"
             android:layout_weight="1"
             android:onClick="actionButton"
-            app:srcCompat="@mipmap/ic_item_blue2" />
+            android:paddingBottom="2dp"
+            app:srcCompat="@drawable/item_color_limao" />
 
         <ImageView
-            android:id="@+id/imgBGItem12"
+            android:id="@+id/imgBGItem3"
             android:layout_width="wrap_content"
-            android:layout_height="38dp"
+            android:layout_height="32dp"
             android:layout_weight="1"
             android:onClick="actionButton"
-            app:srcCompat="@mipmap/ic_item_red" />
+            android:paddingBottom="2dp"
+            app:srcCompat="@drawable/item_color_pick" />
 
         <ImageView
-            android:id="@+id/imgBGItem14"
+            android:id="@+id/imgBGItem4"
             android:layout_width="wrap_content"
-            android:layout_height="38dp"
+            android:layout_height="32dp"
             android:layout_weight="1"
             android:onClick="actionButton"
-            app:srcCompat="@mipmap/ic_item_blue" />
+            android:paddingBottom="2dp"
+            app:srcCompat="@drawable/item_color_red" />
+
+        <ImageView
+            android:id="@+id/imgBGItem5"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:onClick="actionButton"
+            android:paddingBottom="2dp"
+            app:srcCompat="@drawable/item_color_orange" />
+
+        <ImageView
+            android:id="@+id/imgBGItem6"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:onClick="actionButton"
+            android:paddingBottom="2dp"
+            app:srcCompat="@drawable/item_color_yellow" />
+
+        <ImageView
+            android:id="@+id/imgBGItem7"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:onClick="actionButton"
+            android:paddingBottom="2dp"
+            app:srcCompat="@drawable/item_color_marrom" />
+
+        <ImageView
+            android:id="@+id/imgBGItem8"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:onClick="actionButton"
+            android:paddingBottom="2dp"
+            app:srcCompat="@drawable/item_color_blue" />
+
+        <ImageView
+            android:id="@+id/imgBGItem9"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            android:onClick="actionButton"
+            android:paddingBottom="2dp"
+            app:srcCompat="@drawable/item_color_roxo" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llChecks"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="2dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/llButtons"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/yesBGItem1"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:clickable="false"
+            app:srcCompat="@drawable/ic_yes" />
+
+        <ImageView
+            android:id="@+id/yesBGItem2"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ic_yes" />
+
+        <ImageView
+            android:id="@+id/yesBGItem3"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ic_yes" />
+
+        <ImageView
+            android:id="@+id/yesBGItem4"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ic_yes" />
+
+        <ImageView
+            android:id="@+id/yesBGItem5"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ic_yes" />
+
+        <ImageView
+            android:id="@+id/yesBGItem6"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ic_yes" />
+
+        <ImageView
+            android:id="@+id/yesBGItem7"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ic_yes" />
+
+        <ImageView
+            android:id="@+id/yesBGItem8"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:background="@android:drawable/screen_background_light_transparent"
+            android:clickable="false"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ic_yes" />
+
+        <ImageView
+            android:id="@+id/yesBGItem9"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/ic_yes" />
 
     </LinearLayout>
 
@@ -76,50 +219,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <LinearLayout
-        android:id="@+id/llChecks"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="2dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="@+id/llButtons"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <ImageView
-            android:id="@+id/imgBGItem9"
-            android:layout_width="wrap_content"
-            android:layout_height="42dp"
-            android:layout_weight="1"
-            android:background="@android:drawable/screen_background_light_transparent"
-            app:srcCompat="@drawable/ic_yes" />
-
-        <ImageView
-            android:id="@+id/imgBGItem8"
-            android:layout_width="wrap_content"
-            android:layout_height="42dp"
-            android:layout_weight="1"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/ic_yes" />
-
-        <ImageView
-            android:id="@+id/imgBGItem6"
-            android:layout_width="wrap_content"
-            android:layout_height="42dp"
-            android:layout_weight="1"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/ic_yes" />
-
-        <ImageView
-            android:id="@+id/imgBGItem7"
-            android:layout_width="wrap_content"
-            android:layout_height="42dp"
-            android:layout_weight="1"
-            android:visibility="invisible"
-            app:srcCompat="@drawable/ic_yes" />
-
-    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
     private static final String BANCO_DE_DADOS = "Sverse_BD01";
-    private static final int VERSAO = 2;
+    private static final int VERSAO = 1;
 
     public DataBaseHelper(Context context) {
         super(context, BANCO_DE_DADOS, null, VERSAO);
@@ -62,6 +62,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         bd.execSQL("create table ciclos(" +
                 "_id integer primary key autoincrement," +
                 "titulo text," +
+                "cor integer," +
                 "id_usuario integer not null)");
 
         //Criando Tabela de CicloItens
@@ -212,14 +213,15 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         public static final String TABELA = "ciclos";
         public static final String _ID = "_id";
         public static final String TITULO = "titulo";
+        public static final String COR = "cor";
         public static final String ID_USUARIO = "id_usuario";
 
         public static final String[] COLUNAS = new String[]{
-                TITULO, ID_USUARIO
+                TITULO, COR, ID_USUARIO
         };
 
         public static final String[] COLUNAS_COM_ID = new String[]{
-                _ID, TITULO, ID_USUARIO
+                _ID, TITULO, COR, ID_USUARIO
         };
     }
 

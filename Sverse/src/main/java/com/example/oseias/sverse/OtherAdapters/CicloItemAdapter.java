@@ -30,7 +30,7 @@ import java.util.Date;
  * Created by oseias on 03/04/2018.
  */
 
-public class CicloAdapter extends BaseAdapter {
+public class CicloItemAdapter extends BaseAdapter {
     ImageView imgSegmento1, imgSegmento2, imgYes, imgBGItem, imgItem;
     TextView tvDia, tvHora, tvNome;
     CardView cardItem;
@@ -40,7 +40,7 @@ public class CicloAdapter extends BaseAdapter {
     boolean isLongeClick;
     Context ctx;
 
-    public CicloAdapter(Context ctx, ArrayList<CicloItem> itens) {
+    public CicloItemAdapter(Context ctx, ArrayList<CicloItem> itens) {
         this.ctx = ctx;
         this.itens = itens;
         isLongeClick = false;

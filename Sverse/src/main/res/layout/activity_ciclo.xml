@@ -15,7 +15,7 @@
         android:layout_marginEnd="16dp"
         android:gravity="center_horizontal"
         android:text="Crie um ciclo de estudos!"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,15 +25,16 @@
         android:id="@+id/imgBGTitle"
         android:layout_width="match_parent"
         android:layout_height="52dp"
+        android:background="@color/colorPrimaryDark2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@color/colorPrimaryDark2" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/bgButtons"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="3dp"
         android:background="@color/colorPrimary2"
         app:layout_constraintBottom_toBottomOf="@+id/tabLayout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,39 +44,39 @@
     </android.support.constraint.ConstraintLayout>
 
     <ImageView
-        android:id="@+id/imgPlay"
-        android:layout_width="34dp"
-        android:layout_height="34dp"
-        android:layout_marginEnd="4dp"
-        android:layout_weight="1"
-        android:onClick="actionButton"
-        android:src="@mipmap/ic_play_pomodoro"
-        app:layout_constraintBottom_toBottomOf="@+id/bgButtons"
-        app:layout_constraintEnd_toStartOf="@+id/imgExcluir"
-        app:layout_constraintTop_toBottomOf="@+id/imgBGTitle" />
+        android:id="@+id/imgBGTabs"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimaryDark2"
+        fab:layout_constraintBottom_toBottomOf="@+id/tabLayout"
+        fab:layout_constraintEnd_toEndOf="parent"
+        fab:layout_constraintStart_toStartOf="parent"
+        fab:layout_constraintTop_toBottomOf="@+id/imgBGTitle"
+        fab:layout_constraintTop_toTopOf="@id/tabLayout" />
 
     <ImageView
-        android:id="@+id/imgExcluir"
-        android:layout_width="34dp"
-        android:layout_height="34dp"
-        android:layout_marginEnd="8dp"
-        android:layout_weight="1"
-        android:onClick="actionButton"
-        android:src="@mipmap/ic_configuracao"
+        android:id="@+id/imgTransparent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@android:drawable/screen_background_light_transparent"
         app:layout_constraintBottom_toBottomOf="@+id/tabLayout"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgBGTitle"
-        app:srcCompat="@mipmap/ic_lexcluir_c" />
+        fab:layout_constraintEnd_toEndOf="parent"
+        fab:layout_constraintStart_toStartOf="parent"
+        fab:layout_constraintTop_toTopOf="@id/tabLayout" />
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary2"
+        android:layout_marginTop="3dp"
         app:layout_constraintEnd_toStartOf="@+id/imgPlay"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgBGTitle"
         app:layout_scrollFlags="scroll|enterAlways|snap"
+        app:tabIndicatorColor="@color/colorPrimaryDark2"
+        app:tabIndicatorGravity="top"
+        app:tabIndicatorHeight="3dp"
         app:tabMode="scrollable">
 
         <android.support.design.widget.TabItem
@@ -103,6 +104,29 @@
             android:text="Momentos de Leitura" />
 
     </android.support.design.widget.TabLayout>
+
+    <ImageView
+        android:id="@+id/imgPlay"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_marginEnd="4dp"
+        android:layout_weight="1"
+        android:onClick="actionButton"
+        android:src="@mipmap/ic_play_pomodoro"
+        app:layout_constraintBottom_toBottomOf="@+id/bgButtons"
+        app:layout_constraintEnd_toStartOf="@+id/imgExcluirCiclo"
+        app:layout_constraintTop_toBottomOf="@+id/imgBGTitle" />
+
+    <ImageView
+        android:id="@+id/imgExcluirCiclo"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_marginEnd="8dp"
+        android:layout_weight="1"
+        android:src="@mipmap/ic_lexcluir_c"
+        app:layout_constraintBottom_toBottomOf="@+id/tabLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgBGTitle"/>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/cicloPager"
@@ -169,14 +193,5 @@
         app:layout_constraintEnd_toEndOf="@+id/imgBGTitle"
         app:layout_constraintStart_toStartOf="@+id/imgBGTitle"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageButton"
-        android:layout_width="0dp"
-        android:layout_height="2dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imgBGTitle"
-        app:layout_constraintEnd_toEndOf="@+id/imgBGTitle"
-        app:layout_constraintStart_toStartOf="parent"
-        fab:srcCompat="@android:color/white" />
 
 </android.support.constraint.ConstraintLayout>

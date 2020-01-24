@@ -186,7 +186,7 @@
                             app:layout_constraintTop_toBottomOf="@+id/textView25" />
 
                         <EditText
-                            android:id="@+id/editNome"
+                            android:id="@+id/editLogin"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"

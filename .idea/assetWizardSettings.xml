@@ -104,8 +104,9 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="TEXT" />
+                                      <entry key="backgroundColor" value="d3a65a" />
                                       <entry key="iconShape" value="CIRCLE" />
-                                      <entry key="outputName" value="ic_item_white" />
+                                      <entry key="outputName" value="ic_item_orange" />
                                     </map>
                                   </option>
                                 </PersistentState>

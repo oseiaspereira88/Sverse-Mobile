@@ -31,6 +31,7 @@ public class CicloDAO {
     private Ciclo criarCiclo(Cursor cursor){
         Ciclo model = new Ciclo(
                 cursor.getString(cursor.getColumnIndex(DataBaseHelper.Ciclos.TITULO)),
+                cursor.getInt(cursor.getColumnIndex(DataBaseHelper.Ciclos.COR)),
                 cursor.getInt(cursor.getColumnIndex(DataBaseHelper.Ciclos.ID_USUARIO))
         );
         return  model;
@@ -40,6 +41,7 @@ public class CicloDAO {
         Ciclo model = new Ciclo(
                 cursor.getInt(cursor.getColumnIndex(DataBaseHelper.Ciclos._ID)),
                 cursor.getString(cursor.getColumnIndex(DataBaseHelper.Ciclos.TITULO)),
+                cursor.getInt(cursor.getColumnIndex(DataBaseHelper.Ciclos.COR)),
                 cursor.getInt(cursor.getColumnIndex(DataBaseHelper.Ciclos.ID_USUARIO))
         );
         return  model;
@@ -66,6 +68,7 @@ public class CicloDAO {
     public long salvarCiclo(Ciclo ciclo){
         ContentValues valores = new ContentValues();
         valores.put(DataBaseHelper.Ciclos.TITULO, ciclo.getTitulo());
+        valores.put(DataBaseHelper.Ciclos.COR, ciclo.getCor());
         valores.put(DataBaseHelper.Ciclos.ID_USUARIO, ciclo.getId_usuario());
 
         if(ciclo.get_id() != null){
