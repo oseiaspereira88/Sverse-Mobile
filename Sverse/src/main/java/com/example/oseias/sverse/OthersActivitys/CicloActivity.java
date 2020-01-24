@@ -312,6 +312,9 @@ public class CicloActivity extends AppCompatActivity {
         imgBGTabs.setBackgroundColor(cor);
         bgButtons.setBackgroundColor(cor);
         imgBGTitle.setBackgroundColor(cor);
+        fab.setMenuButtonColorNormal(cor);
+        fabCicloCreate.setColorNormal(cor);
+        fabItemCreate.setColorNormal(cor);
         getWindow().setStatusBarColor(cor);
     }
 

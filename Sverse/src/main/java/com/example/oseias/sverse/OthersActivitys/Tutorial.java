@@ -1,6 +1,7 @@
 package com.example.oseias.sverse.OthersActivitys;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -22,6 +23,8 @@ public class Tutorial extends AppCompatActivity {
     }
 
     public void inicializarVars(){
+        getWindow().setStatusBarColor(Color.WHITE);
+
         final Intent it = new Intent(this, Login.class);
         YoYo.with(Techniques.StandUp)
                 .duration(1200)

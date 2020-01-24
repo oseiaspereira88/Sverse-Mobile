@@ -1,52 +1,29 @@
 package com.example.oseias.sverse.OthersFragments;
 
-import android.annotation.SuppressLint;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.example.oseias.sverse.Adapters.CicloFragmentPagerAdapter;
 import com.example.oseias.sverse.OtherAdapters.CicloItemAdapter;
-import com.example.oseias.sverse.OthersActivitys.CicloItemCreator;
-import com.example.oseias.sverse.SQLite.dao.CicloDAO;
-import com.example.oseias.sverse.SQLite.dao.CicloItemDAO;
-import com.example.oseias.sverse.SQLite.model.Ciclo;
 import com.example.oseias.sverse.SQLite.model.CicloItem;
 import com.exemple.oseias.sverse.R;
-import com.github.clans.fab.FloatingActionButton;
 import com.github.clans.fab.FloatingActionMenu;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
 
 public class CicloFragment extends Fragment {
     private FloatingActionMenu fab;
-    private ArrayList<CicloItem> cicloItens;
     private CicloItemAdapter cicloItemAdapter;
     private ListView lvItens;
 
@@ -62,19 +39,16 @@ public class CicloFragment extends Fragment {
 
     public void findAllViews(View rootView){
         fab = (FloatingActionMenu) getActivity().findViewById(R.id.fab);
-        lvItens = rootView.findViewById(R.id.lvEstudos);
+        lvItens = rootView.findViewById(R.id.lvItens);
     }
 
     public void initAllViews() {
-        cicloItens = new ArrayList<>();
-        lvItens = new ListView(getContext());
-
         crieDados();
-        //Buscar dados do banco via CicloItemDAO
+        ArrayList<CicloItem> itens = crieDados();
 
-        if (!cicloItens.isEmpty()) {
-            ordenarLista(cicloItens);
-            cicloItemAdapter = new CicloItemAdapter(getContext(), cicloItens);
+        if (!itens.isEmpty()) {
+            ordenarLista(itens);
+            cicloItemAdapter = new CicloItemAdapter(getActivity(), itens);
             lvItens.setAdapter(cicloItemAdapter);
         }
 
@@ -98,7 +72,8 @@ public class CicloFragment extends Fragment {
         });
     }
 
-    public void crieDados() {
+    public ArrayList crieDados() {
+        ArrayList<CicloItem> cicloItens = new ArrayList<>();
         cicloItens.add(new CicloItem(1, 1, 13, 45, 2, 25, 10, "Observação...", 1, 1, 1));
         cicloItens.add(new CicloItem(2, 2, 14, 00, 2, 15, 8, "Observação...", 2, 1, 1));
         cicloItens.add(new CicloItem(3, 3, 15, 00, 3, 20, 5, "Observação...", 3, 1, 1));
@@ -110,6 +85,7 @@ public class CicloFragment extends Fragment {
         cicloItens.add(new CicloItem(9, 2, 8, 10, 1, 25, 0, "Observação...", 1, 1, 1));
         cicloItens.get(0).setConcluido(true);
         cicloItens.get(7).setConcluido(true);
+        return cicloItens;
     }
 
     // ordena por dia, hora e minuto

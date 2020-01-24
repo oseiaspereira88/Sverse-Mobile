@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
     private static final String BANCO_DE_DADOS = "Sverse_BD01";
-    private static final int VERSAO = 1;
+    private static final int VERSAO = 2;
 
     public DataBaseHelper(Context context) {
         super(context, BANCO_DE_DADOS, null, VERSAO);
