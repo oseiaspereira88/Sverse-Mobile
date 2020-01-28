@@ -9,7 +9,8 @@
         android:roundIcon="@drawable/novalogo"
         android:supportsRtl="true"
         android:theme="@style/SverseTheme.NoActionBar">
-        <activity android:name="com.example.oseias.sverse.OthersActivitys.CicloItemCreator"></activity>
+        <activity android:name="com.example.oseias.sverse.Main2Activity"></activity>
+        <activity android:name="com.example.oseias.sverse.OthersActivitys.CicloItemCreator" />
         <activity
             android:name="com.example.oseias.sverse.OthersActivitys.TestandoClasses"
             android:screenOrientation="portrait" />

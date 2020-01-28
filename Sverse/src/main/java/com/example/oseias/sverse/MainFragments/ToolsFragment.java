@@ -18,7 +18,7 @@ import com.exemple.oseias.sverse.R;
  * Created by Oseias on 10/01/2018.
  */
 
-public class FragmentFerramentas extends Fragment {
+public class ToolsFragment extends Fragment {
 
     @Nullable
     @Override

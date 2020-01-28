@@ -9,12 +9,12 @@
         android:id="@+id/cardNotifi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="2dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="2dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="2dp"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp"
         app:contentPadding="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,56 +27,63 @@
 
             <ImageView
                 android:id="@+id/bgNotifi"
-                android:layout_width="wrap_content"
-                android:layout_height="80dp"
-                android:layout_marginTop="4dp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
                 android:scaleType="matrix"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/iconNotifi"
-                app:srcCompat="@drawable/bg16_min" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:color/white" />
 
             <TextView
                 android:id="@+id/txtNotifi"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginBottom="4dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginTop="4dp"
-                android:gravity="center_vertical"
-                android:text="TextView"
+                android:text="Descrição descritiva que descreva destritivamente a descrição da notificação"
                 android:textAlignment="textStart"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/iconNotifi"
+                app:layout_constraintEnd_toEndOf="@+id/titleNotifi"
                 app:layout_constraintStart_toStartOf="@+id/titleNotifi"
-                app:layout_constraintTop_toTopOf="@+id/bgNotifi" />
+                app:layout_constraintTop_toBottomOf="@+id/titleNotifi" />
 
             <ImageView
                 android:id="@+id/iconNotifi"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="2dp"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@mipmap/ic_info" />
+                app:srcCompat="@drawable/perfil_sverse" />
 
             <TextView
                 android:id="@+id/titleNotifi"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="8dp"
-                android:text="TextView"
+                android:layout_height="19dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="32dp"
+                android:text="Título da Notificação"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/iconNotifi"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/iconNotifi"
                 app:layout_constraintTop_toTopOf="@+id/iconNotifi" />
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_vertical_more" />
 
         </android.support.constraint.ConstraintLayout>
 

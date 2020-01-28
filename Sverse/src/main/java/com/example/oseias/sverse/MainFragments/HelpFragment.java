@@ -12,7 +12,7 @@ import com.exemple.oseias.sverse.R;
  * Created by Oseias on 10/01/2018.
  */
 
-public class FragmentAjuda extends Fragment {
+public class HelpFragment extends Fragment {
 
     @Nullable
     @Override

@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
+import com.example.oseias.sverse.Main2Activity;
 import com.example.oseias.sverse.MainActivity;
 import com.exemple.oseias.sverse.R;
 import com.example.oseias.sverse.SQLite.dao.ConfiguracaoDAO;
@@ -71,7 +72,8 @@ public class Login extends AppCompatActivity {
             //Run an Carregamento com o Progress Bar
             ////Falta Implementar
 
-            Intent it = new Intent(this, MainActivity.class);
+            //Intent it = new Intent(this, MainActivity.class);
+            Intent it = new Intent(this, Main2Activity.class);
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override

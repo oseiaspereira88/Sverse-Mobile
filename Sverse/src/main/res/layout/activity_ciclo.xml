@@ -26,9 +26,19 @@
         android:layout_width="match_parent"
         android:layout_height="52dp"
         android:background="@color/colorPrimaryDark2"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView38"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/imgBGTitle"
+        app:layout_constraintStart_toStartOf="@+id/imgBGTitle"
+        app:layout_constraintTop_toTopOf="parent"
+        fab:srcCompat="@drawable/cicloicon" />
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/bgButtons"
@@ -111,7 +121,7 @@
         android:layout_height="34dp"
         android:layout_marginEnd="4dp"
         android:layout_weight="1"
-        android:onClick="actionButton"
+        android:onClick="animateButton"
         android:src="@mipmap/ic_play_pomodoro"
         app:layout_constraintBottom_toBottomOf="@+id/bgButtons"
         app:layout_constraintEnd_toStartOf="@+id/imgExcluirCiclo"
@@ -185,13 +195,13 @@
         android:id="@+id/textView42"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:text="Ciclos de Estudo"
         android:textColor="@android:color/white"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imgBGTitle"
-        app:layout_constraintEnd_toEndOf="@+id/imgBGTitle"
-        app:layout_constraintStart_toStartOf="@+id/imgBGTitle"
+        app:layout_constraintStart_toEndOf="@+id/imageView38"
         app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

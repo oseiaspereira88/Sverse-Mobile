@@ -35,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="32dp"
             android:layout_weight="1"
-            android:onClick="actionButton"
+            android:onClick="animateButton"
             android:paddingBottom="2dp"
             app:srcCompat="@drawable/item_color_green" />
 
@@ -44,7 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="32dp"
             android:layout_weight="1"
-            android:onClick="actionButton"
+            android:onClick="animateButton"
             android:paddingBottom="2dp"
             app:srcCompat="@drawable/item_color_limao" />
 
@@ -53,7 +53,7 @@
             android:layout_width="wrap_content"
             android:layout_height="32dp"
             android:layout_weight="1"
-            android:onClick="actionButton"
+            android:onClick="animateButton"
             android:paddingBottom="2dp"
             app:srcCompat="@drawable/item_color_pick" />
 
@@ -62,7 +62,7 @@
             android:layout_width="wrap_content"
             android:layout_height="32dp"
             android:layout_weight="1"
-            android:onClick="actionButton"
+            android:onClick="animateButton"
             android:paddingBottom="2dp"
             app:srcCompat="@drawable/item_color_red" />
 
@@ -71,7 +71,7 @@
             android:layout_width="wrap_content"
             android:layout_height="32dp"
             android:layout_weight="1"
-            android:onClick="actionButton"
+            android:onClick="animateButton"
             android:paddingBottom="2dp"
             app:srcCompat="@drawable/item_color_orange" />
 
@@ -80,7 +80,7 @@
             android:layout_width="wrap_content"
             android:layout_height="32dp"
             android:layout_weight="1"
-            android:onClick="actionButton"
+            android:onClick="animateButton"
             android:paddingBottom="2dp"
             app:srcCompat="@drawable/item_color_yellow" />
 
@@ -89,7 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="32dp"
             android:layout_weight="1"
-            android:onClick="actionButton"
+            android:onClick="animateButton"
             android:paddingBottom="2dp"
             app:srcCompat="@drawable/item_color_marrom" />
 
@@ -98,7 +98,7 @@
             android:layout_width="wrap_content"
             android:layout_height="32dp"
             android:layout_weight="1"
-            android:onClick="actionButton"
+            android:onClick="animateButton"
             android:paddingBottom="2dp"
             app:srcCompat="@drawable/item_color_blue" />
 
@@ -107,7 +107,7 @@
             android:layout_width="wrap_content"
             android:layout_height="32dp"
             android:layout_weight="1"
-            android:onClick="actionButton"
+            android:onClick="animateButton"
             android:paddingBottom="2dp"
             app:srcCompat="@drawable/item_color_roxo" />
 

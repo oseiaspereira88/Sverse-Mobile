@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 
 import com.exemple.oseias.sverse.R;
 
-public class FragmentConfiguracoes extends Fragment {
+public class ConfigFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

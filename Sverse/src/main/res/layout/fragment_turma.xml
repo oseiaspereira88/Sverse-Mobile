@@ -173,7 +173,7 @@
                                     app:layout_constraintTop_toBottomOf="@+id/imageView18">
 
                                     <android.support.v7.widget.CardView
-                                        android:id="@+id/cardView5"
+                                        android:id="@+id/cvPomodoro"
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:layout_margin="4dp"
@@ -192,7 +192,7 @@
                                             android:layout_height="wrap_content">
 
                                             <ImageView
-                                                android:id="@+id/imageView23"
+                                                android:id="@+id/imgIconPomodoro"
                                                 android:layout_width="30dp"
                                                 android:layout_height="30dp"
                                                 android:layout_marginBottom="4dp"
@@ -213,9 +213,9 @@
                                                 android:textColor="@android:color/black"
                                                 android:textSize="20sp"
                                                 android:textStyle="bold"
-                                                app:layout_constraintBottom_toBottomOf="@+id/imageView23"
-                                                app:layout_constraintStart_toEndOf="@+id/imageView23"
-                                                app:layout_constraintTop_toTopOf="@+id/imageView23" />
+                                                app:layout_constraintBottom_toBottomOf="@+id/imgIconPomodoro"
+                                                app:layout_constraintStart_toEndOf="@+id/imgIconPomodoro"
+                                                app:layout_constraintTop_toTopOf="@+id/imgIconPomodoro" />
 
                                             <ImageView
                                                 android:id="@+id/imageView24"

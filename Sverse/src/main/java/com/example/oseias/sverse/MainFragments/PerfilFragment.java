@@ -19,7 +19,7 @@ import com.exemple.oseias.sverse.R;
  * Created by Oseias on 10/01/2018.
  */
 
-public class FragmentPerfil extends Fragment {
+public class PerfilFragment extends Fragment {
     UsuarioDAO userDAO;
     Usuario user;
 

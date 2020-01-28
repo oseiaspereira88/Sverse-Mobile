@@ -43,8 +43,7 @@ public class MainFragment extends Fragment {
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
         appBar.addView(tabLayout);
         viewPager = (ViewPager) view.findViewById(R.id.pager);
-        myFragmentPagerAdapter = new MyFragmentPagerAdapter(
-                getFragmentManager(), getResources().getStringArray(R.array.titles_tabs), tabLayout);
+        myFragmentPagerAdapter = new MyFragmentPagerAdapter(getFragmentManager(),6);
         viewPager.setAdapter(myFragmentPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.setTabTextColors(Color.DKGRAY,Color.WHITE);

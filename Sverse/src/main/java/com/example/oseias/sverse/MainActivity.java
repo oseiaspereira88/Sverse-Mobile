@@ -20,18 +20,18 @@ import android.view.MenuItem;
 import android.widget.Toast;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.example.oseias.sverse.MainFragments.FragmentConfiguracoes;
+import com.example.oseias.sverse.MainFragments.ConfigFragment;
 import com.example.oseias.sverse.OthersActivitys.TestandoClasses;
 import com.example.oseias.sverse.OthersActivitys.Configuracoes;
 import com.example.oseias.sverse.OthersActivitys.CriadorDeAtividades;
 import com.example.oseias.sverse.OthersActivitys.CicloActivity;
 import com.example.oseias.sverse.OthersClass.ArquivamentoIndexFragment.IndexFragement;
 import com.example.oseias.sverse.OthersClass.GestorDeNotas;
-import com.example.oseias.sverse.MainFragments.FragmentAjuda;
-import com.example.oseias.sverse.MainFragments.FragmentFerramentas;
-import com.example.oseias.sverse.MainFragments.FragmentPerfil;
+import com.example.oseias.sverse.MainFragments.HelpFragment;
+import com.example.oseias.sverse.MainFragments.ToolsFragment;
+import com.example.oseias.sverse.MainFragments.PerfilFragment;
 import com.example.oseias.sverse.MainFragments.MainFragment;
-import com.example.oseias.sverse.MainFragments.FragmentSobre;
+import com.example.oseias.sverse.MainFragments.AboutFragment;
 import com.example.oseias.sverse.OthersActivitys.Login;
 import com.example.oseias.sverse.SQLite.dao.ConfiguracaoDAO;
 import com.example.oseias.sverse.SQLite.dao.UsuarioDAO;
@@ -90,7 +90,6 @@ public class MainActivity extends AppCompatActivity
                 .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         finish();
-                        //Ação tomada caso o usuário escolha sim.
                     }
                 })
                 .setNegativeButton("Não", new DialogInterface.OnClickListener() {
@@ -150,15 +149,15 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_principal) {
             fragmentManager.beginTransaction().replace(R.id.contenedor, new MainFragment()).commit();
         } else if (id == R.id.nav_explorar) {
-            fragmentManager.beginTransaction().replace(R.id.contenedor, new FragmentPerfil()).commit();
+            fragmentManager.beginTransaction().replace(R.id.contenedor, new PerfilFragment()).commit();
         } else if (id == R.id.nav_ferramentas) {
-            fragmentManager.beginTransaction().replace(R.id.contenedor, new FragmentFerramentas()).commit();
+            fragmentManager.beginTransaction().replace(R.id.contenedor, new ToolsFragment()).commit();
         } else if (id == R.id.nav_configuracoes) {
-            fragmentManager.beginTransaction().replace(R.id.contenedor, new FragmentConfiguracoes()).commit();
+            fragmentManager.beginTransaction().replace(R.id.contenedor, new ConfigFragment()).commit();
         } else if (id == R.id.nav_ajuda) {
-            fragmentManager.beginTransaction().replace(R.id.contenedor, new FragmentAjuda()).commit();
+            fragmentManager.beginTransaction().replace(R.id.contenedor, new HelpFragment()).commit();
         } else if (id == R.id.nav_sobre) {
-            fragmentManager.beginTransaction().replace(R.id.contenedor, new FragmentSobre()).commit();
+            fragmentManager.beginTransaction().replace(R.id.contenedor, new AboutFragment()).commit();
         } else if (id == R.id.nav_logoff) {
             logoff();
         }
@@ -166,16 +165,6 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
-
-    public void abrirCicloDeEstudo(View view) {
-        YoYo.with(Techniques.RotateIn)
-                .duration(700)
-                .repeat(0)
-                .playOn(view);
-        Toast.makeText(this, "Abrindo Ciclo...", Toast.LENGTH_SHORT).show();
-        Intent it = new Intent(this, CicloActivity.class);
-        startActivity(it);
     }
 
     public void abrirCriadorDeAtividades() {
@@ -203,7 +192,7 @@ public class MainActivity extends AppCompatActivity
                 .repeat(0)
                 .playOn(view);
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, new FragmentPerfil()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.contenedor, new PerfilFragment()).commit();
         navigationView.getMenu().getItem(0).setChecked(true);
         drawer.closeDrawers();
     }

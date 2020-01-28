@@ -5,12 +5,12 @@
     <color name="colorPrimaryDark">#005b4f</color>
     <color name="colorAccent">#3ea999</color>
 
-    <color name="colorPrimary2">#7A88D4</color>
-    <color name="colorPrimaryDark2">#5968C5</color>
+    <color name="colorPrimary2">#F7E7BD</color>
+    <color name="colorPrimaryDark2">#EAC576</color>
     <color name="colorAccent2">#FF4081</color>
 
     <color name="branco">#ffffff</color>
-    <color name="abc_search_url_text_holo">#f0e7ce</color>
+    <color name="abc_search_url_text_holo">#FCF5E9</color>
     <color name="azul_escuro">#d2c0e2</color>
     <color name="color_1">#ffd7d7</color>
 
@@ -18,7 +18,7 @@
     <item name="purple" type="color">#FFAA66CC</item>
     <item name="green" type="color">#D5F3C6</item>
     <item name="orange" type="color">#FFFFBB33</item>
-    <item name="red" type="color">#FFFF4444</item>
+    <item name="red" type="color">#E8A688</item>
     <item name="darkblue" type="color">#FF0099CC</item>
     <item name="darkpurple" type="color">#FF9933CC</item>
     <item name="darkgreen" type="color">#FF669900</item>

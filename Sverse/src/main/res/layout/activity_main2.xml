@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/clMain2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/border_down_radius"
+    tools:context="com.example.oseias.sverse.Main2Activity">
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/mainTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        app:tabIndicatorColor="@color/colorPrimaryDark2"
+        app:tabIndicatorGravity="bottom"
+        app:tabIndicatorHeight="3dp">
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/tabItem1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/iconhome4" />
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/tabItem2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/iconmochila" />
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/tabItem3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/iconnota" />
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/tabItem4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/icongroup2" />
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/tabItem5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/iconnotifi4" />
+
+        <android.support.design.widget.TabItem
+            android:id="@+id/tabItem6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:icon="@drawable/iconmenu" />
+    </android.support.design.widget.TabLayout>
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        android:text="Sverse Mobile"
+        android:textColor="@color/colorPrimaryDark2"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView57"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/mainTabLayout"
+        app:layout_constraintEnd_toStartOf="@+id/imageView58"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/item_color_gray" />
+
+    <ImageView
+        android:id="@+id/imageView56"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView57"
+        app:layout_constraintEnd_toEndOf="@+id/imageView57"
+        app:layout_constraintStart_toStartOf="@+id/imageView57"
+        app:layout_constraintTop_toTopOf="@+id/imageView57"
+        app:srcCompat="@drawable/iconpesquisa4" />
+
+    <ImageView
+        android:id="@+id/imageView58"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/mainTabLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/item_color_gray" />
+
+    <ImageView
+        android:id="@+id/imageView60"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView58"
+        app:layout_constraintEnd_toEndOf="@+id/imageView58"
+        app:layout_constraintStart_toStartOf="@+id/imageView58"
+        app:layout_constraintTop_toTopOf="@+id/imageView58"
+        app:srcCompat="@drawable/iconmessager" />
+
+    <ImageView
+        android:id="@+id/imgDivider"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mainTabLayout"
+        app:srcCompat="@color/colorPrimary2" />
+
+    <view
+        android:id="@+id/mainPager"
+        class="android.support.v4.view.ViewPager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgDivider" />
+
+</android.support.constraint.ConstraintLayout>
