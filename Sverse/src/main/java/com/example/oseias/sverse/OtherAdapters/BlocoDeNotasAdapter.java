@@ -24,7 +24,7 @@ import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.example.oseias.sverse.OthersActivitys.CriadorDeNotas;
+import com.example.oseias.sverse.OthersActivitys.NotaCreator;
 import com.exemple.oseias.sverse.R;
 import com.example.oseias.sverse.SQLite.model.NotaModel;
 
@@ -105,7 +105,7 @@ public class BlocoDeNotasAdapter extends BaseAdapter {
                             .duration(700)
                             .repeat(0)
                             .playOn(finalView);
-                    Intent it = new Intent(act, CriadorDeNotas.class);
+                    Intent it = new Intent(act, NotaCreator.class);
                     Bundle b = new Bundle();
                     b.putInt("id", notaModel.get_id());
                     it.putExtra("id", b);

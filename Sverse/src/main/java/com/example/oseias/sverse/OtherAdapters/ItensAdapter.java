@@ -56,7 +56,7 @@ public class ItensAdapter extends BaseAdapter {
                             .duration(700)
                             .repeat(0)
                             .playOn(finalView);
-                    /*Intent it = new Intent(ctx, CriadorDeNotas.class);
+                    /*Intent it = new Intent(ctx, NotaCreator.class);
                     Bundle b = new Bundle();
                     b.putInt("id", finalI +1);
                     it.putExtra("id", b);

@@ -1,12 +1,11 @@
 package com.example.oseias.sverse.Adapters;
 
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.example.oseias.sverse.MainFragments.MenuFragment;
-import com.example.oseias.sverse.OthersFragments.BlocoDeNotasFragment;
+import com.example.oseias.sverse.OthersFragments.NotasFragment;
 import com.example.oseias.sverse.OthersFragments.MuralFragment;
 import com.example.oseias.sverse.OthersFragments.NotificacoesFragment;
 import com.example.oseias.sverse.OthersFragments.ContainersFragment;
@@ -37,7 +36,7 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
             case 1:
                 return new ContainersFragment();
             case 2:
-                return new BlocoDeNotasFragment();
+                return new NotasFragment();
             case 3:
                 return new NotificacoesFragment();
             case 4:

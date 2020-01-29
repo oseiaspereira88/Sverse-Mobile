@@ -1,22 +1,15 @@
 package com.example.oseias.sverse.OtherAdapters;
 
 import android.content.Context;
-import android.content.Intent;
-import android.graphics.Color;
-import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
-import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.example.oseias.sverse.MainActivity;
-import com.example.oseias.sverse.OthersActivitys.CicloItemCreator;
 import com.example.oseias.sverse.SQLite.dao.ContainerDAO;
 import com.example.oseias.sverse.SQLite.model.CicloItem;
 import com.example.oseias.sverse.SQLite.model.Container;

@@ -5,11 +5,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.example.oseias.sverse.OthersFragments.BlocoDeNotasFragment;
 import com.example.oseias.sverse.OthersFragments.CicloFragment;
-import com.example.oseias.sverse.OthersFragments.ContainersFragment;
-import com.example.oseias.sverse.OthersFragments.MuralFragment;
-import com.example.oseias.sverse.OthersFragments.NotificacoesFragment;
 
 import java.util.ArrayList;
 

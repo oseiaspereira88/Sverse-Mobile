@@ -11,7 +11,7 @@ import com.exemple.oseias.sverse.R;
 import com.example.oseias.sverse.SQLite.dao.UsuarioDAO;
 import com.example.oseias.sverse.SQLite.model.Usuario;
 
-public class Cadastro extends AppCompatActivity {
+public class CadastroActivity extends AppCompatActivity {
     EditText editNome, editEmail, editLogin, editSenha;
     UsuarioDAO usuarioDAO;
     Usuario novoUsuario;
@@ -76,7 +76,7 @@ public class Cadastro extends AppCompatActivity {
 
             usuarioDAO.salvarNovoUsuario(novoUsuario);
 
-            Toast.makeText(this, "Cadastro Efetuado com Sucesso.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "CadastroActivity Efetuado com Sucesso.", Toast.LENGTH_LONG).show();
             finish();
         }
     }

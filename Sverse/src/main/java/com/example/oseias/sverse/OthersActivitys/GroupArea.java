@@ -8,14 +8,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import com.exemple.oseias.sverse.R;
 
-public class TurmaLayout extends AppCompatActivity {
+public class GroupArea extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_turma_layout);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setContentView(R.layout.activity_group_area);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -25,6 +23,14 @@ public class TurmaLayout extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+    }
+
+    public class MyOnLongclickListener implements View.OnLongClickListener {
+
+        @Override
+        public boolean onLongClick(View v) {
+            return true;
+        }
     }
 
 }

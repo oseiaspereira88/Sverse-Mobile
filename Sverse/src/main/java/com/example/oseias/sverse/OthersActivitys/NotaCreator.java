@@ -24,8 +24,8 @@ import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.example.oseias.sverse.MainActivity;
 import com.example.oseias.sverse.DialogFragments.AlertDialogFragment;
+import com.example.oseias.sverse.MainActivity;
 import com.example.oseias.sverse.OthersClass.GestorDeNotas;
 import com.example.oseias.sverse.SQLite.dao.ConfiguracaoDAO;
 import com.example.oseias.sverse.SQLite.model.Configuracao;
@@ -35,7 +35,7 @@ import com.example.oseias.sverse.SQLite.model.NotaModel;
 
 import java.util.Calendar;
 
-public class CriadorDeNotas extends AppCompatActivity {
+public class NotaCreator extends AppCompatActivity {
     private boolean haveNota = false;
 
     //Vars básicas
@@ -58,9 +58,7 @@ public class CriadorDeNotas extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_criador_de_notas);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setContentView(R.layout.activity_nota_creator);
         initializeViews();
         inicializarAlarmeCreator();
         salvarCofiguracoes();
@@ -267,8 +265,8 @@ public class CriadorDeNotas extends AppCompatActivity {
             @Override
             public void onClick(final View v) {
                 cancelarAlarme();
-                Toast.makeText(CriadorDeNotas.this, "Alarme Cancelado.", Toast.LENGTH_SHORT).show();
-                //View.inflate(CriadorDeNotas.this, R.id.bDelAlarme, CriadorDeNotas.this.findViewById(R.id.vGrup));
+                Toast.makeText(NotaCreator.this, "Alarme Cancelado.", Toast.LENGTH_SHORT).show();
+                //View.inflate(NotaCreator.this, R.id.bDelAlarme, NotaCreator.this.findViewById(R.id.vGrup));
                 //Pegar locais em x e y;
                 YoYo.with(Techniques.Pulse)
                         .duration(700)

@@ -1,5 +1,6 @@
 package com.example.oseias.sverse.OtherAdapters;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -23,7 +24,6 @@ import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.example.oseias.sverse.OthersActivitys.Teste;
 import com.exemple.oseias.sverse.R;
 import com.example.oseias.sverse.SQLite.model.Container;
 
@@ -38,7 +38,7 @@ public class GrupAdapter extends BaseAdapter {
     ArrayList<Container> containers;
     boolean isLongeClick;
 
-    public GrupAdapter(Teste act, Context c, ArrayList<Container> containers) {
+    public GrupAdapter(Context c, ArrayList<Container> containers) {
         this.c = c;
         this.containers = containers;
         isLongeClick = false;

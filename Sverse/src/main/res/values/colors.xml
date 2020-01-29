@@ -5,8 +5,8 @@
     <color name="colorPrimaryDark">#005b4f</color>
     <color name="colorAccent">#3ea999</color>
 
-    <color name="colorPrimary2">#F7E7BD</color>
-    <color name="colorPrimaryDark2">#EAC576</color>
+    <color name="colorPrimary2">#BDDBF4</color>
+    <color name="colorPrimaryDark2">#4A83FD</color>
     <color name="colorAccent2">#FF4081</color>
 
     <color name="branco">#ffffff</color>
@@ -24,6 +24,7 @@
     <item name="darkgreen" type="color">#FF669900</item>
     <item name="darkorange" type="color">#FFFF8800</item>
     <item name="darkred" type="color">#b23434</item>
+    <item name="grayblue3" type="color">#D1D9EA</item>
 
     <integer-array name="androidcolors">
         <item>@color/blue</item>

@@ -7,14 +7,12 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.LayerDrawable;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.graphics.Palette;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -152,7 +150,7 @@ public class CicloActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Qual será o titulo?");
 
-        View view = View.inflate(this, R.layout.input_dialog_ciclo_model, null);
+        View view = View.inflate(this, R.layout.input_name_and_color_dialog_model, null);
         final EditText input = view.findViewById(R.id.editTitulo);
 
         final Map<ImageView, ImageView> map = new HashMap<ImageView, ImageView>();

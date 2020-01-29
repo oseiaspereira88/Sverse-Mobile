@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.example.oseias.sverse.OtherAdapters.BlocoDeNotasAdapter;
-import com.example.oseias.sverse.OthersActivitys.CriadorDeNotas;
+import com.example.oseias.sverse.OthersActivitys.NotaCreator;
 import com.exemple.oseias.sverse.R;
 import com.example.oseias.sverse.SQLite.dao.NotaDAO;
 import com.example.oseias.sverse.SQLite.model.NotaModel;
@@ -25,7 +25,7 @@ import java.util.ArrayList;
  * Created by Oseias on 10/01/2018.
  */
 
-public class BlocoDeNotasFragment extends Fragment {
+public class NotasFragment extends Fragment {
     GridView gridView;
     BlocoDeNotasAdapter adapterNotas;
     View rootView;
@@ -55,7 +55,7 @@ public class BlocoDeNotasFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getContext(), "Abrindo Criador de Notas...", Toast.LENGTH_SHORT).show();
-                Intent it = new Intent(getContext(), CriadorDeNotas.class);
+                Intent it = new Intent(getContext(), NotaCreator.class);
                 startActivity(it);
                 getActivity().finish();
             }

@@ -10,7 +10,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.DragEvent;
 import android.view.View;
 import android.widget.ImageView;
@@ -23,7 +22,6 @@ import com.example.oseias.sverse.Interfaces.RecyclerViewOnClickListenerHack;
 import com.example.oseias.sverse.OtherAdapters.AllEtapaAdapter;
 import com.example.oseias.sverse.OtherAdapters.EtapasConcluidasAdapter;
 import com.example.oseias.sverse.OtherAdapters.EtapasEmAndamentoAdapter;
-import com.example.oseias.sverse.OthersClass.ArquivamentoIndexFragment.IndexFragement;
 import com.example.oseias.sverse.SQLite.dao.ConfiguracaoDAO;
 import com.example.oseias.sverse.SQLite.model.Configuracao;
 import com.example.oseias.sverse.SQLite.model.Etapa;
@@ -32,7 +30,7 @@ import com.github.clans.fab.FloatingActionMenu;
 import com.exemple.oseias.sverse.R;
 import java.util.ArrayList;
 
-public class AreaDeTrabalhoEmGrupo extends AppCompatActivity implements RecyclerViewOnClickListenerHack {
+public class WorkGroupArea extends AppCompatActivity implements RecyclerViewOnClickListenerHack {
 
     //General Atributes
     private FloatingActionMenu fab;
@@ -74,7 +72,7 @@ public class AreaDeTrabalhoEmGrupo extends AppCompatActivity implements Recycler
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_area_de_trabalho_em_grupo);
+        setContentView(R.layout.activity_work_group_area);
 
         findFabs();
         findAllViews();
@@ -87,7 +85,7 @@ public class AreaDeTrabalhoEmGrupo extends AppCompatActivity implements Recycler
         fab.setOnMenuToggleListener(new FloatingActionMenu.OnMenuToggleListener() {
             @Override
             public void onMenuToggle(boolean opened) {
-                //Toast.makeText(AreaDeTrabalhoEmGrupo.this, "Is menu Opened: " + (opened? "true" : "false"), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(WorkGroupArea.this, "Is menu Opened: " + (opened? "true" : "false"), Toast.LENGTH_SHORT).show();
             }
         });
 

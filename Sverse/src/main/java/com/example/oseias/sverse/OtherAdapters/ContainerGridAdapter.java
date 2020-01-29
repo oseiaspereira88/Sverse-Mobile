@@ -21,7 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.example.oseias.sverse.OthersActivitys.CriadorDeTurmas;
+import com.example.oseias.sverse.OthersActivitys.GroupCreator;
 import com.exemple.oseias.sverse.R;
 import com.example.oseias.sverse.SQLite.model.Container;
 
@@ -113,7 +113,7 @@ public class ContainerGridAdapter extends BaseAdapter {
 
                 Toast.makeText(c, "Você precionou " + container.getName(), Toast.LENGTH_SHORT).show();
 
-                Intent it = new Intent(act, CriadorDeTurmas.class);
+                Intent it = new Intent(act, GroupCreator.class);
                 Bundle b = new Bundle();
                 b.putInt("id", container.get_id());
                 it.putExtra("id", b);

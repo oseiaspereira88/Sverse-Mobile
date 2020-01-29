@@ -24,7 +24,7 @@ import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.example.oseias.sverse.OthersActivitys.CriadorDeNotas;
+import com.example.oseias.sverse.OthersActivitys.NotaCreator;
 import com.exemple.oseias.sverse.R;
 import com.example.oseias.sverse.SQLite.model.NotifiModel;
 
@@ -97,7 +97,7 @@ public class NotifiAdapter extends BaseAdapter {
                             .duration(700)
                             .repeat(0)
                             .playOn(finalView);
-                    Intent it = new Intent(c, CriadorDeNotas.class);
+                    Intent it = new Intent(c, NotaCreator.class);
                     Bundle b = new Bundle();
                     b.putInt("id", i+1);
                     it.putExtra("id", b);

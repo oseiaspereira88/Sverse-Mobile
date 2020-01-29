@@ -17,11 +17,10 @@ import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.example.oseias.sverse.OtherAdapters.ContainerGridAdapter;
 import com.example.oseias.sverse.OtherAdapters.ContainerListAdapter;
-import com.example.oseias.sverse.OthersActivitys.CriadorDeTurmas;
+import com.example.oseias.sverse.OthersActivitys.GroupCreator;
 import com.example.oseias.sverse.SQLite.dao.ConfiguracaoDAO;
 import com.example.oseias.sverse.SQLite.model.Configuracao;
 import com.exemple.oseias.sverse.R;
-import com.example.oseias.sverse.OtherAdapters.AtividadeAdapter;
 import com.example.oseias.sverse.OtherAdapters.GrupAdapter;
 import com.example.oseias.sverse.OtherAdapters.MateriaAdapter;
 import com.example.oseias.sverse.SQLite.dao.ContainerDAO;
@@ -41,7 +40,6 @@ public class ContainersFragment extends Fragment {
     private ContainerListAdapter containerListAdapter;
     private ContainerDAO containerDAO;
     private MateriaAdapter adapterMaterias;
-    private AtividadeAdapter adapterAtividades;
     private GrupAdapter adapterEstudoEmGrupo;
     private View rootView;
     private ImageView imgListMode;
@@ -88,7 +86,7 @@ public class ContainersFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 //Abrindo Criador de Containers
-                Intent it = new Intent(getActivity(), CriadorDeTurmas.class);
+                Intent it = new Intent(getActivity(), GroupCreator.class);
                 startActivity(it);
             }
         });

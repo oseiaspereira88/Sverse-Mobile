@@ -16,7 +16,6 @@ import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.example.oseias.sverse.Main2Activity;
 import com.example.oseias.sverse.MainActivity;
 import com.exemple.oseias.sverse.R;
 import com.example.oseias.sverse.SQLite.dao.ConfiguracaoDAO;
@@ -25,7 +24,7 @@ import com.example.oseias.sverse.SQLite.model.Configuracao;
 
 import java.util.ArrayList;
 
-public class Login extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     ConstraintLayout cl;
     private EditText editeLogin, editeSenha;
     private UsuarioDAO dao;
@@ -73,7 +72,7 @@ public class Login extends AppCompatActivity {
             ////Falta Implementar
 
             //Intent it = new Intent(this, MainActivity.class);
-            Intent it = new Intent(this, Main2Activity.class);
+            Intent it = new Intent(this, MainActivity.class);
             final Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
@@ -148,7 +147,7 @@ public class Login extends AppCompatActivity {
                       .playOn(view);
 
           } else{
-              Toast.makeText(this, "Login Não Efetuado.", Toast.LENGTH_SHORT).show();
+              Toast.makeText(this, "LoginActivity Não Efetuado.", Toast.LENGTH_SHORT).show();
               Toast.makeText(this, "Verifique os Campos.", Toast.LENGTH_SHORT).show();
               editeLogin.setError(getString(R.string.lbl_erro_login));
               editeSenha.setError(getString(R.string.lbl_erro_senha));
@@ -181,7 +180,7 @@ public class Login extends AppCompatActivity {
 
     public void abrirCadastrar(View view){
         Toast.makeText(this, "Abrindo TELA DE CADASTRO...", Toast.LENGTH_SHORT).show();
-        Intent it = new Intent(this, Cadastro.class);
+        Intent it = new Intent(this, CadastroActivity.class);
         startActivity(it);
     }
 
@@ -220,7 +219,7 @@ public class Login extends AppCompatActivity {
         int id = item.getItemId();
 
         if(id == R.id.config_login){
-            Toast.makeText(this, "Abrindo Configurações de Login.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Abrindo Configurações de LoginActivity.", Toast.LENGTH_LONG).show();
         }
 
         return super.onOptionsItemSelected(item);

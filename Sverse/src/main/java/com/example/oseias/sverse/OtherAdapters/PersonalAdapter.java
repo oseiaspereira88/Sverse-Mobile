@@ -23,7 +23,6 @@ import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.example.oseias.sverse.OthersActivitys.Teste;
 import com.exemple.oseias.sverse.R;import com.example.oseias.sverse.SQLite.model.Container;
 
 import java.util.ArrayList;
@@ -37,7 +36,7 @@ public class PersonalAdapter extends BaseAdapter {
     ArrayList<Container> containers;
     boolean isLongeClick;
 
-    public PersonalAdapter(Teste act, Context c, ArrayList<Container> containers) {
+    public PersonalAdapter(Context c, ArrayList<Container> containers) {
         this.c = c;
         this.containers = containers;
         isLongeClick = false;

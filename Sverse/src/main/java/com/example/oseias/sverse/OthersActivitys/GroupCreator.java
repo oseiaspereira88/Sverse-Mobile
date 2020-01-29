@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Random;
 
-public class CriadorDeTurmas extends AppCompatActivity {
+public class GroupCreator extends AppCompatActivity {
     //Vars básicas
     private String dataDeCriacao = "", horaDeCriacao = "";
     private Integer nImgContainerBG, nImgContainer;
@@ -42,7 +42,7 @@ public class CriadorDeTurmas extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_criador_de_turmas);
+        setContentView(R.layout.activity_group_creator);
         initializeViews();
         salvarCofiguracoes();
 

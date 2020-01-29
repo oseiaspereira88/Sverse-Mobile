@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context="com.example.oseias.sverse.OthersActivitys.Tutorial">
+    tools:context="com.example.oseias.sverse.OthersActivitys.TutorialActivity">
 
     <ImageView
         android:id="@+id/logoIntro"

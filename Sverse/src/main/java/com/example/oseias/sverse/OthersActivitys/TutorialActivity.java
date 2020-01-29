@@ -10,7 +10,7 @@ import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.exemple.oseias.sverse.R;
 
-public class Tutorial extends AppCompatActivity {
+public class TutorialActivity extends AppCompatActivity {
 
     // Create the Handler object (on the main thread by default)
     Handler handler = new Handler();
@@ -25,7 +25,7 @@ public class Tutorial extends AppCompatActivity {
     public void inicializarVars(){
         getWindow().setStatusBarColor(Color.WHITE);
 
-        final Intent it = new Intent(this, Login.class);
+        final Intent it = new Intent(this, LoginActivity.class);
         YoYo.with(Techniques.StandUp)
                 .duration(1200)
                 .repeat(0)

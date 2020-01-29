@@ -102,7 +102,7 @@ public class AllEtapaAdapter extends RecyclerView.Adapter<AllEtapaAdapter.MyView
                                 .duration(700)
                                 .repeat(0)
                                 .playOn(itemView);
-                        //Intent it = new Intent(act, CriadorDeNotas.class);
+                        //Intent it = new Intent(act, NotaCreator.class);
                         //Bundle b = new Bundle();
                         //b.putInt("id", etapa.get_id());
                         //it.putExtra("id", b);
