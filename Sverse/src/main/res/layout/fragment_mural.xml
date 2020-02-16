@@ -1,328 +1,344 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.oseias.sverse.Customizados.LockableScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/scrollMural"
+    android:id="@+id/constraintLayout6"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+    android:layout_height="match_parent">
 
-    <LinearLayout
+    <com.example.oseias.sverse.Customizados.LockableScrollView
+        android:id="@+id/scrollMural"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <android.support.v7.widget.CardView
-            android:id="@+id/cvPomodoro"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="4dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="16dp"
-            android:orientation="horizontal"
-            android:paddingTop="0dp"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cardView4">
-
-            <android.support.constraint.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/imgIconPomodoro"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="4dp"
-                    android:onClick="animateButton"
-                    app:layout_constraintBottom_toTopOf="@+id/imageView24"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/iconpomodoro" />
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:onClick="abrirCicloDeEstudo"
-                    android:text="Pomodoro"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="@+id/imgIconPomodoro"
-                    app:layout_constraintStart_toEndOf="@+id/imgIconPomodoro"
-                    app:layout_constraintTop_toTopOf="@+id/imgIconPomodoro" />
-
-                <ImageView
-                    android:id="@+id/imageView24"
-                    android:layout_width="0dp"
-                    android:layout_height="320dp"
-                    android:layout_marginTop="42dp"
-                    android:scaleType="centerCrop"
-                    android:visibility="visible"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@color/grayblue3" />
-
-                <TextView
-                    android:id="@+id/tvTime"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="16dp"
-                    android:shadowColor="#808080"
-                    android:shadowDx="3"
-                    android:shadowDy="3"
-                    android:shadowRadius="1"
-                    android:text="00:00"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="52sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toTopOf="@+id/linearLayout6"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:visibility="visible" />
-
-                <TextView
-                    android:id="@+id/tvInfoTime"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="32dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="32dp"
-                    android:layout_marginBottom="8dp"
-                    android:onClick="animateButton"
-                    android:shadowColor="#808080"
-                    android:shadowDx="3"
-                    android:shadowDy="3"
-                    android:shadowRadius="1"
-                    android:text="Organize seu Ciclo de Estudo"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toTopOf="@+id/tvTime"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/progressBar" />
-
-                <ListView
-                    android:id="@+id/lvItens"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_marginStart="3dp"
-                    android:layout_marginEnd="3dp"
-                    android:layout_marginBottom="24dp"
-                    android:background="@color/colorAccent"
-                    android:paddingBottom="4dp"
-                    android:visibility="invisible"
-                    app:layout_constraintBottom_toBottomOf="@+id/bAlternar"
-                    app:layout_constraintEnd_toEndOf="@+id/bAlternar"
-                    app:layout_constraintStart_toStartOf="@+id/bAlternar"
-                    app:layout_constraintTop_toTopOf="@+id/imageView24">
-
-                </ListView>
-
-                <ListView
-                    android:id="@+id/lvTimes"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_marginStart="3dp"
-                    android:layout_marginEnd="3dp"
-                    android:layout_marginBottom="24dp"
-                    android:background="@color/colorAccent"
-                    android:paddingBottom="4dp"
-                    android:visibility="invisible"
-                    app:layout_constraintBottom_toBottomOf="@+id/bMarcar"
-                    app:layout_constraintEnd_toEndOf="@+id/bMarcar"
-                    app:layout_constraintStart_toStartOf="@+id/bMarcar"
-                    app:layout_constraintTop_toTopOf="@+id/imageView24" />
-
-                <ImageView
-                    android:id="@+id/bAlternar"
-                    android:layout_width="58dp"
-                    android:layout_height="58dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginBottom="18dp"
-                    android:layout_weight="1"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView24"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:srcCompat="@mipmap/ic_adiar" />
-
-                <ImageView
-                    android:id="@+id/bMarcar"
-                    android:layout_width="58dp"
-                    android:layout_height="58dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="18dp"
-                    android:layout_weight="1"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView24"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:srcCompat="@mipmap/ic_acept" />
-
-                <LinearLayout
-                    android:id="@+id/linearLayout6"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:orientation="horizontal"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView24"
-                    app:layout_constraintEnd_toStartOf="@+id/bMarcar"
-                    app:layout_constraintStart_toEndOf="@+id/bAlternar">
-
-                    <ImageView
-                        android:id="@+id/bVincular"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        app:srcCompat="@mipmap/ic_tag" />
-
-                    <ImageView
-                        android:id="@+id/bPlay"
-                        android:layout_width="wrap_content"
-                        android:layout_height="58dp"
-                        android:layout_weight="1"
-                        app:srcCompat="@mipmap/ic_play_pomodoro"
-                        tools:layout_editor_absoluteX="8dp"
-                        tools:layout_editor_absoluteY="266dp" />
-
-                    <ImageView
-                        android:id="@+id/bRestart"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:layout_weight="1"
-                        app:srcCompat="@mipmap/ic_refazer"
-                        tools:layout_editor_absoluteX="272dp"
-                        tools:layout_editor_absoluteY="255dp" />
-
-                </LinearLayout>
-
-                <ProgressBar
-                    android:id="@+id/progressBar"
-                    android:layout_width="128dp"
-                    android:layout_height="128dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:onClick="animateButton"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/imageView24" />
-
-                <ImageView
-                    android:id="@+id/imageView45"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:onClick="animateButton"
-                    app:layout_constraintBottom_toBottomOf="@+id/progressBar"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/progressBar"
-                    app:srcCompat="@drawable/logo88" />
-
-            </android.support.constraint.ConstraintLayout>
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
-            android:id="@+id/cvDica"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="4dp"
-            android:layout_marginEnd="16dp"
-            android:orientation="horizontal"
-            android:paddingTop="0dp"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="2dp"
+            android:orientation="vertical"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvDica"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:orientation="horizontal"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="2dp">
+
+                <android.support.constraint.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/imageView18"
+                        android:layout_width="0dp"
+                        android:layout_height="130dp"
+                        android:scaleType="centerCrop"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView30"
+                        app:srcCompat="@color/grayblue3" />
+
+                    <TextView
+                        android:id="@+id/textView32"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center"
+                        android:onClick="animateButton"
+                        android:shadowColor="#808080"
+                        android:shadowDx="3"
+                        android:shadowDy="3"
+                        android:shadowRadius="1"
+                        android:text="Use o ciclo de estudo para uma melhor experiência."
+                        android:textAlignment="center"
+                        android:textColor="@android:color/background_light"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/imageView18"
+                        app:layout_constraintStart_toStartOf="@+id/imageView18"
+                        app:layout_constraintTop_toTopOf="@+id/imageView18" />
+
+                    <TextView
+                        android:id="@+id/textView30"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="40dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="40dp"
+                        android:onClick="animateButton"
+                        android:paddingBottom="8dp"
+                        android:text="Linha do Tempo"
+                        android:textAlignment="center"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </android.support.constraint.ConstraintLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </com.example.oseias.sverse.Customizados.LockableScrollView>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/clPomodoro"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:visibility="gone"
+        tools:layout_editor_absoluteX="4dp"
+        tools:layout_editor_absoluteY="50dp"
+        tools:visibility="visible">
+
+        <ImageView
+            android:id="@+id/imageView24"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTituloPomodoro"
+            app:srcCompat="@color/grayblue3" />
+
+        <TextView
+            android:id="@+id/tvTituloPomodoro"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="54dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/white"
+            android:paddingBottom="8dp"
+            android:text="Pomodoro"
+            android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView19">
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <android.support.constraint.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:shadowColor="#808080"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="1"
+            android:text="00:00"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_light"
+            android:textSize="52sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvInfoTime"
+            tools:visibility="visible" />
 
-                <ImageView
-                    android:id="@+id/imageView18"
-                    android:layout_width="0dp"
-                    android:layout_height="130dp"
-                    android:layout_marginTop="8dp"
-                    android:scaleType="centerCrop"
-                    android:visibility="visible"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/imageView17"
-                    app:srcCompat="@color/grayblue3" />
+        <TextView
+            android:id="@+id/tvInfoTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:onClick="animateButton"
+            android:shadowColor="#808080"
+            android:shadowDx="3"
+            android:shadowDy="3"
+            android:shadowRadius="1"
+            android:text="Organize seu Ciclo de Estudo"
+            android:textAlignment="center"
+            android:textColor="@android:color/background_light"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/progressBar" />
 
-                <ImageView
-                    android:id="@+id/imageView17"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginStart="4dp"
-                    android:layout_marginTop="8dp"
-                    android:onClick="animateButton"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@mipmap/ic_info" />
+        <ListView
+            android:id="@+id/lvItens"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="24dp"
+            android:background="@color/colorAccent"
+            android:paddingBottom="4dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/bAlternar"
+            app:layout_constraintEnd_toEndOf="@+id/bAlternar"
+            app:layout_constraintStart_toStartOf="@+id/bAlternar"
+            app:layout_constraintTop_toTopOf="@+id/imageView24">
 
-                <TextView
-                    android:id="@+id/textView32"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
-                    android:layout_marginStart="164dp"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:gravity="center"
-                    android:onClick="animateButton"
-                    android:shadowColor="#808080"
-                    android:shadowDx="3"
-                    android:shadowDy="3"
-                    android:shadowRadius="1"
-                    android:text="Use o ciclo de estudo para uma melhor experiência."
-                    android:textAlignment="center"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@+id/imageView18"
-                    app:layout_constraintStart_toStartOf="@+id/imageView18"
-                    app:layout_constraintTop_toTopOf="@+id/imageView18" />
+        </ListView>
 
-                <TextView
-                    android:id="@+id/textView30"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    android:onClick="animateButton"
-                    android:text="Dica do Momento"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="@+id/imageView17"
-                    app:layout_constraintStart_toEndOf="@+id/imageView17"
-                    app:layout_constraintTop_toTopOf="@+id/imageView17" />
+        <ListView
+            android:id="@+id/lvTimes"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginEnd="3dp"
+            android:layout_marginBottom="24dp"
+            android:background="@color/colorAccent"
+            android:paddingBottom="4dp"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/bMarcar"
+            app:layout_constraintEnd_toEndOf="@+id/bMarcar"
+            app:layout_constraintStart_toStartOf="@+id/bMarcar"
+            app:layout_constraintTop_toTopOf="@+id/imageView24" />
 
-            </android.support.constraint.ConstraintLayout>
+        <ImageView
+            android:id="@+id/bAlternar"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="32dp"
+            android:layout_weight="1"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@mipmap/ic_adiar" />
 
-        </android.support.v7.widget.CardView>
+        <ImageView
+            android:id="@+id/bMarcar"
+            android:layout_width="58dp"
+            android:layout_height="58dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="32dp"
+            android:layout_weight="1"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@mipmap/ic_acept" />
 
-    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linearLayout6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView24"
+            app:layout_constraintEnd_toStartOf="@+id/bMarcar"
+            app:layout_constraintStart_toEndOf="@+id/bAlternar">
 
-</com.example.oseias.sverse.Customizados.LockableScrollView>
+            <ImageView
+                android:id="@+id/bVincular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@mipmap/ic_tag" />
+
+            <ImageView
+                android:id="@+id/bPlay"
+                android:layout_width="wrap_content"
+                android:layout_height="58dp"
+                android:layout_weight="1"
+                app:srcCompat="@mipmap/ic_play_pomodoro"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="266dp" />
+
+            <ImageView
+                android:id="@+id/bRestart"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                app:srcCompat="@mipmap/ic_refazer"
+                tools:layout_editor_absoluteX="272dp"
+                tools:layout_editor_absoluteY="255dp" />
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:onClick="animateButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView24" />
+
+        <ImageView
+            android:id="@+id/imageView45"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:onClick="animateButton"
+            app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/progressBar"
+            app:srcCompat="@drawable/logo88" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/bOpenCiclo"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:clickable="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/button_down_left_radius" />
+
+    <ImageView
+        android:id="@+id/imgOpenCiclo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bOpenCiclo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/bOpenCiclo"
+        app:layout_constraintTop_toTopOf="@+id/bOpenCiclo"
+        app:srcCompat="@drawable/cicloiconnovo" />
+
+    <ImageView
+        android:id="@+id/bOpenPomodoro"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:clickable="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/button_down_right_radius" />
+
+    <ImageView
+        android:id="@+id/imgOpenPomodoro"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/bOpenPomodoro"
+        app:layout_constraintEnd_toEndOf="@+id/bOpenPomodoro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/iconpomodoro" />
+
+</android.support.constraint.ConstraintLayout>

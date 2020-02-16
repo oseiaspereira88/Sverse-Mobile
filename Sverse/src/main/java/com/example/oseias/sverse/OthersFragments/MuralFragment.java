@@ -1,23 +1,25 @@
 package com.example.oseias.sverse.OthersFragments;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.example.oseias.sverse.Customizados.LockableScrollView;
 import com.example.oseias.sverse.OtherAdapters.ItensPomodoroAdapter;
+import com.example.oseias.sverse.OthersActivitys.CicloActivity;
 import com.example.oseias.sverse.OthersClass.MyCountDownTime;
 import com.example.oseias.sverse.SQLite.model.CicloItem;
 import com.exemple.oseias.sverse.R;
@@ -32,12 +34,12 @@ public class MuralFragment extends Fragment {
     View view;
     LockableScrollView scrollMural;
     TextView tvTime, tvInfoTime;
-    ImageView bAlternar, bVincular, bPlay, bRestart, bMarcar;
+    ImageView bAlternar, bVincular, bPlay, bRestart, bMarcar, bOpenPomodoro, bOpenCiclo;
+    ConstraintLayout clPomodoro;
     ListView lvItens, lvTimes;
     ProgressBar progBar;
     MyCountDownTime time;
-    private boolean isTimesDown;
-    private boolean isItensDown;
+    private boolean isTimesDown, isItensDown, isPomodoroOpen;
 
     @Nullable
     @Override
@@ -49,11 +51,11 @@ public class MuralFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+        findAllViews();
         inicializarVars();
     }
 
-    @SuppressLint("WrongViewCast")
-    private void inicializarVars() {
+    public void findAllViews(){
         tvTime = (TextView) view.findViewById(R.id.tvTime);
         tvInfoTime = (TextView) view.findViewById(R.id.tvInfoTime);
         bAlternar = (ImageView) view.findViewById(R.id.bAlternar);
@@ -61,16 +63,25 @@ public class MuralFragment extends Fragment {
         bPlay = (ImageView) view.findViewById(R.id.bPlay);
         bRestart = (ImageView) view.findViewById(R.id.bRestart);
         bMarcar = (ImageView) view.findViewById(R.id.bMarcar);
+        bOpenPomodoro = (ImageView) view.findViewById(R.id.bOpenPomodoro);
+        bOpenCiclo = (ImageView) view.findViewById(R.id.bOpenCiclo);
+        clPomodoro = (ConstraintLayout) view.findViewById(R.id.clPomodoro);
         progBar = (ProgressBar) view.findViewById(R.id.progressBar);
         scrollMural = (LockableScrollView) view.findViewById(R.id.scrollMural);
         lvItens = (ListView) view.findViewById(R.id.lvItens);
         lvTimes = (ListView) view.findViewById(R.id.lvTimes);
+    }
+
+    @SuppressLint("WrongViewCast")
+    private void inicializarVars() {
+        bOpenPomodoro.setOnClickListener(getOnClickByFunctionName("openOrClosePomodoro", bOpenPomodoro));
+        bOpenCiclo.setOnClickListener(getOnClickByFunctionName("openCicloActivity", bOpenCiclo));
 
         bAlternar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Abri uma lista de seleção de itens do ciclo de estudos ou 'avuço'
-                if (lvItens.getVisibility() != View.VISIBLE || isItensDown){
+                if (lvItens.getVisibility() != View.VISIBLE || isItensDown) {
                     lvItens.setVisibility(View.VISIBLE);
                     isItensDown = false;
                     scrollMural.setScrollingEnabled(false);
@@ -102,19 +113,19 @@ public class MuralFragment extends Fragment {
         bPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(time==null) {
-                    time = new MyCountDownTime(getContext(), tvTime, 15*60*1000, 1000, progBar);
+                if (time == null) {
+                    time = new MyCountDownTime(getContext(), tvTime, 15 * 60 * 1000, 1000, progBar);
                 } else {
                     time.cancel();
                 }
-                progBar.setMax(15*60);
+                progBar.setMax(15 * 60);
                 time.start();
             }
         });
         bRestart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(time!=null){
+                if (time != null) {
                     time.cancel();
                     tvTime.setText("00:00");
                 }
@@ -126,7 +137,7 @@ public class MuralFragment extends Fragment {
                 //Aqui conterá a lógica de marcação das etapas do item em andamento;
 
                 //Abri uma lista de times para seleção entre pomodoros e intervalos
-                if (lvTimes.getVisibility() != View.VISIBLE || isTimesDown){
+                if (lvTimes.getVisibility() != View.VISIBLE || isTimesDown) {
                     lvTimes.setVisibility(View.VISIBLE);
                     isTimesDown = false;
                     scrollMural.setScrollingEnabled(false);
@@ -148,7 +159,7 @@ public class MuralFragment extends Fragment {
 
     }
 
-    public ArrayList<CicloItem> crieDados(){
+    public ArrayList<CicloItem> crieDados() {
         ArrayList<CicloItem> lista = new ArrayList<>();
         lista.add(new CicloItem(1, 1, 13, 45, 2, 25, 10, "Observação...", 1, 1, 1));
         lista.add(new CicloItem(2, 2, 14, 00, 2, 15, 8, "Observação...", 2, 1, 1));
@@ -164,9 +175,63 @@ public class MuralFragment extends Fragment {
         return lista;
     }
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        time.getMillisUntilFinished();
+    public void animateButton(View view) {
+        YoYo.with(Techniques.Pulse)
+                .duration(300)
+                .repeat(0)
+                .playOn(view);
+    }
+
+    public void showAndHideAnimate(View view, boolean show){
+        if(show){
+            YoYo.with(Techniques.FadeInUp)
+                    .duration(500)
+                    .repeat(0)
+                    .playOn(view);
+        }else{
+            YoYo.with(Techniques.FadeOutDown)
+                    .duration(300)
+                    .repeat(0)
+                    .playOn(clPomodoro);
+        }
+    }
+
+    //lista e gerencia todos os sets de OnClickListeners
+    public View.OnClickListener getOnClickByFunctionName(String funtionName, View viewButton) {
+        animateButton(viewButton);
+        View.OnClickListener listener;
+        switch (funtionName) {
+            case "openOrClosePomodoro":
+                listener = new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        animateButton((View) view.findViewById(R.id.imgOpenPomodoro));
+                        if (!isPomodoroOpen) {
+                            clPomodoro.setVisibility(View.VISIBLE);
+                            showAndHideAnimate(clPomodoro, true);
+                            isPomodoroOpen = true;
+                        } else{
+                            showAndHideAnimate(clPomodoro, false);
+                            isPomodoroOpen = false;
+                        }
+                    }
+                };
+            break;
+
+            case "openCicloActivity":
+                listener = new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        animateButton((View) getActivity().findViewById(R.id.imgOpenCiclo));
+                        Intent it = new Intent(getActivity(), CicloActivity.class);
+                        getActivity().startActivity(it);
+                        //getActivity().finish();
+                    }
+                };
+                break;
+            default:
+                return null;
+        }
+        return listener;
     }
 }

@@ -15,6 +15,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
@@ -23,6 +24,7 @@ import com.example.oseias.sverse.OthersActivitys.CicloActivity;
 import com.exemple.oseias.sverse.R;
 
 public class MainActivity extends AppCompatActivity {
+    private TextView tvTitle;
     private TabLayout tabLayout;
     private ViewPager viewPager;
     private MyFragmentPagerAdapter myFragmentPagerAdapter;
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void findAllViews(){
+        tvTitle = (TextView) findViewById(R.id.tvTitle);
         tabLayout = (TabLayout) findViewById(R.id.mainTabLayout);
         viewPager = (ViewPager) findViewById(R.id.mainPager);
         myFragmentPagerAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager(), 6);
@@ -45,12 +48,50 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void initViews(){
+        //setando os icons das tabs
         tabLayout.getTabAt(0).setIcon(R.drawable.iconhome4);
         tabLayout.getTabAt(1).setIcon(R.drawable.iconmochila);
-        tabLayout.getTabAt(2).setIcon(R.drawable.iconnota);
+        tabLayout.getTabAt(2).setIcon(R.drawable.iconrotina2);
         tabLayout.getTabAt(3).setIcon(R.drawable.icongroup2);
         tabLayout.getTabAt(4).setIcon(R.drawable.iconnotifi4);
         tabLayout.getTabAt(5).setIcon(R.drawable.iconmenu);
+
+        //setando OnPageChangeListener no viewPager
+        viewPager.addOnPageChangeListener(getOnPageChangeListener());
+    }
+
+    private ViewPager.OnPageChangeListener getOnPageChangeListener() {
+        return new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            }
+            @Override
+            public void onPageSelected(int position) {
+                switch (position){
+                    case 0:
+                        tvTitle.setText("Sverse Mobile");
+                        break;
+                    case 1:
+                        tvTitle.setText("Mochila");
+                        break;
+                    case 2:
+                        tvTitle.setText("Blocos de Notas");
+                        break;
+                    case 3:
+                        tvTitle.setText("Explorar");
+                        break;
+                    case 4:
+                        tvTitle.setText("Notificações");
+                        break;
+                    case 5:
+                        tvTitle.setText("Opções");
+                        break;
+                }
+            }
+            @Override
+            public void onPageScrollStateChanged(int state) {
+            }
+        };
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)

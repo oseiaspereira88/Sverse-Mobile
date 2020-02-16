@@ -130,7 +130,7 @@ public class ItensPomodoroAdapter extends BaseAdapter {
                     YoYo.with(Techniques.Landing)
                             .duration(700)
                             .repeat(0)
-                            .playOn(imgItem);
+                            .playOn(v);
 
                     //Setar item na ferramenta de Pomodoro.
 

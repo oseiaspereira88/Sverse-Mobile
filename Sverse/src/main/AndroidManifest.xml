@@ -59,12 +59,12 @@
             android:name="com.example.oseias.sverse.OthersActivitys.GroupCreator"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.example.oseias.sverse.OthersActivitys.GroupArea"
+            android:name="com.example.oseias.sverse.OthersActivitys.WorkGroupArea"
             android:label="@string/title_activity_area_de_trabalho"
             android:screenOrientation="portrait"
             android:theme="@style/SverseTheme.NoActionBar" />
         <activity
-            android:name="com.example.oseias.sverse.OthersActivitys.WorkGroupArea"
+            android:name="com.example.oseias.sverse.OthersActivitys.GroupArea"
             android:label="@string/title_activity_area_de_trabalho_em_grupo"
             android:screenOrientation="portrait"
             android:theme="@style/SverseTheme.NoActionBar" />

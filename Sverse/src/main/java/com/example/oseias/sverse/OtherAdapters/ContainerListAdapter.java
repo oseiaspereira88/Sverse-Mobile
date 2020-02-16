@@ -23,6 +23,8 @@ import android.widget.Toast;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
+import com.example.oseias.sverse.OthersActivitys.GroupArea;
+import com.example.oseias.sverse.OthersActivitys.WorkGroupArea;
 import com.example.oseias.sverse.OthersActivitys.GroupCreator;
 import com.exemple.oseias.sverse.R;
 import com.example.oseias.sverse.SQLite.model.Container;
@@ -102,7 +104,13 @@ public class ContainerListAdapter extends BaseAdapter {
                             .duration(400)
                             .repeat(0)
                             .playOn(finalView);
-                    //act.listarContainer(i);
+
+                    Intent it = new Intent(act, GroupArea.class);
+                    Bundle b = new Bundle();
+                    b.putInt("id", container.get_id());
+                    it.putExtra("id", b);
+                    act.startActivity(it);
+                    act.finish();
                 }
             }
         });

@@ -173,7 +173,7 @@ public class CicloItemAdapter extends BaseAdapter {
                     YoYo.with(Techniques.Landing)
                             .duration(700)
                             .repeat(0)
-                            .playOn(imgItem);
+                            .playOn(v);
 
                     //Abrir a ferramenta de Pomodoro (na MainActivity) com as info do item selected.
                     Intent it = new Intent(ctx, MainActivity.class);
