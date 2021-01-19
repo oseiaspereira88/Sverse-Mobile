@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AndroidStudioProjects-Sverse-Mobile.iml" filepath="$PROJECT_DIR$/.idea/modules/AndroidStudioProjects-Sverse-Mobile.iml" group="Sverse-Mobile" />
       <module fileurl="file://$PROJECT_DIR$/Sverse/Sverse.iml" filepath="$PROJECT_DIR$/Sverse/Sverse.iml" />
       <module fileurl="file://$PROJECT_DIR$/Sverse-Mobile.iml" filepath="$PROJECT_DIR$/Sverse-Mobile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Sverse/Sverse-Mobile-Sverse.iml" filepath="$PROJECT_DIR$/.idea/modules/Sverse/Sverse-Mobile-Sverse.iml" group="Sverse-Mobile/Sverse" />
     </modules>
   </component>
 </project>
